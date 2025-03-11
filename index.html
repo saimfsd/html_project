@@ -1,67 +1,182 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <title>Index table</title>
+        <style>
+            .table{
+                width: 100%;
+                height: auto;
+            }
+            /*first row*/
+            .first-row{
+                height: 70px;
+            }
 
-<head>
-    <title>my home page</title>
-</head>
+            /*first-row-th-one*/
+            .first-row-th-one{
+                border-style: solid;
+                border-color: black;
+                border-width: 3px;
+                width: 200px;
+                background-color: yellowgreen;
 
-<body>
-    <h1>Assignment 1</h1>
+            }
+            .first-row-th-two{
+                border-style: solid;
+                border-color: black;
+                border-width: 3px;
+                width: 200px;
+                background-color:grey;
 
-    <a href="./html/influencer.html">
-        <h1>Top influncer</h1>
+            }
+            .first-row-th-three{
+                border-style: solid;
+                border-color: black;
+                border-width: 3px;
+                width: 200px;
+                background-color:red;
 
-    </a>
-    <hr>
-    <h1>Assignment 2</h1>
-    <a href="./html/resume.html">
-        <h1>My resume</h1>
+            }
+            .first-row-th-four{
+                border-style: solid;
+                border-color: black;
+                border-width: 3px;
+                width: 200px;
+                background-color: coral;
 
-    </a>
-    <hr />
-    <h1>Assignment 3</h1>
-    <a href="./html/sign-up.html">
-        <h1>Sign up form</h1>
-    </a>
-    <hr>
+            } 
+            /*second row*/
+            .second-row{
+              height: 500px;
+            }
+            /*second row td*/
+            .second-row-td-one{
+                border-style: solid;
+                border-color: black;
+                border-width: 3px;
+                width: 200px;
+                background-color: violet;
+                
+            }
+            /*third row*/
+            .third-row{
+                height: 500px;
+            }
+            .third-row-td-one{
+                border-style: solid;
+                border-color: black;
+                border-width: 3px;
+                width: 200px;
+                background-color: crimson;
+            }
+            /*fourth row*/
+            .fourth-row{
+                height: 500px;
+            }
+            .fourth-row-td-one{
+                border-style: solid;
+                border-color: black;
+                border-width: 3px;
+                width: 200px;
+                background-color: gray;
+            }
+            /*fifth row*/
+            .fifth-row{
+                height: 500px;
+            }
+            /*fifth row one td*/
+            .fifth-row-td-one{
+                border-style: solid;
+                border-color: black;
+                border-width: 3px;
+                width: 200px;
+                background-color: mediumseagreen;
+            }
+        </style>
+    </head>
+    <body>
+        <table class="table">
+            <!--first row-->
+            <tr class="first-row">
+                <th class="first-row-th-one"><a href="#Home"><h1>Home</h1></a></th>
+                <th class="first-row-th-two"><a href="#About"><h1>About</h1></a></th>
+                <th class="first-row-th-three"><a href="#Project"><h1>Project</h1></a</th>
+                <th class="first-row-th-four"><a href="#Contact"><h1>Contact</h1></a></th>
+            </tr>
+            <!--second row-->
+            <tr class="second-row">
+                <td colspan="4" class="second-row-td-one" id="Home"><h1>Home</h1>
+                    <h2>My name is Saim kazi</h2>
+                    <h2>I am full stack developer</h2>
+                    
+</td>
+               
+            </tr>
+            <!--third row-->
+            <tr class="third-row">
+                <td colspan="4" class="third-row-td-one" id="About"><h1>About</h1>
+                    <h2>Hello there! I'm Saim kazi, a passionate Full Stack Web Developer
+                        with a keen interest in leveraging technology to create impactful solutions.</h2>
+                    
+                </td> 
+             
+            </tr>
+            <!--fourth row-->
+            <tr class="fourth-row">
+                <td colspan="4" class="fourth-row-td-one" id="Project">
+                    <h1>Project</h1>
+                    <ol>
+                        <li> <a href="./html/influencer.html">
+                            <h1>Top influncer</h1>
+                    
+                        </a></li>
+                        <li> <a href="./html/resume.html">
+                            <h1>My resume</h1>
+                    
+                        </a></li>
+                        <li> <a href="./html/sign-up.html">
+                            <h1>Sign up form</h1>
+                        </a></li>
+                        <li> <a href="./html/complete-form-tags.html">
+                            <h1>Complete form tags.html</h1>
+                        </a></li>
+                        <li><a href="./html/cpu-componeunt.html">
+                            <h1>Cpu component</h1>
+                    
+                        </a></li>
+                        <li> <a href="./html/report-card.html">
+                            <h1>Report card</h1>
+                    
+                        </a></li>
+                        <li> <a href="./html/student-data.html">
+                            <h1>Student Data</h1>
+                        </a></li>
+                        <li><a href="./html/youtube-tbl.html">
+                            <h1>Youtube Page</h1>
+                        </a></li>
+                        <li><a href="./html/table-layout.html">
+                            <h1>Table Layout</h1>
+                        </a></li>
+                        <li> <a href="./html/tbl-index.html">
+                            <h1>Table index</h1>
+                        </a></li>
+                    </ol>
 
-    <h1>Assignment 4</h1>
-    <a href="./html/complete-form-tags.html">
-        <h1>Complete form tags.html</h1>
-    </a>
-    <hr>
-    <h1>Assignment 5</h1>
-    <a href="./html/cpu-componeunt.html">
-        <h1>Cpu component</h1>
+                </td>
+                
+            </tr>
+            <!--fifth row-->
+            <tr class="fifth-row">
+                <td colspan="4" class="fifth-row-td-one" id="Contact"><h1>Contact</h1>
+                    <p><h2>Phone.no</h2><a href="tel:9764090337">9764090337</a></p>
 
-    </a>
-    <hr>
-    <h1>Assignment 6</h1>
-    <a href="./html/report-card.html">
-        <h1>Report card</h1>
-
-    </a>
-    <hr>
-    <h1>Assignment 7</h1>
-    <a href="./html/student-data.html">
-        <h1>Student Data</h1>
-    </a>
-    <hr>
-    <h1>Assignment 8</h1>
-    <a href="./html/youtube-tbl.html">
-        <h1>Youtube Page</h1>
-    </a>
-    <hr>
-    <h1>Assignment 9</h1>
-    <a href="./html/table-layout.html">
-        <h1>Table Layout</h1>
-    </a>
-    <hr>
-    <h1>Assignmet 10</h1>
-    <a href="./html/tbl-index.html">
-        <h1>Table index</h1>
-    </a>
-</body>
-
-
+                    <p><h2>Email us</h2><a href="mail to">saimquazi118@gmail.com</a></p>
+                  <h2>Location:Amner</h2>
+                  <h2>Sky:Available</h2>
+                
+                </td>
+              
+            </tr>
+        </table>
+    </body>
 </html>
