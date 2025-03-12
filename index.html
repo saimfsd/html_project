@@ -1,182 +1,272 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Index table</title>
-        <style>
-            .table{
-                width: 100%;
-                height: auto;
-            }
-            /*first row*/
-            .first-row{
-                height: 70px;
-            }
 
-            /*first-row-th-one*/
-            .first-row-th-one{
-                border-style: solid;
-                border-color: black;
-                border-width: 3px;
-                width: 200px;
-                background-color: lightyellow;
+<head>
+    <title>Index table</title>
+    <style>
+        .table {
+            width: 100%;
+            height: auto;
+        }
 
-            }
-            .first-row-th-two{
-                border-style: solid;
-                border-color: black;
-                border-width: 3px;
-                width: 200px;
-                background-color:goldenrod;
+        /*first row*/
+        .first-row {
+            height: 70px;
+        }
 
-            }
-            .first-row-th-three{
-                border-style: solid;
-                border-color: black;
-                border-width: 3px;
-                width: 200px;
-                background-color:lightblue;
+        /*first-row-th-one*/
+        .first-row-th-one {
+            border-style: solid;
+            border-color: black;
+            border-width: 3px;
+            width: 200px;
+            background-color: lightyellow;
 
-            }
-            .first-row-th-four{
-                border-style: solid;
-                border-color: black;
-                border-width: 3px;
-                width: 200px;
-                background-color: lightskyblue;
+        }
 
-            } 
-            /*second row*/
-            .second-row{
-              height: 500px;
-            }
-            /*second row td*/
-            .second-row-td-one{
-                border-style: solid;
-                border-color: black;
-                border-width: 3px;
-                width: 200px;
-                background-color: violet;
-                
-            }
-            /*third row*/
-            .third-row{
-                height: 500px;
-            }
-            .third-row-td-one{
-                border-style: solid;
-                border-color: black;
-                border-width: 3px;
-                width: 200px;
-                background-color: lightcoral;
-            }
-            /*fourth row*/
-            .fourth-row{
-                height: 500px;
-            }
-            .fourth-row-td-one{
-                border-style: solid;
-                border-color: black;
-                border-width: 3px;
-                width: 200px;
-                background-color: gray;
-            }
-            /*fifth row*/
-            .fifth-row{
-                height: 500px;
-            }
-            /*fifth row one td*/
-            .fifth-row-td-one{
-                border-style: solid;
-                border-color: black;
-                border-width: 3px;
-                width: 200px;
-                background-color: rgb(32, 178, 168);
-            }
-        </style>
-    </head>
-    <body>
-        <table class="table">
-            <!--first row-->
-            <tr class="first-row">
-                <th class="first-row-th-one"><a href="#Home"><h1>Home</h1></a></th>
-                <th class="first-row-th-two"><a href="#About"><h1>About</h1></a></th>
-                <th class="first-row-th-three"><a href="#Project"><h1>Project</h1></a</th>
-                <th class="first-row-th-four"><a href="#Contact"><h1>Contact</h1></a></th>
-            </tr>
-            <!--second row-->
-            <tr class="second-row">
-                <td colspan="4" class="second-row-td-one" id="Home"><h1>Home</h1>
-                    <h2>My name is Saim kazi</h2>
-                    <h2>I am full stack developer</h2>
-                    
-</td>
-               
-            </tr>
-            <!--third row-->
-            <tr class="third-row">
-                <td colspan="4" class="third-row-td-one" id="About"><h1>About</h1>
-                    <h2>Hello there! I'm Saim kazi, a passionate Full Stack Web Developer
-                        with a keen interest in leveraging technology to create impactful solutions.</h2>
-                    
-                </td> 
-             
-            </tr>
-            <!--fourth row-->
-            <tr class="fourth-row">
-                <td colspan="4" class="fourth-row-td-one" id="Project">
+        .first-row-th-two {
+            border-style: solid;
+            border-color: black;
+            border-width: 3px;
+            width: 200px;
+            background-color: goldenrod;
+
+        }
+
+        .first-row-th-three {
+            border-style: solid;
+            border-color: black;
+            border-width: 3px;
+            width: 200px;
+            background-color: lightblue;
+
+        }
+
+        .first-row-th-four {
+            border-style: solid;
+            border-color: black;
+            border-width: 3px;
+            width: 200px;
+            background-color: lightskyblue;
+
+        }
+
+        /*second row*/
+        .second-row {
+            height: 500px;
+        }
+
+        /*second row td*/
+        .second-row-td-one {
+            border-style: solid;
+            border-color: black;
+            border-width: 3px;
+            width: 200px;
+            background-color: violet;
+            /*table*/
+        }
+
+        /*third row*/
+        .third-row {
+            height: 500px;
+        }
+
+        .third-row-td-one {
+            border-style: solid;
+            border-color: black;
+            border-width: 3px;
+            width: 200px;
+            background-color: lightcoral;
+        }
+
+        /*fourth row*/
+        .fourth-row {
+            height: 500px;
+        }
+
+        .fourth-row-td-one {
+            border-style: solid;
+            border-color: black;
+            border-width: 3px;
+            width: 200px;
+            background-color: lightgoldenrodyellow;
+        }
+
+
+        /* second table */
+        .second-table {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* second table td */
+        .second-table-one {
+            border-style: solid;
+            border-color: black;
+            border-width: 3px;
+        }
+
+        /*fifth row*/
+        .fifth-row {
+            height: 500px;
+        }
+
+        /*fifth row one td*/
+        .fifth-row-td-one {
+            border-style: solid;
+            border-color: black;
+            border-width: 3px;
+            width: 200px;
+            background-color: rgb(32, 178, 168);
+        }
+    </style>
+</head>
+
+<body>
+    <table class="table">
+        <!--first row-->
+        <tr class="first-row">
+            <th class="first-row-th-one"><a href="#Home">
+                    <h1>Home</h1>
+                </a></th>
+            <th class="first-row-th-two"><a href="#About">
+                    <h1>About</h1>
+                </a></th>
+            <th class="first-row-th-three"><a href="#Project">
                     <h1>Project</h1>
-                    <ol>
-                        <li> <a href="./html/influencer.html">
-                            <h1>Top influncer</h1>
-                    
-                        </a></li>
-                        <li> <a href="./html/resume.html">
-                            <h1>My resume</h1>
-                    
-                        </a></li>
-                        <li> <a href="./html/sign-up.html">
-                            <h1>Sign up form</h1>
-                        </a></li>
-                        <li> <a href="./html/complete-form-tags.html">
-                            <h1>Complete form tags.html</h1>
-                        </a></li>
-                        <li><a href="./html/cpu-componeunt.html">
-                            <h1>Cpu component</h1>
-                    
-                        </a></li>
-                        <li> <a href="./html/report-card.html">
-                            <h1>Report card</h1>
-                    
-                        </a></li>
-                        <li> <a href="./html/student-data.html">
-                            <h1>Student Data</h1>
-                        </a></li>
-                        <li><a href="./html/youtube-tbl.html">
-                            <h1>Youtube Page</h1>
-                        </a></li>
-                        <li><a href="./html/table-layout.html">
-                            <h1>Table Layout</h1>
-                        </a></li>
-                        <li> <a href="./html/tbl-index.html">
-                            <h1>Table index</h1>
-                        </a></li>
-                    </ol>
+                </a> </th>
+            <th class="first-row-th-four"><a href="#Contact">
+                    <h1>Contact</h1>
+                </a></th>
+        </tr>
+        <!--second row-->
+        <tr class="second-row">
+            <td colspan="4" class="second-row-td-one" id="Home">
+                <h1>Home</h1>
+                <h2>My name is Saim kazi</h2>
+                <h2>I am full stack developer</h2>
 
-                </td>
-                
-            </tr>
-            <!--fifth row-->
-            <tr class="fifth-row">
-                <td colspan="4" class="fifth-row-td-one" id="Contact"><h1>Contact</h1>
-                    <h2>Phone.no: <a href="tel:9764090337">9764090337</a></h2>
+            </td>
 
-                    <h2>Email us:<a href="mail to">saimquazi118@gmail.com</a></h2>
-                  <h2>Location:Nagpur</h2>
-                  <h2>Skype:Available</h2>
-                
-                </td>
-              
-            </tr>
-        </table>
-    </body>
+        </tr>
+        <!--third row-->
+        <tr class="third-row">
+            <td colspan="4" class="third-row-td-one" id="About">
+                <h1>About</h1>
+                <h2>Hello there! I'm Saim kazi, a passionate Full Stack Web Developer
+                    with a keen interest in leveraging technology to create impactful solutions.</h2>
+
+            </td> 
+
+        </tr>
+        <!--fourth row-->
+        <tr class="fourth-row">
+            <td colspan="4" class="fourth-row-td-one" id="Project">
+
+                <table class="second-table">
+                    <tr>
+                        <td class="second-table-one">
+                            <a href="./Html/resume.html"> <img
+                                    src="https://thumbs.dreamstime.com/b/resume-categories-17620272.jpg" alt="resume"
+                                    width="100%" height="200px">
+                                <h1>My Resume</h1>
+                            </a>
+
+                        </td>
+                        <td class="second-table-one">
+                            <a href="./Html/influencer.html"> <img
+                                    src="https://m.media-amazon.com/images/I/51QCBGTb48L._AC_UF1000,1000_QL80_.jpg"
+                                    alt="Top personalities" width="100%" height="200px">
+                                <h1>Top Personalities</h1>
+                            </a>
+
+                        </td>
+                        <td class="second-table-one">
+                            <a href="./Html/sign-up.html"> <img
+                                    src="https://img.freepik.com/free-vector/sign-up-concept-illustration_114360-7965.jpg"
+                                    alt="Sign up form" width="100%" height="200px">
+                                <h1>Sign u form</h1>
+                            </a>
+
+                        </td>
+                        <td class="second-table-one">
+                            <a href="./Html/complete-form-tags.html"> <img
+                                    src="https://www.shutterstock.com/image-vector/user-interface-template-web-elements-260nw-1298537821.jpg"
+                                    alt="Complete form tags" width="100%" height="200px">
+                                <h1>Complete form tags</h1>
+                            </a>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="second-table-one">
+                            <a href="./Html/cpu-componeunt.html"> <img
+                                    src="https://media.istockphoto.com/id/476174376/vector/computer-parts-set.jpg?s=612x612&w=0&k=20&c=gyylUXu2f6vze-D029GlE3fKCJCgA82AglJ_q0ZcL84="
+                                    alt="Cpu Componeunt" width="100%" height="200px">
+                                <h1>Cpu Componeunt</h1>
+                            </a>
+
+                        </td>
+                        <td class="second-table-one">
+                            <a href="./Html/tbl-youtube-page.html"> <img
+                                    src="https://www.shutterstock.com/image-vector/template-video-frame-youtube-player-260nw-1488096026.jpg"
+                                    alt="" width="100%" height="200px">
+                                <h1>Youtube Page</h1>
+                            </a>
+
+                        </td>
+                        <td class="second-table-one">
+                            <a href="./Html/report-card.html"> <img
+                                    src="https://i.pinimg.com/550x/87/d3/72/87d3720476807b21f02591c07f0daa62.jpg"
+                                    alt="reportd card" width="200px" height="200px">
+                                <h1>Report Card</h1>
+                            </a>
+
+                        </td>
+                        <td class="second-table-one">
+                            <a href="./Html/ tabl-layout-three.html"> <img
+                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQEAAADECAMAAACoYGR8AAAAk1BMVEX///+20bb7/fuvzq/I4sjN4s2q0qqBvoGoyqji7+K22LbY6tiKwYp9vX2eyJ6Owo6dnZ2GhoaSkpKoqKiNjY3w8PBycnLR0dH39/eysrJ5eXmBsoHNzc3BwcHm5ubt7e3d3d28vLxgYGB4eHh4tXijo6NoaGiewp6tra1prmnx9/FSUlJcXFwTExMdHR2Du4NjrWNdnuajAAADdklEQVR4nO3djW+bOBjHcSdr7prmdmc7GINjG9MURl/28v//dSOntlOmZmnTDKTx/UWIBKGHJx8RiCJixGY27WzETEw7MwR2AvOLqWb+KHBxuZhmLi+eBBZj74ojZYEAAggggAACCCCAAAIIIDCmQBSVCaGfmVAJH4z3w/cwrkAunKyDuPeyyzsdvF53wzcxqsCDvl5nTcrdOlqdS3v9MMJOMKrAVijpbWZdVrpS2hCiHL6JUQUqURU2VaKorJkna4p+yeDhXIAAAggggAACCCCAAAIIIIDAs8Bi82Ga2SyeryOaTzO7t86VVAj8L7C8+XuauVlyLkAAAQQQQGAkgXn/KPp5P8Xd3BSmf2Yelw6YsQSKz8YVX5I0WSODEqqx90F3XeY/F/mgjYwnoJQuVVDr2GwrHV0rlJC5qLSSatBGRhMwWdk6r8KDaLaxlU2WnNCZlbUu20EbGU1gnoRNIhW7qUxWFLF/JkovorCDNsK5AAEEEEAAAQR+CCw/XU4zn5b8UooAAggggMCjwN3VO7LcL7h4T62Xs9rfwuqMpe+exx9YnZ5/9/v7tnxHrZfzdX8Lt+erfJbxB+Y/CXw8vdSh/PfbtnCWb8UIIIAAAggggAACCCCAAAIIIIAAAggggAACCCCAAAIIIIAAAggggAACCCCAAAJ/tkDMt1GpWjtdpzK9vM4JAkGpautS7mpdZOb4+m8TKHKXZCY7p2yw4dfrHhVIru1qoZRoqm12oMgJAqVuddyVzcz9a4ZpfrPAWgqtitord6TycYG1d41olVCiPPRfyFMEfLP1Rd+eE+oVu8AbBYyMTolcV0209ZHKRwUqKYtOp1IGYeOBIicIJNkUWhspk6hf82fzN+4DUla19l6WIqYjlTkSIoAAAggggAACCCCAAAIIIIAAAggggAACCCCAAAIIIIAAAggggAACCCCAAAIIIHCeMav/CIHV7T8n5+vPY1SeXupQbva3cHO+yrcrRmpFAAEEEECAu/1yx2fuY4IAAggggAACCCCAAAIIIDCigF7bRteVzqzO6v6F1mn4JkYVuK59KbbaRG1rq4KV62ODBfyGjCrQJtuINjOpF/BdnKCA7D8Iua9yVySfWhesKYdvgiMhAggggAACCCCAAAIIIIDAD4Gr5TRz9SRw99dU83TX70kHAQQQmInNbNrZfAeBJJmgS2twCQAAAABJRU5ErkJggg=="
+                                    alt="Table layout" width="100%" height="200px">
+                                <h1>Table layout</h1>
+                            </a>
+                        <td class="second-table-one">
+                            <a href="./Html/student-data.html"> <img
+                                    src="data:image/jpeg;base64,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N3aKLmDXAMmXNpw3hheztNC7RQ3GtC58ouXMkagOGKmI+acra8NCKXrto5lhvRNocsX4m86PRNocsX4m866DvPf/AIqPtG+yoCGIO8tDs4NdtqR+YJFLzbRzLDeibQ5YvxN5176JtDli/E3nXQc551Du7XtK5RroDDSCO3IbkDTrNkVmgSYU8jS820cyxXom0OWL8TedHom0OWL8Tedb83dJn30ixig6K6uCrqGU9hVhII+8GaXpto5lg/RNocsX4m86PRNocsZ4m866DnPOo2EvsWugsercge4bu2Y7ye+l67aOZYf0TaHLF+JvOj0TaHLF+JvOug5zzqG217Q13ojOLcxK7wuLeTMBGbeMFidDp2Gl5to5livRNocsX4m86PRNocsX4m866DnPOjOedLzbRzLn3om0OWL8TedHom0OWL8TedbnHXmULBIl0H5FhNSM550vNtHMufeibQ5YvxN50eibQ5YvxN51t8XtS3aYLcuBSylhI+qrIrMTEAA3EBJ4ZhTpxYDi3n65UsF7SqlVY/kXUfmKXm2jmWD9E2hyxfibzo9E2hyxfibzrfWr4YSrAiSJEHVSQRpyIIpec86Xm2jmXPvRNocsX4m86PRNocsX4m863ODvsc8k6OwH3AwKdvYgIpZmhRxJ7KXm2jmWAOD2hyxfibzo9E2hyxfibzroCXpEgnujtjUHUaiKRisWttGuO4VEVmZjwVVBLE/cATS820cywXom0OWL8TedHom0OWL8TeddCznnUbF32DWgGPWuQfeN3cMd6jupebaOZYb0TaHLF+JvOj0TaHLF+JvOuhZzzqPb2gjMyB5ZGyMI+axQXACYgdRgfzHOl5to5lhfRNocsX4m86PRNocsX4m863r4sBlQt1mDFRzCxJ/LMKUl8EkBgSphgI0MAweRgg/nS820cywHom0OWL8TedHom0OWL8TeddCznnUbZ19mQksSd5dHZwW7cUdwAFLzbRzLDeibQ5YvxN50eibQ5YvxN510LOedRxj1Nw285zrEjKdMwJEmI1APbS820cywvom0OWL8TedHom0OWL8Tedb1cWpbJnGbXTtMBSSOYGddRzFO5zzpebaOZc2v7HxbSWtX2JHEgk95qHi8K9tstxSrRMHjB/8A5XTr15hctCTDMwI5xbcj9QKxnTr6UP8Apr/lq1TVm4Y2BTRTnEtrjsbatkby5bSZjMwWeHCaqNq3MJfXK+KtgAgjLdQFXV1dHEz1lZARMjjpVD65Yr7Lwnzo9csV9l4T51myXfdUJr7KwBJPpY1bN/dt+0zxqObcT1tOPGZm07WBvkm5iLWaLihlvKrKt61u3UMuuUiGgz1lU9gqm9csV9l4T50euWK+y8J86mnJusNbYXC7Pt3hfW9Z3gWM29UTIUEkCBJCJP4E5Cpm0tqWGRQt+yTvbOguKTpetk9vITWd9csV9l4T50euWK+y8J86acm6w2r/AKvhv9RY/wBxfOqbaeBwF83DcxKfKakC8gCncvZzLpxCXG4yJMxoKrfXLFfZeE+dHrlivsvCfOmnJuqD93ZGCN9LnpVvKu8Yjerm3j3MLcDKeCrOG1A4527CQV2NkYBCsYm20bkS91JC4cOFy5QNWDsrTxDsO2ovrlivsvCfOj1yxX2XhPnSyTc4bWf1jDf6ix/uL51Fwe1LAa6TfsgG5IJuLqN3aEjXXURWd9csV9l4T50euWK+y8J86acm6w2s/q+G/wBRY/3F86qXw+CNrcjFItvfC9lF5NHF8YjQmTlNwExPBiBGkVPrlivsvCfOj1yxX2XhPnTTk3VCUdj7PyhTixAtbr+7b1WSST1dWM9umnDjOgt7UwqgKt7DAAAAC4oAA4AAHQVlfXLFfZeE+dHrlivsvCfOmnJucNo8dtSwQsX7J+UQ6XFOgaSePCpH9Xw3+osf7i+dZT1yxX2XhPnR65Yr7LwnzppybrDXG1rOBxDBrmJtwLVy0VF1ArW7zWmcNOuu5UaEaE/eIlzZeAYycWPr/wD5reu8e25DSOsPklXXs5mCIXrlivsvCfOj1yxX2XhPnSyTc4a42dawVm4bi4lCSGENdQgZrty6YiCOtdYceAEyRNWf9Xw3+osf7i+dZT1yxX2XhPnR65Yr7LwnzppybnDaPBbUsDPN+yJuORNxdRJ1GuopeK2hhbiMjX8PlYQRnQgjtBDSCCNCCIMmsz65Yr7Lwnzo9csV9l4T5005N1QlYjYuzmtPa9KCo6FIF5OqpUqQhYHIIgQNBlEAayrEbI2c63AcSg3gxQYi5bkjGMWucQdVJOU8QNJIJqH65Yr7Lwnzo9csV9l4T5005N1Q0WzcThLNsW1xNkgM7a3Embjs5GkCAWIGnCKMZtSwWtRfsmLhJi4pgC1d1OugrO+uWK+y8J86PXLFfZeE+dNOTc4bV/1fDf6ix/uL51T7UsYS5bxSribAbFA5s1xSmfdLZzRx+YiiJjSqz1yxX2XhPnR65Yr7LwnzppybnDTTsrZ8yMUo46b22QMzo5iQcolAIEAdgB1pzZ+AwFl0dcUpKcA15CD8nYtyQANYw6GeZbsMVXeuWK+y8J86PXLFfZeE+dNOTc4bV/1fDf6ix/uL51G2btSwqGb9kTcvETcUaG9cIPHgRWd9csV9l4T50r1wxUT8l4T5005NzQ1P9Xw3+osf7i+dVmJtYJ3uu2JtHfJu3UvbKlMrLl1BMGZOvED7qqT0vxX2XhPnXvrfivsvCfOlkruKE/ZuCwNm6Lwxas4UrLXbeoa3h7ZkKBqRhbZ07c3YYq5/q+G/1Fj/AHF86y/rfivsvCfOj1vxX2XhPnSyTcUNKMdauXrIS7achnMK4Yxun1gVl+nX0of9Nf8ALUHplivsvCfOqnae0XvvnfLmgDQQIE+dbppmHDHxqa6cof/Z"
+                                    alt="Student data" width="100%" height="200px">
+                                <h1>Student data</h1>
+                            </a>
+
+                        </td>
+                        <td class="second-table-one">
+                            <a href="./Html/calculator.html"> <img
+                                    src="https://help.apple.com/assets/6758C0F05C38883A170CE6F4/6758C0F55C38883A170CE700/en_US/ab0ca8cb557985c7eadf756325f491b5.png"
+                                    alt="reportd card" width="200px" height="200px">
+                                <h1>Calculator</h1>
+                            </a>
+
+                        </td>
+            </td>
+        </tr>
+    </table>
+
+
+    </td>
+
+    </tr>
+    <!--fifth row-->
+    <tr class="fifth-row">
+        <td colspan="4" class="fifth-row-td-one" id="Contact">
+            <h1>Contact</h1>
+            <h2>Phone.no: <a href="tel:9764090337">9764090337</a></h2>
+
+            <h2>Email us:<a href="mail to">saimquazi118@gmail.com</a></h2>
+            <h2>Location:Nagpur</h2>
+            <h2>Skype:Available</h2>
+
+        </td>
+
+    </tr>
+    </table>
+</body>
+
 </html>
