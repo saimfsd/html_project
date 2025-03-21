@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Grid</title>
+    <style>
+        body {
+            height: 100vh;
+            width: 100vw;
+
+        }
+
+        .main-container {
+            height: auto;
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            background-color: red;
+
+
+        }
+
+        .product {
+            height: 100px;
+            width: 100%;
+            background-color:burlywood;
+
+            grid-column: 1 / 5 span;
+            text-align: center;
+            font-size: 50px;
+            column-gap: 50px;
+            color:black;
+
+        }
+
+        .product-one {
+            height: 300px;
+            width: 100%;
+            background-color: white;
+            border-radius: 20px;
+        }
+
+        p {
+            text-align: center;
+        }
+
+        h3 {
+            text-align: center;
+        }
+        img{
+            background-color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-container">
+
+        <div class="product"> Product Grid</div>
+        <div class="product-one">
+            <img src="https://rukminim3.flixcart.com/image/450/400/xif0q/allinone-desktop/4/c/7/-original-imah876yz5exvscq.jpeg?q=90&crop=false"
+                height="200px" width="200px" alt="Destop">
+            <h3>Destop</h3>
+            <p> $129</p>
+        </div>
+        <div class="product-one">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmcmTRb4KTPULOj5QLvtUaJHIwYU6oieiSYw&s"
+                alt="Laptop">
+            <h3>Laptop</h3>
+            <p>$350
+
+            </p>
+        </div>
+        <div class="product-one">
+            <img src="https://5.imimg.com/data5/SELLER/Default/2021/2/HX/ZR/BV/31661333/cpu-500x500.jpg" height="200px"
+                width="200px" alt="">
+            <h3>Cpu</h3>
+            <p>$70
+
+            </p>
+        </div>
+        <div class="product-one">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Commodore-64-Computer-FL.jpg/1200px-Commodore-64-Computer-FL.jpg"
+                alt="" height="200px" width="200px">
+            <h3>Keyboard</h3>
+            <p>$15</p>
+        </div>
+        <div class="product-one">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIcg9MXJ1FkTtesVQbED-5fV7X5y0J-tyh7A&s"
+                alt="" height="200px" width="200px">
+            <h3>RGB Disc</h3>
+            <p>$29</p>
+        </div>
+        <div class="product-one">
+            <img src="https://img.pikbest.com/origin/06/44/93/45fpIkbEsT25K.jpg!f305cw" alt="" height="200px"
+                width="200px">
+            <h3>Mouse</h3>
+            <p>$2</p>
+        </div>
+        <div class="product-one">
+            <img src="https://cdn1.smartprix.com/rx-iwv4SfyWU-w1200-h1200/wv4SfyWU.webp" alt="" height="200px"
+                width="200px">
+            <h3>Printer</h3>
+            <p>$15</p>
+        </div>
+        <div class="product-one">
+            <img src="https://m.media-amazon.com/images/I/713TUYjagQL.jpg" alt="" height="200px" width="200px">
+            <h3>Speaker</h3>
+            <p>$5</p>
+        </div>
+        <div class="product-one">
+            <img src="https://5.imimg.com/data5/SELLER/Default/2024/8/439908494/JU/QO/ZU/3770647/15957-490-image-0-500x500.jpg"
+                alt="" height="200px" width="200px" > 
+                <h3>CCTV</h3>
+                <p>$50</p>
+        </div>
+        <div class="product-one">
+            <img src="https://m.media-amazon.com/images/I/61+R5rOj9+L.jpg" alt=""  height="200px" width="200px">
+            <h3>Headphone</h3>
+                <p>$40</p>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
