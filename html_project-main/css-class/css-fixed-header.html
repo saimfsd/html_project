@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fixed header</title>
+    <style>
+        body{
+            width: 100vw;
+            height: 100vh;
+        }
+        .main-container{
+            width: 100%;
+            height: 100%;
+        }
+       .nav-header{
+        width: 100%;
+        height: 80px;
+        background-color: #CBAAAA;
+        display: grid;
+        grid-template-columns:repeat(2, 1fr) ;
+     
+       }
+       .logo{
+        width: 100% ;
+        height: 100%;
+        padding-left: 100px;
+
+
+       }
+        .header-link{
+            width: 100%;
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+
+            
+        }
+      
+        .Home{
+          width: 500px; 
+         
+        }
+
+
+        
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <!-- Header section-->
+         <header class="nav-header">
+            <div class="logo">
+                <h1>Logo</h1>
+                </div>
+       <div class="header-link">
+        <h1>Home</h1>
+        <h1>About</h1>
+        <h1>Product</h1>
+        <h1>Contact</h1>
+    
+       </div>
+         </header>
+         <section class="About"></section>
+         <!--Home Section-->
+         <section class="Home"></section>
+         <!--About Section-->
+         <section class="contact"></section>
+
+
+    </div>
+    
+</body>
+</html>
