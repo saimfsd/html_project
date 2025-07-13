@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loop classes </title>
+</head>
+<body>
+    <label for=""> Enter the number</label>
+     <input type="number" placeholder="4 digit number" id="pin">
+     <button onclick="pinValidation()">Check</button> 
+     <h2 id="display"></h2>
+</body>
+<script>
+    function pinValidation(){   
+        let pin = document.getElementById("pin").value;
+        let userAttempt = 0;
+        while(userAttempt  <= 4){
+            if (pin === "1234"){
+              //  document.getElementById("display").innerHTML = "pin is Correct"
+              alert("pin is correct");  
+                break;
+
+            }else {
+                userAttempt++;
+              //  document.getElementById("display").innerHTML = "pin is incorrect  ,try again!"
+              alert("pin is incorrrect");
+                console.log(userAttempt);
+                userAttempt ++;
+            }
+
+            if (userAttempt === 5){
+                //document.getElementById("display").innerHTML = "Attempts over."
+                alert ("Attempts over")
+
+            }
+            enterPin = prompt("enter a digit pin")
+        }
+    }
+</script>
+</html>

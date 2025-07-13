@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button{
+            width: 300px;
+            padding: 10px;
+            background-color:yellow;
+            font-size: 30px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="result"></h1>
+    <button onclick="getTable(5)">Print table</button>
+    <script>
+        function getTable(number){
+            let table = "";
+            for (let i =2; i<= 10; i++){
+               table += number * i + "<br/>";
+            }
+            document.getElementById("result").innerHTML = table;
+        }
+    </script>
+</body>
+</html>

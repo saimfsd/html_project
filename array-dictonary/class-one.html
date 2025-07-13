@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Student Data</title>
+  </head>
+  <body>
+    <p id="result"></p>
+    <script>
+      const studentData = [
+        {
+          name: "John elia",
+          age: 20,
+          marks: {
+            html: 30,
+            css: 40,
+            js: 50,
+          }
+        },
+        {
+          name: "Saim",
+          age: 20,
+          marks: {
+            html: 30,
+            css: 80,
+            js: 50,
+          }
+        },
+        {
+          name: "Ayush",
+          age: 20,
+          marks: {
+            html: 50,
+            css: 40,
+            js: 50,
+          }
+        },
+        {
+          name: "Ayan",
+          age: 20,
+          marks: {
+            html: 30,
+            css: 40,
+            js: 30,
+          }
+        }
+      ];
+ 
+    //   let result = `Student's name is ${studentData[0].name} and his HTML marks are ${studentData[0].marks.html}`;
+    //   console.log(result);
+ 
+ 
+    let result = ``;
+    for (let i = 0; i < studentData.length; i++) {
+        result += `Student's name is ${studentData[i].name} and his HTML marks are ${studentData[i].marks.html} <br>`;
+    }
+    document.getElementById("result").innerHTML = result;
+ 
+ 
+    </script>
+  </body>
+</html>
+ 
+ 

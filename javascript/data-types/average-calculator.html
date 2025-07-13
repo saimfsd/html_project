@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Average calculator</title>
+</head>
+<style>
+    body{
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+  justify-content: center;
+  align-items: center;
+
+    }
+    .main-container{
+        width: 50%;
+        height: 700px;
+        background-color: tomato;
+        text-align: center;
+        margin: 0 auto;
+
+    }
+    input {
+  width: 90%;
+  max-width: 500px;
+  height: 50px;
+  margin-top: 10px;
+  font-size: 18px;
+}
+button {
+  width: 80%;
+  max-width: 400px;
+  height: 50px;
+  margin-top: 20px;
+  font-size: 18px;      
+}
+#display {
+  width: 100%;
+  height: 150px;
+  background-color: yellow;
+  margin-top: 20px;
+  font-size: 18px;
+  box-sizing: border-box;
+}
+  
+</style>
+<body>
+<div class="main-container">
+   <h1> Average Calculator<h1>
+ 
+    <input type="number" placeholder="enter the number " id="input-1">
+    
+    <input type="number  "placeholder="enter the number "id="input-2">
+  
+    <input type="number"placeholder="enter the number "id="input-3">
+    <br>
+
+    <button onclick="calculateAverage()">Average</button>
+    <button onclick=" Sum()">Sum</button>
+    <button onclick=" Subtract()">Subctract</button>
+    <button onclick=" multiplication()">Multiplication</button>
+<div id ="display">
+   
+</div>
+    
+
+</div>
+
+    <script>
+function calculateAverage(){
+         
+          let num1= Number (document.getElementById("input-1").value);
+         
+        
+          let num2 =Number  (document.getElementById("input-2").value);
+       
+
+      
+          let num3=Number (document.getElementById("input-3").value);
+          
+     
+
+       let average = ((num1+num2+num3)/3);
+       document.getElementById("display").innerHTML=  +average;
+      
+
+}
+function Sum(){
+    let num1= Number(document.getElementById("input-1").value)
+
+    let num2= Number(document.getElementById("input-2").value)
+    let num3= Number(document.getElementById("input-3").value)
+    let Sum =(num1+num2+num3);
+    document .getElementById("display").innerHTML= +Sum;
+}
+function Subtract(){
+    let num1= Number(document.getElementById("input-1").value)
+
+    let num2= Number(document.getElementById("input-2").value)
+    let num3= Number(document.getElementById("input-3").value)
+    let Subtract =(num1-num2-num3);
+    document .getElementById("display").innerHTML= +Subtract;
+}
+function multiplication(){
+    let num1= Number(document.getElementById("input-1").value)
+
+    let num2= Number(document.getElementById("input-2").value)
+    let num3= Number(document.getElementById("input-3").value)
+    let multiplication =(num1*num2*num3) ;
+    document .getElementById("display").innerHTML= +multiplication;
+}
+    </script>
+</body>
+</html>

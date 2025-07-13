@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example on datatype</title>
+</head>
+<style>
+    body{
+        width: 100vw;
+      height: 100vh;
+      margin: 0;
+      padding:0 ;
+    }
+    .main-container{
+        width: 500px;
+        height: 500px;
+        background-color: yellow;
+        margin: 100px;
+        text-align: center;
+     
+      
+
+    }
+    input{
+        width: 80%;
+        height:15%;
+        margin: 30px;
+        
+
+
+    }
+    button{
+        width: 80%;
+        height:15%;
+        margin: 40px;
+    }
+    label{
+        font-size: 20px;
+    
+    }
+    #display{
+        width: 100%;
+        height: 20%;
+        background-color: tomato;
+
+    }
+   
+
+</style>
+<body>
+    <div class="main-container">
+        <input type="number"placeholder="Enter total cart price" id="cartPrice">
+        <input type="checkbox" name="member"  id="member"><label for="member">Member</label>
+        <button onclick="discountChecker()">Submit</button>
+        <p id="display"></p>
+    </div>
+    <script>
+function  discountChecker(){
+    var cartprice = document.getElementById("cartPrice").value;
+    var member = document.getElementById("member").checked;
+
+    if (cartprice >=5000 && member  == true){
+        
+        document.getElementById("display").innerHTML = "Discount applies";
+    }
+    else{
+        document.getElementById("display").innerHTML = "Discount not applies";
+    }
+}                                       
+    </script>
+</body>
+</html>

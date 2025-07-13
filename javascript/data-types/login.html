@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radius of circle</title>
+</head>
+<style>
+    body {
+        width: 100vw;
+        height: 100vh;
+        background-color: grey;
+    }
+
+    .main-container {
+        width: 550px;
+        height: 550px;
+        margin: 100px;
+        border: solid grey 3px;
+        background-color: white;
+        border-radius: 40px;
+
+
+
+
+
+    }
+
+    input {
+        width: 450px;
+        height: 40px;
+        padding-left: 10px;
+        margin: 25px;
+        border-radius: 10px none;
+
+
+
+    }
+
+    h1 {
+        margin: 40px;
+        text-align: center;
+    }
+
+
+    button {
+        width: 500px;
+        height: 50px;
+        margin-top: 20px;
+        background-color: rgb(0, 145, 255);
+        border-radius: 10px;
+        color: white;
+        border: none;
+        margin-left: 20px;
+
+
+    }
+
+    p {
+        margin-left: 20px;
+        margin-bottom: 20px;
+        color: grey;
+    }
+
+    label {
+        margin-left: 20px;
+    }
+
+    #display {
+        font-weight: bold;
+        color: green;
+    }
+</style>
+
+<body>
+    <div class="main-container">
+        <h1>Welcome Back</h1>
+        <label for="">Email or Username</label>
+        <input type="text" id="input" placeholder="Enter username or email">
+        <p>you can use either your registered email or username</p>
+        <label for="">Password</label>
+        <input type="text" id="input-1" placeholder="Enter the Password">
+        
+            <p id="display"></p>
+       
+        <button onclick="checklogin()">Login</button>
+
+    </div>
+
+</body>
+<script>
+    function checklogin() {
+        var username = document.getElementById("input").value;
+        var password = document.getElementById("input-1").value;
+
+        if (username === "saim kazi" && password === "monishka") {
+            document.getElementById("display").innerHTML = "login successful";
+            document.getElementById("display").style.color = "green";
+            
+
+        }
+        else {
+            document.getElementById("display").innerHTML = "Unsuccessful";
+            document.getElementById("display").style.color = "red";
+        }
+      
+    }
+
+</script>
+
+</html>

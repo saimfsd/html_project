@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="heading">Artificial intelligence</h1>
+    <p id="paragraph">
+        Artificial intelligence (AI) is the capability of computational systems to
+        perform tasks typically associated with human intelligence, such as
+        learning, reasoning, problem-solving, perception, and decision-making. It
+        is a field of research in computer science that develops and studies
+        methods and software that enable machines to perceive their environment
+        and use learning and intelligence to take actions that maximize their
+        chances of achieving defined goals.
+    </p>
+
+    <select id="select-lang" name="language" onchange="translateLan()">
+        <option value="English">English</option>
+        <option value="Marathi">Marathi</option>
+        <option value="Hindi">Hindi</option>
+        <option value="French">French</option>
+    </select>
+    
+
+    <!---Language link-->
+    <script src="./marathi.js"></script>
+    <script src="./spanish.js"></script>
+    <script src="./hindi.js"></script>
+    <script src="./english.js"></script>
+
+    <script>
+
+        const languages = {
+            English: englishData,
+            Marathi: marathiData,
+            Hindi: hindiData,
+            Spanish: spanishData
+        };
+
+
+        function translateLan() {
+            const selectedLanguage = document.getElementById("select-lang").value;
+            const result = languages[selectedLanguage];
+            document.getElementById("heading").innerHTML = result.heading;
+            document.getElementById("paragraph").innerHTML = result.paragraph;
+        }
+
+    </script>
+</body>
+
+</html>

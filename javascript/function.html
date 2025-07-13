@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function .tml </title>
+</head>
+<body>
+    <script>
+        function sum (a,b){
+            console.log("Sum", a + b);
+            return a + b;
+
+        }
+        function diff(a,b){
+            console.log ("diff", a - b);
+            return a - b;
+        }
+        function product( a,b){
+            console.log("product", a * b);
+            return a * b ;
+        }
+        function division (a,b){
+            console.log("division" , a / b);
+            return a/b
+        }
+        function calculator(){
+            let add = sum(10,20);
+            let sub = diff(20,10);
+            let multi = product(10,20)
+            let div = division (10,20)
+            return add ;
+        
+        }
+        let result = calculator;
+        console.log (result);
+        document.getElementById("result").innnerHtml = result;
+    </script>
+</body>
+</html>

@@ -6,23 +6,23 @@
     <title>Boolean data type in js</title>
 </head>
 <body>
-    <p id="display" style="font-size: 40px;">true</p>
+    
+    <h1 id="display"></h1>
     <script>
-       let number = true;
-       document.getElementById("display").innerHTML = number;
-       alert(number)
-       console.log (number);
-       
+      let a = prompt ("Enter a letter");
+      //check input is vowel or not , using ternary operator \
+      let check =
+      a=="a"||a=="e"|| a=="i"|| a=="o"|| a=="u"
+      ? "it is vowel"
+       :"Consonant";
+       if (a =="a"||a=="e"|| a=="i"|| a=="o"|| a=="u"){
+        document.getElementById("display").innerHTML = "it is vowel";
+       }
+       else {
+        document.getElementById("display").innerHTML = "Constant";
+       }
         
-
-       let a = 40 ;
-       let b = 10 ;
-       let result = a > b ;
-       alert ("a > b is:"+result);
-       document.getElementById("display").innerHTML ="a > b is:"+result;
-       
-       
-       
+     
     </script>   
 </body>
 </html>

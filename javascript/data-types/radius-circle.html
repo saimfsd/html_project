@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radius of circle</title>
+</head>
+<style>
+body{
+    width: 100vw;
+    height: 100vh;
+}
+.main-container{
+    width: 500px;
+    height: 520px;
+    text-align: center;
+    margin: 100px;
+    border: solid black 3px;
+
+  
+
+    
+}
+.circle{
+height: 100px;
+width: 100px;
+background-color: violet;
+border-radius: 80px;
+margin-left: 200px;
+
+}
+input{
+    width: 480px;
+    height:30px;
+    margin-top: 40px;
+
+}
+p{
+   margin: 40px;
+}
+button{
+    width: 400px;
+    height: 40px;
+    margin-top: 40px;
+    background-color: yellow;
+}
+#display{
+    width: 400px;
+    height: 60px;
+    margin: 30px;
+margin-left: 40px;
+    background-color:gray;
+}
+
+</style>
+<body>
+    <div class="main-container">
+        <h2>Circle Area Calculator</h2>
+        <div class="circle"></div>
+        <p>Radius</p>
+        <input type="number" id="input">
+        <button onclick="calculateareacircle()">Calculate Area</button>
+        <div id="display"></div>
+    </div>
+    <script>
+function  calculateareacircle(){
+    
+         var radius = document.getElementById("input").value;
+        
+         var Areacircle = ((3.14*radius*radius));
+       document.getElementById("display").innerHTML=  +Areacircle;
+      
+        }
+    </script>
+</body>
+</html>

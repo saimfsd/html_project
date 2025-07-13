@@ -5,18 +5,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JS class one</title>
 </head>
+<style>
+  body{
+    width: 100vw;
+    height: 100vh;
+    
+  }
+  .container{
+    width: 100%;
+    height: 100%;
+    background-color: violet;
+    display: flex;
+    flex-direction: column;
+    justify-content:  center;
+    align-items: center;
+
+  }
+  p{
+    font-size: 40px;
+  }
+  button{
+    width: 200px;
+    padding: 10px;
+    font-size: 30px;
+    border-radius: 10px;
+    background-color: yellowgreen;
+
+    
+  }
+</style>
 <body>
-  <script>
-    boxOne = 10
-   boxTwo = 20 
-   sum = boxOne + boxTwo
-   console .log(sum)
-   diff = boxOne - boxTwo
-   console .log (diff)
-   product = boxOne * boxTwo
-   console. log(product)
-   average = boxOne-boxTwo
-   console.log(average)
+  <div class="container" id="container">
+  <p id="display"></p>
+  <button onclick="hello()" id="button-1">Click </button>
+  <button onclick="changeColor('red')" id="button-2">red</button>
+  <button onclick="changeColor('green')"  id="button-3">green</button>
+  <button onclick="changeColor('yellow')"  id="button-4">yellow </button>
+ 
+ <script>
+  
+  
+  function hello (){
+    console.log ("Hello World");
+    alert("Hello World");
+    document.getElementById("display").innerHTML = "Hello world";
+    document.getElementById("container").style.backgroundColor = "lightblue";
+    document.getElementById("display").style.color = "red";
+
+
+  }
+function red (){
+  document.getElementById("button-1").style.backgroundColor = "red";
+}
+function green (){
+  document.getElementById("button-2").style.backgroundColor = "black";
+}
+function yellow (){
+  document.getElementById("button-3").style.backgroundColor = "yellow";
+}
+function lightred (){
+  document.getElementById("button-4").style.backgroundColor = "blue";
+}
+function changeColor(color){
+  document.getElementById("container").style.backgroundColor = color;
+}
  </script>
 </body>
 </html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BANKING </title>
+</head>
+<body>
+<script>
+    let total = 0;
+
+    function bankingSystem(){
+        while (true){
+            let userChoice = Prompt ("Enter your choice");
+            if (userChoice ==1){
+                let depositeAmount  = Number(prompt("Enter amount for deposite"));
+                total = total - withdrawAmount;
+                alert ("Amount deposite  successfully /n your balance is ",total);
+            }
+            else if (userChoice == 2){
+                let withdrawAmount = Number(prompt("Enter amount for withdraw"));
+                total = total - withdrwaAmount ;
+                alert ("AAmount withdraw successfully /n your balance is" + total);
+            }
+            else if (userChoice ==3){
+                alert ("Your balance is" + total);
+            }
+            else if (userChoice ==4){
+                break;
+            }
+        }
+    }
+</script>
+</body>
+</html>

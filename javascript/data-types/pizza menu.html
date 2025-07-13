@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pizza menu</title>
+    <style>
+   
+    </style>
+</head>
+<body>
+    <div>
+    <button onclick="getPizzasize(1 , 'RED')">Small size pizza</button>
+    <button  onclick="getPizzasize(2 , 'blue')">medium size pizza</button>
+    <button  onclick="getPizzasize(3 , 'violet')">large size pizza</button>
+    </div>
+<script>
+    function getPizzasize(getSize, color){
+        let size = getSize;
+
+        switch(size){
+        case 1 :
+            alert("Small size pizza");
+            break;
+
+        case 2 :
+            alert("you select medium size pizza")  
+            break;
+            case 3  : 
+            alert("you select large size pizza");
+            break;    
+    }
+    
+    }
+</script>
+
+</body>
+</html>

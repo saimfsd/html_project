@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bitwise operator</title>
+</head>
+<style>
+    body{
+        width: 100vw;
+        height: 100vh;
+        background-color: grey;
+    }
+    .main-container{
+        width: 500px;
+        height: 500px;
+        background-color: white;
+    }
+    input,label{
+        width: 80%;
+        height: 30px;
+        margin-left: 40px;
+        margin-top:  20px;
+        margin-left: 10px;
+
+
+    }
+    h2,p{
+        text-align: center;
+
+    }
+    button{
+        width: 80%;
+        height: 30px;
+        margin-left: 40px;
+        margin-top:  20px;
+        margin-left: 10px;
+        background-color:rgb(67, 179, 67);
+    }
+    #display{
+        width: 80%;
+        height: 100px;
+        margin-left: 40px;
+        margin-top:  20px;
+        margin-left: 10px;
+        background-color: tomato;
+        text-align: center;
+    }
+
+
+   
+</style>
+<body>
+    <div class="main-container">
+        
+            <h2>Even Number Checker</h2>
+               
+            <p>(using bitwise and operator)</p>
+     
+        <label for="">Enter number</label>
+        <br>
+        <input type="number" id="input">
+        <button onclick="Evenodd()">Check Even/Odd</button>
+        <h3 id="display"></h3>
+    </div>
+    <script>
+        function Evenodd(){
+           let num = document.getElementById("input").value;
+
+          if( (num & 1)==0  ){
+            document.getElementById("display").innerHTML = num +"it is even number";
+
+          }
+          else{
+            document.getElementById("display").innerHTML = num +"it is odd number";
+
+          }
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language selector</title>
+    <style>
+        body{
+            width: 100vw;
+            height: 100vh;
+            background-color:grey;
+
+        }
+        .main-container{
+            width: 500px;
+            height: 500px;
+            background-color: white;
+            padding: 20PX;
+            margin: 250PX;
+            
+        }
+        .selector{
+            width: 100%;
+            height: 10%;
+            text-align: center;
+            font-size: 30px;
+            margin-top: 20px;
+            
+        }
+        .material{
+
+        width: 100%;
+        height: 90%;
+        margin-top: 50px;
+        }
+        select{
+            width: 100%;
+            height: 10%;
+            margin: 20px 5px;
+
+
+        }
+        button{
+            width: 60%;
+            height: 10%;
+            background-color: rgb(163, 203, 101);
+            margin-top: 40px ;
+            margin-left: 80px;
+            
+        }
+        #display{
+            width: 100%;
+            height: 25%;
+            background-color: rgb(4, 102, 117);
+            margin-top:30px ;
+            text-align: center;
+            color: white;
+            font-size: 30PX;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <div class="selector"> Language Selector</div>
+       <div class="material">
+        <select name="" id="language" >
+            <option value="en">English</option>
+            <option value="hi">hindi</option>
+            <option value="fr">franch</option>
+            <option value="es">spanifh</option>
+            <option value="marathi">marathi</option>
+
+        </select>
+        <button onclick="translanguage()">Click me</button>
+        <div id="display"></div>
+
+    </div> 
+    </div>
+    <script>
+    function translanguage(){
+        let lang = document.getElementById("language").value;
+      let  show = "";
+        switch(lang){
+        case "en" :
+          show = "Hello";
+        break;
+        case "hi" :
+          show = "नमस्ते"
+        break;
+        case "fr"  : 
+        show = "hola"
+            break;  
+            case "marathi": show = "gandhi ji "
+            break;  
+
+.0        }
+    document.getElementById("display").innerHTML = show ;
+    }
+    </script>
+</body>
+
+</html>-1
