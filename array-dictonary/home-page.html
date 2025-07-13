@@ -18,6 +18,16 @@
         and use learning and intelligence to take actions that maximize their
         chances of achieving defined goals.
     </p>
+    <!--List tag-->
+    <h2 id="admission-process-heading">Addmission process Steps</h2>
+    <ol id="admission-process-list">
+        <li>Research colleges and courses</li>
+        <li>Fill out application forms</li>
+        <li>Appear for entrance exam (if required)</li>
+        <li>Attend counselling/interview sessions</li>
+        <li>Submit required document and fees</li>
+
+    </ol>
 
     <select id="select-lang" name="language" onchange="translateLan()">
         <option value="English">English</option>
@@ -32,6 +42,7 @@
     <script src="./spanish.js"></script>
     <script src="./hindi.js"></script>
     <script src="./english.js"></script>
+    <!--Translate logic-->
 
     <script>
 
@@ -45,11 +56,22 @@
 
         function translateLan() {
             const selectedLanguage = document.getElementById("select-lang").value;
-            const result = languages[selectedLanguage];
+            let result = languages[selectedLanguage];
             document.getElementById("heading").innerHTML = result.heading;
             document.getElementById("paragraph").innerHTML = result.paragraph;
-        }
+            document.getElementById("admission-process-heading").innerHTML = result.admission_process_heading;
+            document.getElementById("admission-process-list").innerHTML = result.admission_process_list;
 
+            localStorage.setItem("selectedLanguage", selectedLanguage);
+
+           
+        }
+        window.onload = function (){
+            let savedLanguage = localStorage.getItem("selectedLanguage");
+            document.getElementById("select-lang").value = savedLanguage;
+            translateLang();    
+        };
+       
     </script>
 </body>
 

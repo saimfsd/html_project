@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jain Aluminium</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: sans-serif;
+      background-color: black;
+      color: white;
+    }
+
+    nav {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 60px;
+      position: fixed;
+      top: 0;
+     
+      z-index: 10;
+      background-color: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(10px);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo-circle {
+      width: 45px;
+      height: 45px;
+      background: white;
+      color: black;
+      font-weight: bold;
+      font-size: 20px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      font-size: 14px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: white;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: #facc15;
+    }
+
+    .hero {
+      height: 100vh;
+      background-image: url('https://alcoi.in/wp-content/uploads/2025/06/System-Aluminium-Windows-in-India.webp');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      padding: 0 60px;
+      padding-top: 120px;
+    }
+
+    .hero-content {
+      background-color: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(6px);
+      padding: 30px;
+      border-radius: 10px;
+      max-width: 500px;
+    }
+
+    .hero-content h1 {
+      font-size: 60px;
+      font-weight: 300;
+      color: #facc15;
+      line-height: 1.2;
+    }
+
+    .hero-content span {
+      font-weight: 600;
+      display: block;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 15px;
+      margin-top: 30px;
+    }
+
+    .buttons button {
+      padding: 12px 20px;
+      font-size: 25px;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      cursor: pointer;
+    }
+
+    .btn-work { background: #4e4f00; }
+    .btn-call { background: #334155; }
+    .btn-quote { background: #0ea5e9; }
+
+    .carousel-container {
+      position: relative;
+      width: 90%;
+      max-width: 1000px;
+      margin: 60px auto;
+      overflow: hidden;
+      border-radius: 10px;
+    }
+
+    .carousel-track {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .carousel-slide {
+      min-width: 100%;
+      height: 400px;
+    }
+
+    .carousel-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.4);
+      color: white;
+      border: none;
+      padding: 10px;
+      font-size: 20px;
+      cursor: pointer;
+      z-index: 10;
+    }
+
+    .prev-btn { left: 10px; }
+    .next-btn { right: 10px; }
+
+    /* About Section */
+    .about-section {
+      padding: 60px;
+      background-color: #f4f4f4;
+      color: #111;
+    }
+
+    .about-section h2 {
+      font-size: 30px;
+      border-left: 5px solid #facc15;
+      padding-left: 15px;
+      margin-bottom: 30px;
+    }
+
+    .about-flex {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+
+    .about-images {
+      flex: 1 1 300px;
+    }
+
+    .about-images img {
+      width: 100%;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+
+    .about-content {
+      flex: 1 1 400px;
+    }
+
+    .about-content h3 {
+      font-style: italic;
+      font-size: 26px;
+      margin-bottom: 15px;
+    }
+
+    .about-content p {
+      font-size: 15px;
+      line-height: 1.6;
+      color: #333;
+      margin-bottom: 15px;
+    }
+
+    .about-content a {
+      text-decoration: underline;
+      color: #000;
+    }
+
+    .about-button {
+      background-color: #ef4444;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 5px;
+    }
+
+    /* Product Section */
+    .product-section {
+      padding: 60px;
+      background-color: #fff;
+      color: #111;
+    }
+
+    .product-title {
+      font-size: 32px;
+      margin-bottom: 30px;
+      border-left: 5px solid #4b5563;
+      padding-left: 15px;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .product-card {
+      background: #e0f2f1;
+      border-radius: 10px;
+      padding: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    .product-card:hover {
+      transform: scale(1.02);
+    }
+
+    .product-card h3 {
+      border-left: 3px solid #93c5fd;
+      padding-left: 10px;
+      color: #111;
+      font-size: 18px;
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      margin: 15px 0;
+      border-radius: 8px;
+    }
+
+    .product-card p {
+      font-size: 14px;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    .product-card a {
+      display: inline-block;
+      padding: 8px 14px;
+      background: white;
+      color: black;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    /* Services Section */
+    .services-section {
+      padding: 60px;
+      background-color: #ffffff;
+      color: #111;
+    }
+
+    .services-title {
+      font-size: 28px;
+      margin-bottom: 40px;
+      border-bottom: 2px solid #000;
+      display: inline-block;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .service-card {
+      background: #f5f5f5;
+      padding: 20px;
+      border-radius: 10px;
+      transition: transform 0.3s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .service-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+
+    .service-card h3 {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .service-card p {
+      font-size: 14px;
+      color: #444;
+      margin-bottom: 15px;
+      line-height: 1.6;
+    }
+
+    .service-card a {
+      text-decoration: none;
+      color: #ec4899;
+      font-weight: 500;
+      font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+      .hero-content h1 { font-size: 40px; }
+      .carousel-slide { height: 250px; }
+      .buttons { flex-direction: column; }
+      .buttons button { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav>
+  <div class="logo"><div class="logo-circle">JA</div></div>
+  <div class="nav-links">
+    <a href="#">Home</a><a href="#">About</a><a href="#">Product</a>
+    <a href="#">Services</a><a href="#">Our Work</a><a href="#">Contact</a>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>Welcome to<br><span>Jain</span><span>Aluminium</span></h1>
+    <div class="buttons">
+      <button class="btn-work">Our Work</button>
+      <button class="btn-call">Request Call</button>
+      <button class="btn-quote">Get in Quote</button>
+    </div>
+  </div>
+</section>
+
+<!-- Carousel -->
+<div class="carousel-container">
+  <div class="carousel-track" id="carouselTrack">
+    <div class="carousel-slide"><img src="https://homebuilddoors.co.uk/cdn/shop/files/1500mm-white-aluminium-heritage-single-door-side-window-363948_597x700.jpg?v=1727494850"></div>
+    <div class="carousel-slide"><img src="https://i.pinimg.com/736x/18/b6/4a/18b64a10f0d7efdfa4d24b8b626151f1.jpg"></div>
+    <div class="carousel-slide"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0e8CLFR2siMZVF9zUv1ij1_qA3v51yrHN7g&s"></div>
+  </div>
+  <button class="carousel-btn prev-btn" onclick="prevSlide()">❮</button>
+  <button class="carousel-btn next-btn" onclick="nextSlide()">❯</button>
+</div>
+
+<!-- About Section -->
+<section class="about-section">
+  <h2>About</h2>
+  <div class="about-flex">
+    <div class="about-images">
+      <img src="https://i.ibb.co/WvLXVsq/image1.jpg">
+      <img src="https://i.ibb.co/3N7rYW6/image2.jpg">
+    </div>
+    <div class="about-content">
+      <h3>Jain Aluminium Works</h3>
+      <p>As the aluminium doors and windows manufacturer, we ensure that every product is backed by the graded raw material and adroit techniques of our team.</p>
+      <p><a href="#">Aluminium Doors</a>, <a href="#">Glass Partitions</a>, <a href="#">ACP Works</a>, <a href="#">PVC Doors</a>, and more.</p>
+      <a href="#" class="about-button">Know more</a>
+    </div>
+  </div>
+</section>
+
+<!-- Product Section -->
+<section class="product-section">
+  <h2 class="product-title">Our Products</h2>
+  <div class="product-grid">
+    <div class="product-card">
+      <h3>Aluminium Windows</h3>
+      <img src="https://alcoi.in/wp-content/uploads/2025/06/System-Aluminium-Windows-in-India.webp">
+      <p>Aluminium Windows are durable, stylish, and low maintenance.</p>
+      <a href="#">See Product →</a>
+    </div>
+    <div class="product-card">
+      <h3>Aluminium Doors</h3>
+      <img src="https://i.pinimg.com/736x/18/b6/4a/18b64a10f0d7efdfa4d24b8b626151f1.jpg">
+      <p>Strong, sleek and ideal for modern homes and buildings.</p>
+      <a href="#">See Product →</a>
+    </div>
+    <div class="product-card">
+      <h3>Aluminium Glass Pitch</h3>
+      <img src="https://i.ibb.co/zXN0BkD/glass-office.jpg">
+      <p>Great for clear visibility & elegant room dividers.</p>
+      <a href="#">See Product →</a>
+    </div>
+    <div class="product-card">
+      <h3>Aluminium Partition</h3>
+      <img src="https://i.ibb.co/3N7rYW6/image2.jpg">
+      <p>Ideal for offices, workspaces and custom enclosures.</p>
+      <a href="#">See Product →</a>
+    </div>
+  </div>
+</section>
+
+<!-- Services Section -->
+<section class="services-section">
+  <h2 class="services-title">Our services</h2>
+  <div class="services-grid">
+
+    <div class="service-card">
+      <img src="https://i.ibb.co/KmTkN8q/fabrication.jpg">
+      <h3>Aluminium Fabrication Service</h3>
+      <p>Customized fabrication for windows, doors, partitions & structures with premium finish.</p>
+      <a href="#">Read more →</a>
+    </div>
+
+    <div class="service-card">
+      <img src="https://i.ibb.co/WtMdcs3/window-service.jpg">
+      <h3>Aluminium Windows Service</h3>
+      <p>Experts in sliding, fixed, top-hung, and casement aluminium window systems.</p>
+      <a href="#">Read more →</a>
+    </div>
+
+    <div class="service-card">
+      <img src="https://i.ibb.co/3Fm2hdW/door-service.jpg">
+      <h3>Aluminium Door Service</h3>
+      <p>Strong, modern doors including swing, sliding & folding for every space.</p>
+      <a href="#">Read more →</a>
+    </div>
+
+    <div class="service-card">
+      <img src="https://i.ibb.co/LS5yzvW/partition.jpg">
+      <h3>Aluminium Partition Work</h3>
+      <p>Glass & solid partitions for offices, shops & showrooms. Fast installation guaranteed.</p>
+      <a href="#">Read more →</a>
+    </div>
+
+    <div class="service-card">
+      <img src="https://i.ibb.co/mHb92f0/acp.jpg">
+      <h3>ACP Cladding Service</h3>
+      <p>Exterior-grade Aluminium Composite Panel cladding that’s stylish and weatherproof.</p>
+      <a href="#">Read more →</a>
+    </div>
+
+    <div class="service-card">
+      <img src="https://i.ibb.co/YZpcsyK/sliding.jpg">
+      <h3>Aluminium Sliding Systems</h3>
+      <p>Smooth sliding systems for doors and windows — durable & space-saving.</p>
+      <a href="#">Read more →</a>
+    </div>
+
+    <div class="service-card">
+      <img src="https://i.ibb.co/dLV6H5h/office-cabin.jpg">
+      <h3>Office Cabin Aluminium Work</h3>
+      <p>Modular cabins built with aluminium and glass — ready for instant use.</p>
+      <a href="#">Read more →</a>
+    </div>
+
+    <div class="service-card">
+      <img src="https://i.ibb.co/QC3tDsc/pvc-door.jpg">
+      <h3>PVC Door & Frame Installation</h3>
+      <p>Affordable & waterproof PVC doors, perfect for wet areas and budget spaces.</p>
+      <a href="#">Read more →</a>
+    </div>
+
+    <div class="service-card">
+      <img src="https://i.ibb.co/wgHttvH/glazing.jpg">
+      <h3>Aluminium Glazing Service</h3>
+      <p>Energy-saving single & double-glazed aluminium windows for noise and heat insulation.</p>
+      <a href="#">Read more →</a>
+    </div>
+
+    <div class="service-card">
+      <img src="https://i.ibb.co/dMDvhZ4/repair.jpg">
+      <h3>Aluminium Section Window Repair</h3>
+      <p>Professional repair & servicing of stuck, broken or old section windows on-site.</p>
+      <a href="#">Read more →</a>
+    </div>
+
+  </div>
+</section>
+
+<script>
+  const track = document.getElementById("carouselTrack");
+  const slides = document.querySelectorAll(".carousel-slide");
+  let currentIndex = 0;
+
+  function updateSlide() {
+    track.style.transform = `translateX(-${currentIndex * 100}%)`;
+  }
+
+  function nextSlide() {
+    currentIndex = (currentIndex + 1) % slides.length;
+    updateSlide();
+  }
+
+  function prevSlide() {
+    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+    updateSlide();
+  }
+
+  setInterval(nextSlide, 4000);
+</script>
+
+</body>
+</html>
