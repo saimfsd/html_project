@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Saim Kazi | Full Stack Developer</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+     height: 100vh;
+     width: 100vw;
+     font-family: 'Segoe UI', sans-serif;
+      color: white;
+      background-image: url('https://images.unsplash.com/photo-1531297484001-80022131f5a1?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cG9ydGZvbGlvJTIwYmFja2dyb3VuZHxlbnwwfHwwfHx8MA%3D%3D');
+      background-size: cover;
+      background-position: center;
+    }
+
+      
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 50px;
+      background-color: rgba(0, 0, 0, 0.9);
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #00ffff;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #00ff88;
+    }
+
+    .hero {
+      height: calc(100vh - 80px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0 50px;
+      background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.2));
+    }
+
+    .hero h1 {
+      font-size: 45px;
+      margin-bottom: 10px;
+    }
+
+    .hero h1 span {
+      color: #a5d06d;
+    }
+
+    .hero h2 {
+      font-size: 50px;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      max-width: 600px;
+      line-height: 1.6;
+      font-size: 16px;
+      color: #e1e1e1;
+    }
+
+    @media (max-width: 768px) {
+      .hero h2 {
+        font-size: 36px;
+      }
+
+      .hero h1 {
+        font-size: 28px;
+      }
+
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+   
+.about-section {
+    
+  padding: 60px 50px;
+  background-color: #0b0c10;
+  color: white;
+}
+
+.about-container {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.about-image img {
+  width:400px;
+  height: 300px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid #00ffcc;
+  box-shadow: 0 0 20px rgba(0, 255, 204, 0.5);
+}
+
+.about-text h2 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.about-text h3 {
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.about-text h3 span {
+  color: #a5d06d;
+}
+
+.about-text p {
+  font-size: 16px;
+  line-height: 1.6;
+  max-width: 600px;
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 15px;
+  gap: 15px;
+  padding-left: 0;
+  list-style: none;
+}
+
+.skills li {
+  background-color: #1f2833;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-size: 14px;
+  border: 1px solid #45a29e;
+}.project-section {
+  background-color: #1f2833;
+  padding: 60px 50px;
+  color: white;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 40px;
+}
+
+.project-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.project-card {
+    width: 300px;
+  background-color: #0b0c10;
+  padding: 25px;
+  border-radius: 15px;
+  border: 1px solid #45a29e;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+  
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0, 255, 204, 0.2);
+}
+
+.project-card h3 {
+  font-size: 30px;
+  margin-bottom: 10px;
+  color: #66fcf1;
+ 
+}
+
+.project-card p {
+  font-size: 14px;
+  color: #c5c6c7;
+  margin-bottom: 15px;
+}
+
+.project-card a {
+  text-decoration: none;
+  color: #00ffcc;
+  font-weight: bold;
+  border-bottom: 1px solid transparent;
+}
+
+.project-card a:hover {
+  border-bottom: 1px solid #00ffcc;
+}
+
+
+
+.contact-section {
+  background-color: #0b0c10;
+  padding: 60px 20px;
+  color: white;
+  display: flex;
+  justify-content: center;
+}
+
+.contact-wrapper {
+  width: 100%;
+  max-width: 900px;
+}
+
+.contact-text {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.contact-text h2 {
+  font-size: 36px;
+  margin-bottom: 10px;
+  color: #66fcf1;
+}
+
+.contact-text p {
+  font-size: 16px;
+  color: #c5c6c7;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.form-group input {
+  flex: 1;
+  padding: 15px;
+  font-size: 16px;
+  border: 1px solid #45a29e;
+  border-radius: 8px;
+  background-color: #1f2833;
+  color: white;
+  min-width: 250px;
+}
+
+.contact-form textarea {
+  width: 100%;
+  padding: 15px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #45a29e;
+  background-color: #1f2833;
+  color: white;
+  resize: vertical;
+}
+
+.contact-form button {
+  width: fit-content;
+  padding: 12px 30px;
+  background-color: #00ffcc;
+  color: #0b0c10;
+  font-weight: bold;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  align-self: center;
+  transition:  0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #66fcf1;
+}
+
+/* Responsive Layout */
+@media (max-width: 600px) {
+  .form-group {
+    flex-direction: column;
+  }
+}
+</style>
+
+</style>
+ 
+</head>
+<body>
+  <nav>
+    <div class="logo">SK</div>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Project</a></li>
+      <li><a href="#">Contact us</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero">
+    <h1>Hi’ IM <span>SAIM KAZI</span></h1>
+    <h2>Full Stack developer</h2>
+    <p>
+      A passionate full stack developer I craft end-to-end web solutions that are
+      fast, responsive, and user-friendly.
+  </section>
+  <!-- About Section Start -->
+<section class="about-section">
+    <div class="about-container">
+      <div class="about-image">
+        <img src="../asset/images/saim-image.jpeg" alt="Saim Kazi">
+      </div>
+      <div class="about-text">
+        <h2>About Me</h2>
+        <h3>I'm <span>Saim Kazi</span></h3>
+        <p>
+          I’m a passionate Full Stack Developer with a love for building responsive,
+          fast, and creative web applications. Currently learning full stack development,
+          I specialize in both frontend (HTML, CSS, JavaScript) and backend (Node.js, etc.).
+          I enjoy solving problems and bringing new ideas to life with code.
+        </p>
+       
+        
+      </div>
+    </div>
+  </section>
+  <!-- Project Section Start -->
+<section class="project-section">
+    <div class="project-container">
+      <h2 class="section-title">My Projects</h2>
+      <div class="project-grid">
+        <!-- Project Card 1 -->
+        <div class="project-card">
+          
+        
+          <a href="./website.html" target="_blank"> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEc9A_S6BPxCDRp5WjMFEfXrpCu1ya2OO-Lw&s" alt="">
+            <h3>Html project</h3>
+          </a>
+
+        </div>
+  
+        <!-- Project Card 2 -->
+        <div class="project-card">
+          <h3>Event Management Website</h3>
+        <img src="" alt="">
+          <a href="#" target="_blank">View Project</a>
+        </div>
+  
+        <!-- Project Card 3 -->
+        <div class="project-card">
+          <h3>Login/Signup System</h3>
+          <p>Simple and secure authentication form using HTML, CSS, and JavaScript.</p>
+          <a href="#" target="_blank">View Project</a>
+        </div>
+        <div class="project-card">
+            <h3></h3>
+            <p>Simple and secure authentication form using HTML, CSS, and JavaScript.</p>
+            <a href="#" target="_blank">View Project</a>
+          </div>
+          <div class="project-card">
+            <h3>Login/Signup System</h3>
+            <p>Simple and secure authentication form using HTML, CSS, and JavaScript.</p>
+            <a href="#" target="_blank">View Project</a>
+          </div>
+          <div class="project-card">
+            <h3>Login/Signup System</h3>
+            <p>Simple and secure authentication form using HTML, CSS, and JavaScript.</p>
+            <a href="#" target="_blank">View Project</a>
+          </div>
+          <div class="project-card">
+            <h3>Login/Signup System</h3>
+            <p>Simple and secure authentication form using HTML, CSS, and JavaScript.</p>
+            <a href="#" target="_blank">View Project</a>
+          </div>
+          <div class="project-card">
+            <h3>Login/Signup System</h3>
+            <p>Simple and secure authentication form using HTML, CSS, and JavaScript.</p>
+            <a href="#" target="_blank">View Project</a>
+          </div>
+      </div>
+    </div>
+  </section>
+  <!-- Contact Section Start -->
+<section id="contact" class="contact-section">
+    <div class="contact-wrapper">
+      <div class="contact-text">
+        <h2>Get in Touch</h2>
+        <p>Feel free to drop a message for any queries, projects or collaborations.</p>
+      </div>
+      <form class="contact-form">
+        <div class="form-group">
+          <input type="text" placeholder="Your Name" required />
+          <input type="email" placeholder="Your Email" required />
+        </div>
+        <textarea placeholder="Your Message" rows="6" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </section>
+  <!-- Contact Section End -->
+  
+  
+</body>
