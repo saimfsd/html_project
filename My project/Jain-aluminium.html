@@ -11,8 +11,13 @@
       padding: 0;
       box-sizing: border-box;
     }
+    /*Scroll behaviour*/
+    html {
+  scroll-behavior: smooth;
+}
     body {
       font-family: sans-serif;
+   
     }
 
     /* Main container*/
@@ -30,7 +35,7 @@
       display: flex;
       justify-content: space-evenly;
       align-items: center;
-      backdrop-filter: blur(10px);
+      backdrop-filter: blur(11px);
       position: fixed;
       z-index: 10;
     }
@@ -43,17 +48,64 @@
       justify-content: center;
       align-items: center;
       border-radius: 100px;
-      padding-right: 44%;
+      padding-right: 20%;
     }
 
     /* Navigation links */
     .nav-link {
       height: 100%;
-      width: 60%;
+      width: 90%;
       display: flex;
       justify-content: space-evenly;
       align-items: center;
+      
     }
+    .nav-link a {
+      text-decoration:none;
+      color: white;
+
+    }
+    /*fixed header end*/
+
+    /*Our work dropdown*/
+    .dropbtn {
+ 
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #070607;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: rgb(255, 255, 255);
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #7c1515}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+ /*Our work dropdown*/
+
+
     span{
         font-size:18px ;
     }
@@ -61,35 +113,39 @@
     /* Home section */
     .Home {
       width: 100vw;
-      height: 100vh;
+      height: 90vh;
       position: relative;
       overflow: hidden;
     }
 
     /* Background image with blur for home section */
     .Home::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
       width: 100%;
       height: 100%;
+      content: "";
+      position: absolute;
       background-image: url('https://alcoi.in/wp-content/uploads/2025/06/System-Aluminium-Windows-in-India.webp');
+      animation-name: example;
+      animation-duration: 4s;
       background-size: cover;
       background-position: center;
       filter: blur(1px) brightness(0.6);
       z-index: 0;
+      
+     
     }
 
     /* Home section text */
     .Home-content {
-      padding: 170px;
       font-size: 65px;
+      padding: 170px;
       color: rgba(255, 255, 255, 0.95);
       position: relative;
       z-index: 1;
       text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
       margin-left: 10px;
+      
+     
     }
 
     /* Welcome and heading */
@@ -105,6 +161,7 @@
 
     /* Buttons under home section */
     .button-sec {
+    
       display: flex;
       justify-content: center;
       align-items: center;
@@ -114,21 +171,57 @@
       flex-wrap: wrap;
     }
 
+
     .button-sec button {
       padding: 10px 25px;
-      font-size: 25px;
+     font-size: 20px;
       border: none;
       border-radius: 15px;
       color: white;
       cursor: pointer;
       transition: transform 0.s ease;
     }
+/* external button css start */
+    /* CSS */
+.button-1 {
+  background-color: #EA4C89;
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  height: 40px;
+  line-height: 20px;
+  list-style: none;
+  margin: 0;
+  outline: none;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: color 100ms;
+  vertical-align: baseline;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
 
-    .btn-work {
-      background-color: #4e4f00;
-    }
+.button-1:hover,
+.button-1:focus {
+  background-color: #F082AC;
+}
+    /* external css button end */
     .btn-call {
       background-color: #334155;
+     
+    }
+    .btn-call  a{
+      text-decoration: none;
+      color: white;
     }
     .btn-quote {
       background-color: #0ea5e9;
@@ -140,16 +233,15 @@
 
     /* About section */
     .about-section {
-      padding: 90px 140px;
+      padding: 80px 150px;
       background: #f9f9f9;
     }
 
     .about-section h2 {
-      font-size: 40px;
-      text-align: center;
-      margin-bottom: 100px;
-      border-bottom: 4px solid #15c1cd;
-      display: inline-block;
+      font-size: 32px;
+      margin-bottom: 30px;
+      border-left: 5px solid #19bce9;
+      padding-left: 15px;
     }
 
     /* Flex container for about content */
@@ -168,19 +260,19 @@
       flex: 1;
       display: flex;
       flex-direction: column;
-      gap: 20px;
+      gap: 10px;
     }
 
     .about-images img {
       width: 100%;
-      max-width: 400px;
+      max-width: 500px;
       border-radius: 8px;
       object-fit: cover;
     }
 
     /* Text content in about section */
     .about-content {
-      max-width: 550px;
+      max-width: 500px;
     }
 
     .about-content h3 {
@@ -192,7 +284,7 @@
     .about-content p {
       font-size: 16px;
       margin-bottom: 20px;
-      line-height: 1.6;
+      line-height: 1.8;
     }
 
     /* "Know more" button */
@@ -222,7 +314,7 @@
     .product-title {
       font-size: 32px;
       margin-bottom: 30px;
-      border-left: 5px solid #4b5563;
+      border-left: 5px solid #19bce9;
       padding-left: 15px;
     }
 
@@ -240,7 +332,7 @@
       padding: 20px;
       transition: transform 0.3s ease;
     }
-
+/* product carda h3,hover */
     .product-card:hover {
       transform: scale(1.02);
     }
@@ -251,7 +343,7 @@
       color: #111;
       font-size: 18px;
     }
-
+/*  product cards img , p */
     .product-card img {
       width: 100%;
       height: 200px;
@@ -265,7 +357,7 @@
       color: #333;
       margin-bottom: 10px;
     }
-
+/* product cards a */
     .product-card a {
       display: inline-block;
       padding: 8px 14px;
@@ -276,6 +368,306 @@
       text-decoration: none;
       font-weight: 500;
     }
+    .product-card a :hover{
+      background: goldenrod;
+    }
+    /* product card end */
+    /* services start */
+    .services-section {
+      padding: 60px;
+      background-color: #ffffff;
+      color: #111;
+    }
+
+    .services-title {
+      font-size: 32px;
+      margin-bottom: 30px;
+      border-left: 5px solid #19bce9;
+      padding-left: 15px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .service-card {
+      background: #f5f5f5;
+      padding: 20px;
+      border-radius: 10px;
+      transition: transform 0.3s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .service-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+
+    .service-card h3 {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .service-card p {
+      font-size: 14px;
+      color: #444;
+      margin-bottom: 15px;
+      line-height: 1.6;
+    }
+
+    .service-card a {
+      text-decoration: none;
+      color: #0c5d61;
+      font-weight: 500;
+      font-size: 14px;
+    }
+    /* services end */
+    /* speciallity start */
+    .speciality-section {
+  padding: 40px 20px;
+  background-color: #eceaea;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.speciality-title {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.vertical-bar {
+  width: 4px;
+  height: 50px;
+  background-color: rgb(43, 181, 202);
+  margin-right: 15px;
+}
+
+.speciality-title h2 {
+  font-size: 1.8rem;
+  color: #222;
+  line-height: 1.3;
+}
+
+.speciality-title h2 span {
+  font-weight: bold;
+}
+
+.speciality-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.speciality-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fefefe;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.speciality-text h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.speciality-text a {
+  color: #222;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.speciality-image img {
+  width: 300px;
+  height: auto;
+  border-radius: 6px;
+}
+/* speciallity end */
+/* contact section */
+.contact-section {
+  padding: 50px 20px;
+  background-color: #fff;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.contact-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: #222;
+}
+
+.contact-title span {
+  border-bottom: 3px solid #524e8a;
+}
+
+.contact-container {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+
+
+/* informaation box start*/
+
+
+.info-box span {
+  font-size: 20px;
+}
+
+
+
+.contact-info a {
+  color: #6c6a89;
+  text-decoration: none;
+}
+
+.contact-form {
+  flex: 1;
+  min-width: 300px;
+}
+/* informaation box end*/
+.form-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 60%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  font-family: monospace;
+  font-size: 14px;
+}
+
+.contact-form textarea {
+  height: 100px;
+  resize: vertical;
+  
+}
+
+.contact-form button {
+  background-color: #6c6a89;
+  color: white;
+  padding:  14px 100px;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.contact-form button:hover {
+  background-color: #bd470c;
+}
+.infor{
+  width: 100%;
+height: 400px;
+background-color: rgb(29, 29, 80);
+display: flex;
+flex-direction: column;
+
+}/*contact end */
+
+
+@media (max-width: 764px) {
+  .header {
+    flex-direction: column;
+    height: auto;
+    padding: 25px;
+    padding-left: 10px;
+  }
+  .logo-img {
+    padding-right: 10px;
+    }
+
+  .nav-link {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .Home-content {
+    padding: 100px ;
+    font-size: 30px;
+  }
+
+  .button-sec {
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px;
+  
+  }
+
+  .about-container {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .about-section {
+    padding: 40px 20px;
+  }
+
+  .services-grid,
+  .product-grid {
+    grid-template-columns: 1fr;
+    padding:  10px;
+  }
+
+  .speciality-box {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .speciality-image img {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .contact-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .form-row {
+    flex-direction: column;
+  }
+
+}
+@media (min-width : 400px)and (max-width : 768px){
+
+ .logo-img {
+      height: 100%;
+      width: 60%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 100px;
+      padding-right: 40%;
+    }
+}
+@keyframes example {
+  from {background-image: url('https://alcoi.in/wp-content/uploads/2025/06/System-Aluminium-Windows-in-India.webp');}
+ 
+  to {background-image: url('https://img.freepik.com/free-photo/glass-window-overlooking-green-garden_1232-2979.jpg?semt=ais_hybrid&w=740');}
+  
+}
+
+
   </style>
 </head>
 <body>
@@ -283,34 +675,41 @@
     <!-- Fixed top navigation -->
     <div class="header">
       <div class="logo-img">
-        <img src="https://thumbs.dreamstime.com/b/red-white-color-alphabet-letter-combination-ja-j-logo-icon-design-suitable-company-business-139493174.jpg" alt="" height="80px" width="80px">
+        <img src="../ChatGPT Image Jul 14, 2025, 08_58_21 AM.png" alt="" height="80px" width="80px">
       </div>
       <div class="nav-link">
-        <span>Home</span>
-        <span>About</span>
-        <span>Our Work</span>
-        <span>Product</span>
-        <span>Services</span>
-        <span>Contacts</span>
+       <a href="#home"><span>Home</span></a> 
+        <a href="#about"><span>About</span></a>
+        <div class="dropdown">
+          <span class="dropbtn">Our work</span>
+          <div class="dropdown-content">
+          <a href="#">Gallery</a>
+          <a href="#">Video</a>
+         
+          </div>
+        </div>
+       <a href="#product"><span>Product</span></a> 
+        <a href="#special"><span>Services</span></a>
+        <a href="#contact"><span>Contacts</span></a>
       </div>
     </div>
-
+<!--fixed top navigation end-->
     <!-- Home section -->
-    <div class="Home" id="home">
+    <section class="Home" id="home">
       <div class="Home-content">
         <h4>Welcome to the</h4>
         <h1>Jain Aluminium</h1>
       </div>
       <div class="button-sec">
-        <button class="btn-work">Our Work</button>
-        <button class="btn-call">Request Call</button>
+        <button class="button-1" role="button">Our Work</button>
+        <button class="btn-call"><a href="tel :9764090337">Request Call</a></button>
         <button class="btn-quote">Get in Quote</button>
       </div>
-    </div>
+    </section>
 
     <!-- About section -->
-    <div class="about-section">
-      <h2>About</h2>
+    <section class="about-section" id="about" >
+      <h2 >About</h2>
       <div class="about-container">
         <div class="about-images">
           <img src="https://www.shutterstock.com/image-photo/pvc-industry-worker-operator-making-600nw-2498302763.jpg" alt="Image 1" />
@@ -320,18 +719,18 @@
           <h3>Jain Aluminium <br>Works</h3>
           <p>As the aluminium doors and windows manufacturer, we ensure that every product is backed by the graded raw material and adroit techniques of our team.</p>
           <p>As the aluminium doors and windows manufacturer, we ensure that every product is backed by the graded raw material and adroit techniques of our team.</p>
-          <p>All type of Aluminium and Glass Works, <u>Aluminium Doors & Windows</u>, <u>Office Cabins & Partitions</u>, <u>ACP Works</u>, <u>Glazing</u>, <u>PVC Doors</u>, <u>Aluminium Fabrication Work</u>.</p>
+          <p>All type of Aluminium and Glass Works, Aluminium Doors & Windows Office Cabins & Partitions,<u>ACP Works</u>, <u>Glazing</u>, <u>PVC Doors</u>, <u>Aluminium Fabrication Work</u>.</p>
           <p>All type of Aluminium and Glass Works, <u>Aluminium Doors & Windows</u>, <u>Office Cabins & Partitions</u>, <u>ACP Works</u>, <u>Glazing</u>, <u>PVC Doors</u>, <u>Aluminium Fabrication Work</u>.</p>
           <button class="know-more-btn">Know more</button>
         </div>
       </div>
-    </div>
+    </section>
 
     <!-- Product section -->
-    <section class="product-section">
+    <section class="product-section" id="product">
       <h2 class="product-title">Our Products</h2>
       <div class="product-grid">
-        <!-- Product 1 -->
+        <!-- Product 1  to 8 (Repeated)-->
         <div class="product-card">
           <h3>Aluminium Windows</h3>
           <img src="https://alcoi.in/wp-content/uploads/2025/06/System-Aluminium-Windows-in-India.webp">
@@ -344,44 +743,194 @@
           <h3>Aluminium Doors</h3>
           <img src="https://i.pinimg.com/736x/18/b6/4a/18b64a10f0d7efdfa4d24b8b626151f1.jpg">
           <p>Strong, sleek and ideal for modern homes and buildings.</p>
-          <a href="#">See Product →</a>
+          <a href="./my-doors.html">See Product →</a>
         </div>
 
         <!-- Product 3 -->
         <div class="product-card">
           <h3>Aluminium Glass Pitch</h3>
-          <img src="https://i.ibb.co/zXN0BkD/glass-office.jpg">
+          <img src="https://constructionwiki.co.uk/wp-content/uploads/2023/08/pexels-photo-323772.jpeg">
           <p>Great for clear visibility & elegant room dividers.</p>
-          <a href="#">See Product →</a>
+          <a href="">See Product →</a>
         </div>
 
-        <!-- Product 4 to 8 (Repeated) -->
+        <!-- Product 4 -->
         <div class="product-card">
           <h3>Aluminium Partition</h3>
-          <img src="https://i.ibb.co/3N7rYW6/image2.jpg">
+          <img src="https://i0.wp.com/www.universalglazing.com/wp-content/uploads/2024/08/aluminium-office-partition.jpg?fit=525%2C525&ssl=1">
           <p>Ideal for offices, workspaces and custom enclosures.</p>
           <a href="#">See Product →</a>
         </div>
         <div class="product-card">
-          <h3>Aluminium Partition</h3>
-          <img src="https://i.ibb.co/3N7rYW6/image2.jpg">
-          <p>Ideal for offices, workspaces and custom enclosures.</p>
+          <h3> Aluminium plastic composite panel </h3>
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ36FRtNBZaJzbmded_rZC_9ET_fW3eetrdnA&s">
+          <p>ACP Panels are durable, lightweight   </p>
           <a href="#">See Product →</a>
         </div>
         <div class="product-card">
-          <h3>Aluminium Partition</h3>
-          <img src="https://i.ibb.co/3N7rYW6/image2.jpg">
-          <p>Ideal for offices, workspaces and custom enclosures.</p>
+          <h3>Glass Patches </h3>
+          <img src="https://ozone.blr1.digitaloceanspaces.com/media/2024/10/small_.jpeg">
+          <p>Glass patches or patch fittings are used to fix glass doors and partitions .</p>
           <a href="#">See Product →</a>
         </div>
         <div class="product-card">
-          <h3>Aluminium Partition</h3>
-          <img src="https://i.ibb.co/3N7rYW6/image2.jpg">
-          <p>Ideal for offices, workspaces and custom enclosures.</p>
+          <h3>Aluminium Frames</h3>
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTG3QWy0CV__7XA1RkPtk5fXd8JS2PiNCndtw&s">
+          <p>Aluminium frames are used for windows, doors, partitions, and structural framing</p>
+          <a href="#">See Product →</a>
+        </div>
+        <div class="product-card">
+          <h3>Aluminium Louvers</h3>
+          <img src="https://www.jaipuraluminiumworks.com/service-image/aluminum-louvers-manufacturers.jpg">
+          <p>Aluminium louvers are ventilating slats or grills used for airflow.</p>
           <a href="#">See Product →</a>
         </div>
       </div>
     </section>
+    <!-- Services Section -->
+<section class="services-section" id="serv">
+  <h2 class="services-title">Our services</h2>
+  <div class="services-grid">
+
+    <div class="service-card">
+      <img src="https://5.imimg.com/data5/SELLER/Default/2023/7/324914671/BU/TK/EC/148430396/upvc-aluminium-window-fabrication-services.jpg">
+      <h3>Aluminium Fabrication Service</h3>
+      <p>Customized fabrication for windows, doors, partitions & structures with premium finish.</p>
+      <a href="#">Read more →</a>
+    </div>
+
+    <div class="service-card">
+      <img src="https://5.imimg.com/data5/SELLER/Default/2022/12/PI/IN/EF/37083905/aluminium-window-repairing-service-500x500.jpg">
+      <h3>Aluminium Windows Service</h3>
+      <p>Experts in sliding, fixed, top-hung, and casement aluminium window systems.</p>
+      <a href="#">Read more →</a>
+    </div>
+
+    <div class="service-card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXsZ5OZJi1yP73llt5-zF1D1Bp8hWmcMRkbw&s">
+      <h3>Aluminium Door Service</h3>
+      <p>Strong, modern doors including swing, sliding & folding for every space.</p>
+      <a href="#">Read more →</a>
+    </div>
+
+    <div class="service-card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS53sahIFaT8l7cG6sXTWRWEatDS1a2cpwFOQ&s">
+      <h3>Aluminium Partition Work</h3>
+      <p>Glass & solid partitions for offices, shops & showrooms. Fast installation guaranteed.</p>
+      <a href="#">Read more →</a>
+    </div>
+
+
+
+ 
+
+  
+  </div>
+  <!--Service section end-->
+</section>
+<!--Speciallity-->
+<section class="speciality-section" id="special">
+  <div class="speciality-title">
+    <div class="vertical-bar"></div>
+    <h2>We do <br><span>Speciality</span></h2>
+  </div>
+
+  <div class="speciality-container">
+
+    <div class="speciality-box">
+      <div class="speciality-text">
+        <h3>Aluminium Door and Windows</h3>
+      
+      </div>
+      <div class="speciality-image">
+        <img src="https://www.doctorwindows.in/img/repair-of-upvc-doors-uttar-pradesh.webp" alt="Aluminium Door and Windows">
+      </div>
+    </div>
+
+    <div class="speciality-box">
+      <div class="speciality-text">
+        <h3>Aluminium Fabrication</h3>
+        
+      </div>
+      <div class="speciality-image">
+        <img src="https://4.imimg.com/data4/CN/CP/MY-12164147/aluminium-fabrication.jpg" alt="Aluminium Fabrication">
+      </div>
+    </div>
+
+  </div>
+</section>
+<!--Speciallity end-->
+<hr>
+ <!-- Contact section start -->
+<section class="contact-section" id="contact">
+  <h2 class="contact-title">Get in Touch</h2>
+  <div class="contact-container">
+
+    <!-- Left Info -->
+    <div class="contact-info">
+      <div class="info-box">
+        <span>📍</span>
+        <div>
+          <strong>Address</strong>
+          <p>Saraswati get Palace Bus stop,Katol 441302 <br>Near Nagpur, Maharashtra India</p>
+        </div>
+      </div>
+
+      <div class="info-box">
+        <span>📧</span>
+        <div>
+          <strong>Email</strong>
+          <p>saimquazi11@gmail.com</p>
+        </div>
+      </div>
+
+      <div class="info-box">
+        <span>📞</span>
+        <div>
+          <strong>Call Us</strong>
+          <p><a href="tel:9764090337">9764090337</a></p>
+        </div>
+      </div>
+
+      <div class="info-box">
+        <span>🌐</span>
+        <div>
+          <strong>Website</strong>
+          <p><a href="http://www.jainaluminiumworks.com" target="_blank"></a></p>
+        </div>
+      </div>
+    </div>
+<!--left info end-->
+    <!-- Right Form -->
+    <form class="contact-form">
+      <div class="form-row">
+        <input type="text" placeholder="Name">
+      </div>
+      <div class="form-row">
+        <input type="email" placeholder="Email">
+        <input type="tel" placeholder="Phone">
+      </div>
+      <div class="form-row">
+        <input type="text" placeholder="City">
+      </div>
+      <div class="form-row">
+        <textarea placeholder="Discribe your requirement"></textarea>
+      </div>
+      <div class="form-row">
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+<!--Right form end-->
+  </div>
+  <div class="infor">
+   <p></p>
+  </div>
+  <!--Contact section end-->
+</section>
+>
+
+
+
   </div>
 </body>
 </html>
