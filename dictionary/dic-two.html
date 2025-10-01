@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>If else </title>
+</head>
+<style>
+    body {
+        display: flex;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+        background-color: #f0f4f8;
+        font-family: Arial, sans-serif;
+    }
+
+    .container {
+        background: white;
+        padding: 200px 200px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+
+    input[type="text"] {
+        padding: 10px;
+        width: 400px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-bottom: 70px;
+    }
+
+    button {
+        padding: 10px 40px;
+        font-size: 16px;
+        background-color: #007BFF;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-left: 10px;
+    }
+
+    button:hover {
+        background-color: #0056b3;
+    }
+</style>
+<body>
+    <h1 id="display"></h1> 
+    <input type="text" id="input-one">
+      <input type="text" id="input-two">
+      <button onclick="inputOput()">Get Age</button>          
+      
+    <script>
+ //function inputOput(){
+  //  let exp = Number(document.getElementById("input-one").value);
+   // let dept = document.getElementById("input-two").value;
+   // let result = dept.toUpperCase(); // Convert to uppercase
+
+   // if(exp >= 5 && result === "HR"){
+   //     alert("You are a senior employee");
+   // } else {
+   //     alert("You are not a senior HR employee");
+   // }
+//} 
+const list = [
+    { id: 1, name: "Atharv", mark: 50 },
+    { id: 2, name: "Ratnesh", mark: 60 },
+    { id: 3, name: "Achal", mark: 70 },
+    { id: 4, name: "Saim", mark: 80 },
+    { id: 5, name: "Shruti", mark: 45 },
+    { id: 6, name: "Ayush", mark: 40 }
+];
+
+//let group = [];
+//for (let i = 0; i <= list.length - 1; i++) {
+ // if (list[i].mark>50){
+   // group.push(list[i].name)
+//}
+//}
+//alert(group)
+//let idgroup = [];
+//for (let i = 0; i <= list.length - 1; i++) {
+   //if (list[i].id % 2 ==0){
+    //idgroup.push(list[i].name)
+//}
+//}
+for (let i = 0; i <= list.length - 1; i++) {
+    let surnamein = prompt(`Enter${list[i].name}surname`);
+    alert(list[i].name + surnamein);
+}
+
+
+   </script>
+</body>
+</html>

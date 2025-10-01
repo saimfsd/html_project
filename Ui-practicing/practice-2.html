@@ -1,0 +1,37 @@
+<h2 id="countText">Total Students: 3</h2>
+<button onclick="addStudent()">Add Student +</button>
+<p id="cart">Cart: 0</p>
+<div id="students"></div>
+
+
+<script>
+let students = ["Saim", "Ashish", "Ayush"];
+let cart = [];
+
+// Show students on UI
+function showStudents(){
+    document.getElementById("students").innerHTML = ""; // clear old content
+    students.map((s, index) => {
+        document.getElementById("students").innerHTML += `<p>${s} <button onclick="addToCart(${index})">Add</button></p> `;
+           
+    });    
+}
+// Add to Cart
+function addToCart(i){
+    cart.push(students[i]);
+    document.getElementById("cart").innerText = `Cart: ${cart.length}`;
+}
+
+// Add new student
+function addStudent(){
+    let name = prompt("Enter student name:");
+    if(name){
+        students.push(name);
+        document.getElementById("countText").innerText = `Total Students: ${students.length}`;
+        showStudents(); // UI update directly
+    }
+}
+
+// Initial UI
+showStudents();
+</script>

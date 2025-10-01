@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java script</title>
+    <style>
+        body {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+        }
+
+        input {
+            width: 300px;
+            height: 50px;
+        }
+
+        button {
+            width: 100px;
+            height: 50px;
+            margin-left: 50px;
+            margin-top: 20px;
+            background-color: rgb(122, 101, 141);
+            color: white;
+
+        }
+    </style>
+</head>
+
+<body>
+    <!--Checknumber positive or negative-->
+    <div class="container-num">
+        <br>
+        <input type="number" id="input-one">
+        <button onclick="chechNumber()">Check num</button>
+        <!--check age-->
+        <input type="number" id="input-two">
+        <button onclick="checkAge()">Check Age</button>
+        <!--check johny name-->
+        <input type="text" id="input-three">
+        <button onclick="checkName()">Check Name</button>
+        <!--checklipyear-->
+        <input type="text" id="input-four">
+        <button onclick="checkYear()">Check Lipyear</button>
+        <!--admin or superadmin-->
+        <input type="text" id="input-five">
+        <button onclick="userName()">Check correct user</button>
+        <!--pe number-->
+        <input type="text" id="input-six">
+        <button onclick=" peNumber()">positive even number</button>
+        <!--true false-->
+        <input type="text" id="input-seven">
+        <button onclick=" showString()">Check TF</button>
+    </div>
+    <div>
+        <h1 id="display"></h1>
+    </div>
+
+    <script>
+        //Check number
+        function chechNumber() {
+            let x = document.getElementById("input-one").value;
+
+            if (x > 0) {
+                alert("positive")
+
+            }
+            else if (x < 0) {
+                alert("negative")
+            }
+            else {
+                alert("zero")
+            }
+        }
+
+        //Check Age 
+        function checkAge() {
+            let age = document.getElementById("input-two").value;
+
+            if (age == 13 || (age > 13 && age < 20)) {
+                alert("High school")
+            }
+        }
+
+        //  check name johnny 
+
+        function checkName() {
+            let name = document.getElementById("input-three").value;
+            if (name == "johnny") {
+                alert("User is correct")
+            }
+            else {
+                alert(" User is incorrect")
+            }
+        }
+
+        //check lip year
+
+        function checkYear() {
+            let n = document.getElementById("input-four").value;
+            if ((n % 4 == 0) && (n % 100 !== 0)) {
+                alert("Lip year")
+            }
+            else {
+                alert("not lip year")
+            }
+        }
+        //check admin or superadmin 
+        function userName() {
+            let name = document.getElementById("input-five").value;
+            if (name == "admin" || name == "superadmin") {
+
+                alert("authentic")
+            }
+            else {
+                alert("not authentic")
+            }
+        }
+        //positive and even and odd 
+
+        function peNumber() {
+            let num = document.getElementById("input-six").value;
+            if (num == 0) {
+                alert("the number is zero")
+            }
+            //postive values eo
+            if (num > 0) {
+                if (num % 2 == 0) {
+                    alert("the number positive aur even")
+                }
+                else if (num % 2 !== 0) {
+                    alert("the number positive aur odd")
+                }
+
+            }
+            //negative values no
+            if (num < 0) {
+                if (num % 2 == 0) {
+                    alert("the number is negative aur even")
+                }
+                else if (num % 2 !== 0) {
+                    alert("the number is negative aur odd")
+                }
+            }
+        }
+        // True false 
+
+        function checkString(input) {
+            if (input == "true") {
+                return "yes";
+            }
+            else if (input == "false") {
+                return "no"
+            }
+        }
+        function showString() {
+            let num = document.getElementById("input-seven").value;
+
+            let result = checkString(num)
+            alert(result)
+        }
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

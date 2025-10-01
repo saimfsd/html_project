@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>inserting</title>
+</head>
+<body>
+    <script>
+//         push() → Array ke end me element add karta hai
+
+// unshift() → Array ke start me element add karta hai
+
+// splice(index, 0, element) → Specific index pe element add karta hai (0 = delete count)
+
+        //array inserting
+
+//         let arr = [10, 20, 30, 40, 50];
+//         arr.push(60); 
+//     console.log(arr); // [10, 20, 30, 40, 50, 60]
+
+
+//      // 2. Start me insert karna
+//      arr.unshift(5);
+//      console.log(arr); // [5, 10, 20, 30, 40, 50, 60]
+
+
+//      // 3. Specific position me insert karna (index 3)
+// arr.splice(3, 0, 25); 
+// console.log(arr); // [5, 10, 20, 25, 30, 40, 50, 60]
+
+
+// let arr = [15, 25, 35, 45];
+//  arr.unshift(5)
+// console.log(arr)
+
+
+// let arr = [5, 15, 25, 35];
+// arr.splice(2 , 0 , 20);
+// console.log(arr)
+// Aapko 20 ko 15 aur 25 ke beech insert karna hai
+// Final output => [5, 15, 20, 25, 35]
+
+
+let arr = ["apple", "banana", "mango", "grapes"];
+
+arr.splice(1 , 0 ,"orange")
+arr.splice(4 , 0 ,"pineapple")
+  console.log(arr)
+// ["apple", "orange", "banana", "mango", "pineapple", "grapes"]
+
+
+// arr.concat
+// let arr1 = ["apple", "banana"];
+// let arr2 = ["mango", "grapes"];
+
+// let result = arr1.concat(arr2); // ek array dusre array me add karne ke conct use hota hai 
+// console.log(result);
+// ["apple", "banana", "mango", "grapes"]
+
+
+
+
+// let arr6 = ["Mango","Grapes","banana"];
+// arr6.push("apple");
+// console.log(arr6);
+
+
+let patie = ["Patient1","Patient2","Patient3"];
+patie.unshift("Patient");
+console.log(patie)
+
+let student = ["A", "B", "C","D"];
+student.splice(2 , 0 , "E");
+console.log(student)
+
+
+// delete and add there 
+let playlist = ["Song1", "Song2", "Song3"];
+
+// 2nd position matlab index 1
+playlist.splice(1, 1, "New Song");
+
+
+let fourwhil = ["TrackA", "TrackB", "TrackC", "TrackD"];
+
+// Index 1 se start karo, 2 elements remove karo ("TrackB", "TrackC")
+fourwhil.splice(1, 2, "Remix1", "Remix2");
+
+console.log(fourwhil);
+
+//SLICE
+
+let numbers = [10, 20, 30, 40, 50];
+
+// slice(startIndex, endIndex) → endIndex exclusive hota hai
+let newArr = numbers.slice(1, 3);
+
+console.log(newArr);
+
+// Map function 
+const numbers1 = [1, 2, 3, 4, 5];
+
+// Har number ka square banate hain
+const squares = numbers.map(num => num * num);
+
+console.log("Original:", numbers);   // [1, 2, 3, 4, 5]
+console.log("Squares:", squares);   // [1, 4, 9, 16, 2
+
+
+// filter function 
+
+const numbers3 = [10, 15, 20, 25, 30];
+
+// Sirf 20 se bade numbers chahiye
+const greaterThan20 = numbers.filter(num => num > 20);
+
+console.log("Original:", numbers);        // [10, 15, 20, 25, 30]
+console.log("Filtered:", greaterThan20); // [25, 30]
+
+
+
+const arr1 = [1, 2, 3];
+const arr2 = [4, 5, 6];
+
+// Dono array ko merge karna
+const merged = [...arr1, ...arr2];
+
+console.log("Merged:", merged); // [1, 2, 3, 4, 5, 6]
+
+// Ek array copy banana
+const copyArr = [...arr1];
+console.log("Copy:", copyArr); // [1, 2, 3]
+    </script>
+</body>
+</html>

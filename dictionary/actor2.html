@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actor Name</title>
+</head>
+<body>
+    <script>
+ let newData = [
+        
+  {
+    name: "Amir Khan",
+    movies: [
+      { Name: "Idiots", Release_Date: "2009", IMDB_Rating: 8.4 },
+      { Name: "Dangal", Release_Date: "2016", IMDB_Rating: 8.3 }
+    ]
+  },
+  {
+    name: "Shahrukh khan", 
+    movies: [
+      { Name: "Chak De! India", Release_Date: "2007", IMDB_Rating: 8.2 },
+      { Name: "My Name Is Khan", Release_Date: "2010", IMDB_Rating: 8.0 }
+    ]
+  },
+  {
+    name: "Salman Khan",
+    movies: [
+      { Name: "Bajrangi Bhaijaan", Release_Date: "2015", IMDB_Rating: 8.0 },
+      { Name: "Kick", Release_Date: "2014", IMDB_Rating: 6.8 }
+    ]
+  }
+];
+// print actor name
+
+for (let actor of newData) {
+  console.log(actor.name);
+
+}
+// first Shahrukh first movie 
+console.log(newData[0].movies[0].Name);
+
+//Print all movies of Amir Khan
+
+for (let movie of newData[1].movies) {
+  console.log(movie.Name);
+}
+
+// Print the IMDB rating of Kick
+console.log(newData[2].movies[1].IMDB_Rating);
+
+//Count how many movies Salman Khan has.
+console.log(newData[2].movies.length)
+
+// Print the release year of “Dangal”.
+console.log(newData[0].movies[1].Release_Date)
+
+//Print the name of the actor who acted in “My Name Is Khan”.
+for (let actor of newData) {
+  for (let movie of actor.movies) {
+    if (movie.Name === "My Name Is Khan") {
+      console.log(actor.name);
+    }
+  }
+}
+// Print all movies that have an IMDB rating greater than 8.
+for (let actor of newData) {
+  for (let movie of actor.movies) {
+    if (movie.IMDB_Rating > 8) {
+      console.log(movie.Name);
+    }
+  }
+}
+
+//Print the last movie of Shahrukh Khan.
+console.log(newData[0].movies[1].Name);
+
+// Print all movie names along with their release years for Amir Khan.
+
+for (let actor of newData){
+    if (actor.name == "Amir Khan"){
+        for(let movie of actor.movies){
+            console.log(`${movie.Name} - ${movie.Release_Date}`)
+        }
+    }
+}
+// jo movie input karoge us actor ka naam
+
+for(let actor of newData){
+    for(let i = 0 ; i < actor.movies.length ; i ++){
+    if (actor.movies[i].Name == "My Name Is Khan"){
+        console.log(actor.name)
+    }
+}
+}
+//
+
+for(let actor of newData){
+    for(let i = 0 ; i < actor.movies.length ; i ++){
+    if (actor.movies[i].Name == "Dangal"){
+        console.log(actor.name)
+    }
+}
+}
+// Print all actors who have a movie with IMDB rating less than 7
+
+for (let actor of newData) {
+  for (let movie of actor.movies) {
+    if (movie.IMDB_Rating < 7) {
+      console.log(actor.name);
+    }
+  }
+}
+
+// Print the total number of movies for all actors combined.
+    let x = newData[0].movies.length
+    let y = newData[1].movies.length
+    let z = newData[2].movies.length
+    let sum = x + y + z ;
+    console.log(sum)
+
+// using loop 
+
+let totalCount = 0 ;
+for(let actor of newData){
+    totalCount += actor.movies.length ;
+}
+console.log(totalCount)
+
+//Print the average IMDB rating of all movies of Amir Khan.
+for(let actor of newData){
+    for(let movie of actor.movies){
+        console.log(movie.IMDB_Rating / 2)
+    }
+}
+
+// Print the first movie name of each actor.
+
+for (let actor of newData) {
+    console.log(`${actor.name} - ${actor.movies[0].Name}`);
+}
+
+
+
+</script>
+</body>
+</html>

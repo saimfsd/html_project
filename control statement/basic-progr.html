@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Condition Practice</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f2f5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 50px;
+    }
+
+    .container {
+      background: white;
+      padding: 20px 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    input {
+      padding: 10px;
+      width: 200px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      margin-bottom: 15px;
+      font-size: 16px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background: #45a049;
+    }
+
+    #result {
+      margin-top: 20px;
+      font-weight: bold;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Condition Practice</h2>
+    <input type="number" id="inputNumber" placeholder="Enter any number">
+    <input type="number" id="inputNumber1" placeholder="Enter any number">
+    <input type="number" id="inputNumber2" placeholder="Enter any number">
+    <br>
+    <button onclick="checkCondition()">Check Number</button>
+    <div id="result"></div>
+  </div>
+
+  <script>
+    function checkCondition() {
+      const num = parseFloat(document.getElementById('inputNumber').value);
+      const num1 = parseFloat(document.getElementById('inputNumber1').value);
+      const num2 = parseFloat(document.getElementById('inputNumber2').value);
+
+      
+      //if else condition
+
+   //   if (num > 0) {
+ // alert("Positive");
+//} else if (num < 0) {
+ // alert("Negative");
+//} else {
+ // alert("Zero");
+//}
+
+//if( num % 2 == 0){
+ //  alert("even number");
+//}
+//else if (num % 2 != 0 ){
+  //  alert(" odd number")
+//}
+//else{
+ // ("the number is  zero")
+//}
+  
+
+//if ( num > 100){
+  //alert("big")
+//}
+//else if(num < 100 && num >  51){
+  //  alert("Medium")
+//}
+//else if ( num < 51){
+
+//alert("small")}
+
+  // practice a
+  //if ( num < 13 && num > 1){
+   // alert("child")
+  //}
+ // else if (num >= 13 && num <= 19){
+ //   alert("teeneger")
+ // }
+
+  //else if (num <= 50 && num >= 20 ){
+   // alert("Adult")
+  //}
+  //else if (num <= 0 ){
+  //  alert("invalid number")
+// }
+ // else{
+ //   alert("seniour")
+ // }
+
+//if(num > 90){
+  //  alert("A Grade")
+//}
+//else if ( num > 75 && num < 90){
+  //  alert("B Grade")
+
+//else if (num > 50 && num < 75){
+
+  //  alert(" C Grade")
+//}
+//else{
+  //  alert("Fail")
+//}
+
+
+//if (num >= 90 && num1 >= 90 && num2 >= 90) {
+  //alert("Excellence");
+//}
+//else if (num >= 40 && num1 >= 40 && num2 >= 40) {
+ // alert("Pass");
+//}
+//else {
+ // alert("Fail");
+//}
+
+//if ( num >= 18 ){
+     //alert( "vote eligibel hai ")
+//}
+//else if ( num < 18){
+   //  alert( "it is not vote ")
+//}
+}
+
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>function type </title>
+</head>
+<body>
+    <script> 
+// declarion function 
+
+        function add(a, b) {
+  return a + b;
+}
+console.log(add(5, 3)); // 8
+
+// Expression function
+const multiply = function(a, b) {
+  return a * b;
+};
+console.log(multiply(4, 2)); // 8
+
+//Anonoums function 
+
+setTimeout(function() {
+  console.log("Hello after 2 seconds");
+}, 2000);
+
+// Arrow functiomn 
+
+const divide = (a, b) => a / b;
+console.log(divide(10, 2)); // 5
+
+
+//Constractor function 
+function Person(name, age) {
+  this.name = name;
+  this.age = age;
+}
+const user = new Person("Saim", 22);
+console.log(user.name); // Saim
+
+
+//Async function 
+
+// async function fetchData() {
+//   return "Data received!";
+// }
+// fetchData().then(result => console.log(result)); // Data received!
+
+
+// function number( a , b){
+//     return a + b ;
+// }
+// number( 1 + 2);
+// alert(number(a,b))
+
+
+// Call back function 
+
+// function greet(callback) {
+//     console.log("Hello");
+//     callback();  // ye baad me call hota hai
+// }
+
+// greet(function() {
+// console.log("I am the callback!");   
+// });
+  //Hello
+// I am the callback!
+
+
+
+//Ek function morningRoutine(task) banao jo ek callback accept kare aur callback execute kare.
+
+// Callback function "Brush your teeth" print kare.
+
+// morningRoutine() ko call kar ke result check kar
+
+function morningRoutine(task) {
+  task();  // callback ko execute kiya
+}
+
+function said() {
+  console.log("Brush your teeth");  // callback function
+}
+
+morningRoutine(said);  // function ko argument ke roop me pass kiya
+
+//Ek function welcomeUser(name, callback) banao jo pehle "Welcome <name>" print kare aur fir callback "Have a great day!" print kare.
+
+  function welcomeUser(name , callback){
+    console.log("Welcome"+ name);
+    callback()
+
+  }
+  function feel (){
+    console.log("Have a nice day");
+  }
+  welcomeUser("Saim kazi",feel);
+
+
+
+
+  //call back 
+  function delayedGreeting(name, callback) {
+  setTimeout(function() {
+    console.log("Good Evening, " + name);
+    callback();
+  }, 2000);  // 2 second delay
+}
+
+function askDay() {
+  console.log("How was your day?");
+}
+
+delayedGreeting("Saim", askDay);
+
+//Jo function argument ke roop me bheja jata hai usse callback function kehte hain.
+
+//Kyun?
+
+// Taaki ek function apna kaam khatam karne ke baad dusra function ko call back kar sake.
+    </script>
+</body>
+</html>

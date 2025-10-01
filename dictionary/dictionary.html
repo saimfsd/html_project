@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dictionary</title>
+</head>
+<body>
+    <script>
+        let fruits = {
+            name : "saim",
+            color  : "red",
+            price : 200
+        }
+
+        console.log(fruits)
+        console.log(fruits.color);
+        console.log ( fruits.price)
+// add keys 
+        fruits.taste = "Sweet";
+        console.log(fruits)
+ //Upadate value 
+        fruits .price = 50 ;
+        console.log(fruits.price)
+
+//deleting value 
+        delete fruits.taste ;
+        console.log(fruits)
+
+        // intermediatw 
+
+        for (let key in fruits){
+            console.log (key);
+        }
+        for (let key in fruits){
+            console.log (fruits[key]);
+        }
+
+//  Copy a dictionary
+
+// let student = {name: "Saim", age: 20};
+// let copyStudent = {...student};
+// console.log(copyStudent);
+
+//Merge dictnory
+
+// let dict1 = {a: 1, b: 2};
+// let dict2 = {c: 3, d: 4};
+// let merged = {...dict1, ...dict2};
+// console.log(merged);
+
+
+// check array in keys //
+
+// let fruit = {name: "Apple", color: "Red", price: 50};
+// let keys = Object.keys(fruit);
+// console.log(keys); 
+// // Output: ["name", "color", "price"]
+
+
+//Example 1: Nested Dictionary (Object inside Object)
+
+let fruit = {
+  name: "Apple",
+  color: "Red",
+  price: 50,
+  origin: {
+    country: "India",
+    city: "Nagpur"
+  }
+};
+
+console.log(fruit.origin);
+// Output: {country: "India", city: "Nagpur"}
+console.log(fruit.origin.city);
+// Output: Nagpur
+
+//Add a new key to nested object
+fruit.origin.vitamin = 8 ;
+console.log(fruit.origin)
+
+
+let fruit2 = {
+  name: "Apple",
+  nutrition: {calories: 52, sugar: 10}
+};
+let keys = Object.keys(fruit2.nutrition);
+for (let i = 0; i < keys.length; i++) {
+  console.log(keys[i], fruit2.nutrition[keys[i]]);
+}
+// Output:
+// calories 52
+// sugar 10
+
+//Example 5: Dynamic update using key
+let fruit = {name: "Apple", price: 50};
+let key = "price";
+fruit[key] = 60; 
+console.log(fruit.price); 
+// Output: 60
+    </script>
+</body>
+</html>

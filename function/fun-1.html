@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>labery function</title>
+  <style>
+    body {
+      background: #f2f2f2;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background: #ffffff;
+      padding: 30px 40px;
+      border-radius: 20px;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    input[type="text"] {
+      padding: 12px 20px;
+      width: 250px;
+      border: 2px solid #ddd;
+      border-radius: 12px;
+      font-size: 16px;
+      transition: 0.3s;
+      outline: none;
+    }
+
+    input[type="text"]:focus {
+      border-color: #4CAF50;
+      box-shadow: 0 0 5px rgba(76, 175, 80, 0.4);
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 12px 25px;
+      background-color: #4CAF50;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    #output {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Enter something:</h2>
+    <input type="text" id="Input-one" placeholder="Type here..." />
+    <br />
+    <button onclick="sayhello()">Submit</button>
+    <div id="output"></div>
+  </div>
+
+  <script>
+function sayhello(){
+ 
+ // given string
+ //const str = "Hello world@gmail.com";
+
+ //includes function
+ //const str = "Hello javascript"
+ //const must = str.includes("z");
+ //alert(must)
+
+//const str = "Hello  javascript"
+ //const result = str.endsWith("y");
+// alert(result)
+
+ // endsWith function
+// const gmail = str.endsWith("@gmail.com");
+
+ // indexOf function
+ //const str = "Hello world"
+   // const strsize = str.indexOf("world")
+//alert(strsize)
+
+  //slice fucntion
+ 
+//const string = document.getElementById("Input-one").value;
+//const result1 = string.slice(-5 , -1)
+
+
+//alert(result1)
+//alert(result2)
+ 
+ // Sub string () same as a slice     // only indexing
+
+
+//const str = "Hello Javascript";
+//const result = str.substring(5, 2)
+//alert(result)
+
+
+//replace function
+
+//const str = "Hello Javascript"
+//const result = str.replace("Hello","Welcome")
+//alert(result)
+
+
+// trim function
+
+//const str = "    Javascript     "
+//const result = str.trim()
+//alert(result)
+
+
+// charAt
+const str = "Hello World"
+const letter = str.charAt(str.length - 1)
+alert(letter)
+
+}
+
+
+
+  </script>
+</body>
+</html>

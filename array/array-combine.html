@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combine</title>
+</head>
+<body>
+    <script>
+// 1️⃣ Initial Array
+let fruits = ["apple", "banana", "mango"];
+console.log("Initial Array:", fruits);// print initial fruits 
+
+// 2️⃣ Insertion
+fruits.push("orange");           // last me add
+fruits.unshift("grapes");        // start me add
+fruits.splice(2, 0, "pineapple"); // index 2 pe insert
+console.log("After Insertion:", fruits);
+
+// 3️⃣ Updating
+fruits[3] = "kiwi";               // index 3 update
+fruits.splice(1, 1, "watermelon"); // index 1 replace
+console.log("After Updating:", fruits);
+
+// 4️⃣ Deletion
+fruits.pop();                      // last delete
+fruits.shift();                     // first delete
+fruits.splice(1, 1);               // index 1 delete
+console.log("After Deletion:", fruits);
+
+// 5️⃣ Searching
+console.log("Index of mango:", fruits.indexOf("mango"));
+console.log("Includes kiwi?", fruits.includes("kiwi"));
+
+// 6️⃣ Traversing
+console.log("Traversing Array:");
+for(let i = 0; i < fruits.length; i++){
+    console.log(fruits[i]);
+}
+
+// 7️⃣ Transforming (Uppercase)
+let upperFruits = fruits.map(fruit => fruit.toUpperCase());
+console.log("Uppercase Fruits:", upperFruits);
+
+// 8️⃣ Copy / Merge
+let tropical = ["papaya", "banana"];
+let merged = [...fruits, ...tropical];
+console.log("Merged Array:", merged);
+
+// 9️⃣ Sub-array (Slice)
+let subArray = merged.slice(1, 4);
+console.log("Sub-array (slice):", subArray);
+
+
+// Checkword 
+
+function checkWord() {
+            let sentence = prompt("Enter a sentence:");
+            let word = prompt("Enter the word to search:");
+
+            // Using includes() to check if word exists in sentence
+            if (sentence.includes(word)) {
+                alert(`Yes! The word "${word}" exists in the sentence.`);
+            } else {
+                alert(`No! The word "${word}" does not exist in the sentence.`);
+            }
+        }
+
+
+    </script>
+</body>
+</html>

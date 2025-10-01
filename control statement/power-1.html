@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Simple UI</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #f0f0f0;
+      font-family: sans-serif;
+    }
+    .container {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    input {
+      padding: 10px;
+      width: 200px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      padding: 10px 15px;
+      margin-left: 10px;
+      border: none;
+      background: #007bff;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    num 
+    <input type="text" id="myInput" placeholder="Type something..." />
+    power
+    <input type="text" id="myInput-2" placeholder="Type something..." />
+    <button onclick="handleClick()">Submit</button>
+  </div>
+
+  <script>
+    function handleClick() {
+   let num = document.getElementById("myInput").value;
+     let power = document.getElementById("myInput-2").value;
+   let result = num ;
+
+      if (power > 1){
+        for(let i = 1 ; i < power ;  i ++){
+           result = result * num 
+           alert(result)
+        }
+      }
+      else {
+      result = 0 ;
+     alert(result)
+      }
+    }
+  
+  </script>
+
+</body>
+</html>

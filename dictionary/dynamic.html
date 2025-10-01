@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Dynamic Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px 0;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+        }
+
+        input {
+            padding: 5px;
+        }
+
+        #dynamic-list {
+            margin-top: 20px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            background-color: #ddd;
+            margin: 5px 0;
+            padding: 5px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Dynamic Website</h1>
+    </header>
+
+    <main>
+        <p id="message">Click the button to see something dynamic!</p>
+        <button onclick="changeMessage()">Click Me</button>
+
+        <div id="dynamic-list">
+            <h2>Fruits List:</h2>
+            <ul id="fruits"></ul>
+            <input type="text" id="fruit-input" placeholder="Add a fruit">
+            <button onclick="addFruit()">Add Fruit</button>
+        </div>
+    </main>
+
+    <script>
+        // Dynamic message change
+        function changeMessage() {
+            const messages = [
+                "Hello, welcome!",
+                "Have a great day!",
+                "You clicked the button!",
+                "Dynamic websites are fun!"
+            ];
+            const randomIndex = Math.floor(Math.random() * messages.length);
+            document.getElementById("message").innerText = messages[randomIndex];
+        }
+
+        // Dynamic fruits list
+        let fruits = ["Apple", "Banana", "Mango"];
+        const fruitsList = document.getElementById("fruits");
+
+        function displayFruits() {
+            fruitsList.innerHTML = "";
+            fruits.forEach(fruit => {
+                const li = document.createElement("li");
+                li.textContent = fruit;
+                fruitsList.appendChild(li);
+            });
+        }
+
+        function addFruit() {
+            const fruitInput = document.getElementById("fruit-input");
+            const newFruit = fruitInput.value.trim();
+            if(newFruit) {
+                fruits.push(newFruit);
+                displayFruits();
+                fruitInput.value = "";
+            } else {
+                alert("Please enter a fruit name!");
+            }
+        }
+
+        // Initial display
+        displayFruits();
+    </script>
+</body>
+</html>

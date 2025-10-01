@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array function </title>
+</head>
+<body>
+    <h1 id="display"></h1>
+
+    <script>
+    //     array= []
+
+    //     function addvalue(){
+    //     let input = prompt("enter a number")
+    //     array[array.length]= input 
+    //     document.getElementById("display").innerHTML = array ;
+    // }
+    //    addvalue()
+//     studentData = [];
+// function addArray(){
+//     for(let i = 1 ; i <=3 ; i++){
+//     let studentName = prompt("Enter a name");
+//     let studentAge = prompt("Enter a age");
+//     let skills = [];
+//     for(let i = 0 ; i <= 3 ; i++){
+//         skills[skills.length] = prompt("Enter skill")
+
+//     }
+//     studentData.push({
+//         name : studentName ,
+//         age : studentAge ,
+//         skill : skills
+//     })
+// console.log(studentData)
+
+
+// }
+// }
+// addArray()
+
+
+// Ek program banao jo studentData array ke sabhi student ke names print kare.
+
+let studentData = [{ 
+    name : "saim kazi",
+    age : 18 ,
+    skills : ["Html","css"]
+
+},
+{ 
+    name : "Ashish",
+    age : 30,
+    skills :[ "css","haj","dfsd"]
+
+},
+{ 
+    name : "Ayush",
+    age : 15,
+    skills : ["javascript"]
+
+},
+]
+for (let i = 0; i < studentData.length; i++) {
+  console.log(studentData[i].name);
+}
+//first student age 
+console.log (studentData[0].age);
+
+//Har student ke skills ki total ginti (length) print karo.
+for(let i = 0; i < studentData.length ; i++){
+    console.log(studentData[i].skills.length)
+}
+//Ek naya student object manually push karo aur array ko print karo.
+
+studentData.push({
+    name : "pratik bhai",
+    age : 70,
+  skills : ["communication skii "]
+})
+console.log(studentData)
+
+// Sirf un students ke naam print karo jinke pass 3 ya usse zyada skills hai.
+for (let i = 0; i < studentData.length; i++) {
+  if (studentData[i].skills.length >= 3) {
+    console.log(studentData[i].name);
+  }
+}
+//Har student ka sirf pehla skill print karo.
+for(let i = 0 ; i < studentData.length ; i ++){
+    console.log(studentData[i].skills[0])
+}
+//Sabhi students ke ages ko add karke total age print karo.
+let totalAge = 0;
+for (let i = 0; i < studentData.length; i++) {
+  totalAge += studentData[i].age;  // totalAge = totalAge + studentData[i].age
+}
+console.log(totalAge)
+
+
+// Sirf un students ke naam print karo jinka age 20 se kam hai.
+
+for (let i = 0; i < studentData.length; i++) {
+if(studentData[i].age < 20){
+    console.log(studentData[i].name)
+}
+}
+//Har student ka sirf pehla skill print karo.
+
+for (let i = 0; i < studentData.length; i++) {
+  console.log(studentData[i].name +""+ studentData[i].skills.join(", "));
+}
+
+// Check karo ki kya array me koi student hai jiska name “Ashish” hai. Agar hai to "Found" print karo, warna
+for (let i = 0; i < studentData.length; i++) {
+  if(studentData[i].name == "Ashish"){
+    console.log("found")
+  }
+  else{
+    console.log("not found")
+  }
+}
+// Sirf ek student ko naam ke basis pe search karke uska data print karo.
+let searchName = "Ashish"; // jis student ko dhoondhna hai
+
+for (let i = 0; i < studentData.length; i++) {
+  if (studentData[i].name === searchName) {
+    console.log(studentData[i]);
+  }
+}
+
+//Sirf un students ke names print karo jinki age sabse badi (max age) hai.
+let maxAge = 0;
+
+for (let i = 0; i < studentData.length; i++) {
+  if (studentData[i].age > maxAge) {
+    maxAge = studentData[i].age;
+  }
+}
+
+console.log("Maximum Age =", maxAge);
+
+//min age
+let minAge = 100;
+
+for (let i = 0; i < studentData.length; i++) {
+  if (studentData[i].age < minAge) {
+    minAge = studentData[i].age;
+  }
+}
+
+console.log("Minimum Age =", minAge);
+
+//Ek naya student prompt se input leke studentData me push karo.
+let newName = prompt("Enter student name:");
+let newAge = prompt("Enter student age:");
+let newSkill = prompt("Enter one skill:");
+
+let newobject ={
+    name : newName ,
+    age  : parseInt(newAge) ,
+    skill :[ newSkill ]
+}
+studentData.push(newobject);
+
+    </script>
+</body>
+</html>

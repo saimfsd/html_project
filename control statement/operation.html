@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operation  </title>
+</head>
+<style>
+    input{
+        width: 300px;
+        height: 40px;
+    }
+    button{
+        width: 200px;
+        background-color: rgb(203, 225, 203);
+        height: 30px;
+       margin: 40px;
+    }
+</style>
+<body>
+
+<input type="number-one" id="input-one" placeholder="Enter first number">
+<input type="number-two" id="input-two" placeholder="Enter second number">
+
+<input type="text" id="operation" placeholder="Enter operation (add, sub, multi, div)">
+<button onclick="Operation()">Operation</button>
+
+<p id="result"></p>
+
+<script>
+ function add (){
+  let num1 =  document.getElementById("input-one").value ;
+  let num2 = document.getElementById("input-two").value;
+ let Sum = parseInt(num1) + parseInt(num2);
+ document.getElementById("result").innerHTML = + Sum ;
+ return (Sum);
+
+ }
+ function sub (){
+  let num1 = document.getElementById("input-one").value ;
+  let num2 = document.getElementById("input-two").value;
+ let diff = parseInt(num1) -  parseInt(num2) ;
+ document.getElementById("result").innerHTML = + diff ;
+ return (Diff);
+
+ }
+ function multi (){
+  let num1 = document.getElementById("input-one").value ;
+  let num2 = document.getElementById("input-two").value;
+ let mul = parseInt(num1) * parseInt(num2) ;
+ document.getElementById("result").innerHTML = + mul ;
+ return (mul);
+
+ }
+ function Operation(){
+  let ope = document.getElementById("operation").value ;
+  
+  if ( ope == ""){
+    alert("Enter valid number")
+
+  }
+
+  else if (ope == "add"){
+    alert("Addition")
+    add();
+  }
+  else if (ope == "sub"){
+    alert("Subtract")
+    sub()
+  }
+  else if (ope == "multi") {
+    alert("Multiplication")
+    multi();
+  }
+  else {
+    alert("invalid operation")
+  }
+ }
+</script>
+  
+</body>
+</html>

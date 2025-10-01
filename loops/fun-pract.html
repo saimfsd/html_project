@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Input, Button and Display</title>
+  <style>
+    body {
+      display: flex;
+      height: 100vh;
+      justify-content: center;
+      align-items: center;
+      background-color: #f0f4f8;
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      background: white;
+      padding:  200px 200px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    input[type="text"] {
+      padding: 10px;
+      width: 400px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-bottom: 70px;
+    }
+
+    button {
+      padding: 10px 40px;
+      font-size: 16px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-left: 10px;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    #display {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #333;
+      min-height: 24px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <input type="text" id="myInput" placeholder="Enter string">
+    <br>
+    <button onclick="usingWhile()">while</button>
+    <button onclick="usingFor()">for</button>
+
+
+    <div id="display"></div>
+  </div>
+
+  <script>
+    //function handleClick() {
+     // const str = document.getElementById('myInput').value;
+     // const strlength = str.toUpperCase() ; 
+ 
+
+ // if (str != str.toLowercase()){
+   // alert("Please enter lowercase")
+ // }
+ // else {
+  
+   // document.getElementById("display").innerHTML = strlength ;
+// }
+  //  }
+  //function uName(name) {
+   // let letter = name.charAt(0);
+   // let newletter = letter.toUpperCase();
+   // let str = name.slice(1);
+    //let newName = newletter + str;
+   // return newName; 
+//}
+
+
+
+
+// function inputName (){
+  // const input = "sachin ramesh tendulakar" ;
+  //let str = input.split(" ")
+  //let firstName = uName(str[0])
+  //let middleName = uName(str[1])
+ //let lastName = uName(str[2])
+
+  // let output = firstName + middleName + lastName ;
+    
+// document.getElementById("display").innerHTML = output ;
+//}
+
+//Loop 
+ 
+//function usingWhile(){
+
+ // let x = 1 ;
+
+  //while (x <= 10){
+  //  console.log(x)
+  //  x++ ;
+ // }
+//}
+
+//function usingFor(){
+
+  //for(let x = 1 ; x <= 10 ; x++){
+   // console.log(x)
+
+  //}
+//}
+
+//decreament 
+
+//function usingWhile(){
+ // let x = 10 ;
+
+ // while(x >= 1){
+   // console.log(x)
+  //  x-- ;
+ // }
+//}
+
+//stack
+//function usingWhile(n){
+
+  //       console.log(n * 5);
+      //   if (n <= 10){
+       //  usingWhile(n+1)
+
+       //  }                                 
+//}
+//usingWhile(1)
+
+//function usingWhile(){
+          //  let i = 10;
+           // while (i >= 1) {
+            //    console.log(5 * i);
+             //   i--;
+            //}
+       //}
+
+
+      function usingWhile(){
+        let x = prompt("enter a number")
+        let y = prompt("enter a number")
+        
+
+        for( let i = 1 ; i <=y  ; i++){
+          console.log(x * i)
+        }
+      }
+//easy way please practice
+
+ 
+
+  
+
+
+    
+
+
+    
+
+  </script>
+
+</body>
+</html>

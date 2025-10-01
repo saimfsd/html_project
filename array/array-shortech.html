@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Array Remove Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f4f8;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+
+    h1 {
+      color: #1e3a8a;
+      margin-bottom: 20px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 20px 0;
+      width: 250px;
+    }
+
+    ul li {
+      background: #3b82f6;
+      color: white;
+      padding: 10px;
+      margin-bottom: 8px;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    ul li:hover {
+      background: #2563eb;
+    }
+
+    button {
+      padding: 10px 20px;
+      border: none;
+      background: #10b981;
+      color: white;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-bottom: 20px;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: #059669;
+    }
+
+    .output {
+      width: 250px;
+      background: white;
+      padding: 15px;
+      border-radius: 5px;
+      border: 2px solid #3b82f6;
+      min-height: 50px;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+<body>
+  <h1>Student List</h1>
+  <ul id="studentList">
+    <li>1. Sanchit</li>
+    <li>2. Pranay</li>
+    <li>3. Yash</li>
+  </ul>
+
+  <button onclick="showData()">Remove Data</button>
+
+  <div class="output" id="id">Updated data will appear here...</div>
+
+  <script>
+    let data = [
+      { name: "sanchit", age: 18 },
+      { name: "pranay", age: 19 },
+      { name: "yash", age: 13 }
+    ];
+
+    function removeData() {
+      let name = prompt("Enter the name to remove:");
+      return name ? name.toLowerCase() : "";
+    }
+
+    function showData() {
+      let name = removeData();
+      if(!name) return;
+
+      for (let i = 0; i < data.length; i++) {
+        if (data[i].name.toLowerCase() === name) {
+          data.splice(i, 1);
+          
+        }
+        else{
+           alert("it is not correct")
+        }
+        break
+      }
+
+      let result = "";
+      for (let i = 0; i < data.length; i++) {
+        result += data[i].name + " (" + data[i].age + ")<br>";
+      }
+      document.getElementById("id").innerHTML = result ;
+    }
+  </script>
+</body>
+</html>

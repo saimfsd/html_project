@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ui ke sath programming practice </title>
+</head>
+<body>
+
+    <!--SIMPLE BUTTON WITH UI -->
+
+    <!-- <button onclick="increase()">Add +</button>
+<p id="count">0</p>
+
+<script>
+let counter = 0;
+
+function increase(){
+    counter++;
+    document.getElementById("count").innerText = counter;
+}
+</script> -->
+
+
+<!--Add task and display-->
+<!-- 
+<input type="text" id="task">
+<button onclick="addTask()">Add</button>
+<ul id="list"></ul>
+<p id="count"></p>
+
+<script>
+    let count = 0 ;
+function addTask(){
+    let task = document.getElementById("task").value;
+    document.getElementById("list").innerHTML += `<li>${task}</li>` 
+
+    document.getElementById("task").value = ""; // clear input
+}
+</script> -->
+
+<h2 id="countText">Total Students: 5</h2>
+<button onclick="addStudent()">Add Student +</button>
+<p id="cart">Cart: 0</p>
+<div id="students"></div>
+
+<script>
+let students = ["Saim", "Bhushan", "Ashish", "Ayush", "Ratnesh"];
+let cart = [];
+
+function showStudents(){
+    document.getElementById("students").innerHTML = ""; // clear previous
+    for(let i=0; i<students.length; i++){
+        document.getElementById("students").innerHTML += 
+        `<p>${students[i]} <button onclick="addCart(${i})">Add</button></p>`;
+    }
+}
+
+function addCart(i){
+    cart.push(students[i]);
+    document.getElementById("cart").innerText = "Cart: " + cart.length;
+}
+
+function addStudent(){
+    let name = prompt("Enter student name:");
+    students.push(name);
+    document.getElementById("countText").innerText = "Total Students: " + students.length;
+    showStudents();
+}
+
+showStudents();
+</script>
+
+</body>
+</html>
