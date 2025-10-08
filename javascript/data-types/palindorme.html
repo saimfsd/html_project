@@ -3,48 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>palindorme</title>
+    <title>Palindrome</title>
+    <style>
+        button {
+            width: 150px;
+            height: 80px;
+            background-color: green;
+            color: white;
+            font-size: 18px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        #result {
+            font-size: 30px;
+            margin-top: 20px;
+        }
+    </style>
 </head>
-<style>
-    button{
-        width: 150px;
-        height:80px;
-        background-color: green;
-       color: white;
-    }
-    #result{
-        font-size:30px;
-        
-    }
-</style>
 <body>
     
-   <button onclick="checkPalindromeUsingwhileloop()"> Check</button>
-    <p class="display" id="result"></p>
-    <script>
-        
-       // function checkPalindromeUsingwhileloop(){
-//input using prompt
-////let string = Prompt("Enter your string");
-
-//convert caase upper to lower
-//let strlower = string.tolowercase();
-//find length of string 
-//let len = strlower.length;
-
-//let i = 0;
-//while (i <len/2){
-    if (strlower[i] !== strLower[len -1 -i]){
-        document.getElementById("result").innerHtml="Not palindrome";
-        return false;
-    }
-    i++;
-}
-//document.getElementById("result").innerHTML = "Palindrome";//
-
-        
-        
+   <button onclick="checkPalindromeUsingWhileLoop()">Check</button>
+   <p id="result"></p>
     
-    </script>
+   <script>
+       function checkPalindromeUsingWhileLoop() {
+            // input using prompt
+            let string = prompt("Enter your string");
+
+            // convert to lowercase (so case doesn’t matter)
+            let strLower = string.toLowerCase();
+
+            // find length of string 
+            let len = strLower.length;
+
+            // start index
+            let i = 0;
+
+            // loop until middle of string
+            while (i < len / 2) {   
+                // compare characters from start and end
+                if (strLower[i] !== strLower[len - 1 - i]) {
+                    document.getElementById("result").innerHTML = "Not Palindrome";
+                    return;
+                }
+                i++;
+            }
+            // if all matched
+            document.getElementById("result").innerHTML = "Palindrome";
+        }
+   </script>
 </body>
 </html>

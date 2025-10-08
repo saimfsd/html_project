@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function Practice</title>
+</head>
+<body>
+<script> 
+// declaration function 
+
+//function number(a, b) {
+   // return a + b;   // dono numbers add karke return karega
+//}
+
+//let result = number(1, 2);  // 2 argument diye
+//alert(result);   // Output: 3
+
+//function number(a, b ,c ) {
+   // return a * b * c;   // dono numbers add karke return karega
+//}
+
+//let result = number(1, 2 , 3);  // 2 argument diye
+//alert(result);  
+
+// function number(a,b) {
+//     return a * a ;   } 
+
+//  function number1(a,b) {
+//         return  b * b;   
+//     }
+// let result = number(2 ,2 ); 
+// let result1 = number1(2 ,2 ); 
+// let finalresult = result + result1 ;
+// alert(finalresult); 
+
+// function number(a,b) {
+//     return a + b ;   } 
+
+//  function number1(a,b) {
+//         return  a - b;   
+//     }
+// let result = number(2 ,2 ); 
+// let result1 = number1(2 ,2 ); 
+// let finalresult = result + result1 ;
+// alert(finalresult); 
+
+
+//function number(a) {
+    //return a * a  ;   } 
+//
+ //function number1(a) {
+      //  return  a * a * a ;   
+   // }
+
+//let result = number(2  ); 
+//let result1 = number1(2); 
+//let finalresult = result + result1 ;
+//alert(finalresult); 
+
+
+
+// function bigger(a, b) {
+//     if (a > b) {
+//         return a + " is greater";
+//     } else if (b > a) {
+//         return b + " is greater";
+//     } else {
+//         return "Both are equal";
+//     }
+// }
+
+// let result = bigger(10, 20);   // "20 is greater"
+// alert(result);
+
+
+
+// function calculate(a, b, type) {
+//     if (type === "add") {
+//         return a + b;
+//     } else if (type === "subtract") {
+//         return a - b;
+//     }
+// }
+
+// let result = calculate(8, 3, "add");      // 11
+// let result1 = calculate(8, 3, "subtract"); // 5
+// alert(result + " and " + result1);
+
+
+// Express function 
+
+// const add = function(a, b) {
+//     return a + b;
+// };
+
+// let result = add(5, 3);
+// alert(result); 
+
+
+// const add = function(a, b) {
+//     return a - b;
+// };
+
+// let result = add(10, 4);
+// alert(result); 
+
+
+// const checkOdd = function(num) {
+//   if (num % 2 == 0 ){
+//     alert("even number")
+//   }
+//   else{
+//     alert("Odd number")
+//   }
+// };
+
+// let result = checkOdd(7);
+
+// setTimeout(function() {
+//     alert("3 seconds complete!");
+// },10000);
+
+//Arrow function 
+// Normal function me function + return likhna padta hai
+
+// Arrow Function me short me likh sakte ho
+
+const add = (a,b) => a + b;  // Short and clean
+const square = num => num * num;
+alert(square(6));  // 36
+
+const multiply = (a, b) => a * b;
+alert(multiply(4, 5));  // 20
+
+const greet = () => alert("Hello!");
+greet();  // "Hello!"
+
+const addAndSquare = (a, b) => {
+    let sum = a + b;
+    return sum * sum;
+};
+alert(addAndSquare(2, 3));  // 25
+
+let numbers = [1, 2, 3, 4];
+let squares = numbers.map(n => n * n);
+console.log(squares);  // [1, 4, 9, 16]
+
+</script>
+</body>
+</html>

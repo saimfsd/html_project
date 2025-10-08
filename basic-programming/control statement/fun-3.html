@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object and class </title>
+    <style>
+        body {
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f4f8;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            background: white;
+            padding: 200px 200px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            width: 400px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 70px;
+        }
+
+        button {
+            padding: 10px 40px;
+            font-size: 16px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+
+<body>
+    <input type="text" name="" id="" placeholder="enter anything ">
+    <button onclick="timeDay()">Click button</button>
+    <script>
+        function timeDay() {
+            //let input = prompt("enter the dates")
+            //
+            //const  indate = date. getDate()
+            //const  day = date. getDay()
+            //const  year = date. getFullYear()
+            //const  month = date. getMonth()
+
+            //  Use Array 
+            //let days = ["Sunday", "Monday","Tuesday","Wensday","Thursday","Friday"]
+            //let months = ["Jan", "fab", "march"  , "April", " june", "july","Aug","Sep",]
+
+            //  if (day == 0  ){
+            //  alert("Sunday" )
+            //  }
+            //else if (day == 1){
+            //  alert("Monday")
+            //}
+            // else if (day == 2){
+            //  alert ( "Tuesday ")
+            // }
+            // else if (day == 3){
+            // alert ( "Wensday")
+            //  }
+            //else if (day == 4){
+            //   alert ( "Thursday")
+            //  }
+            // else if (day == 5){
+            // alert ( "friday")
+            // }
+            // else if (day == 6){
+            //   alert ( "friday")
+            //}
+            // else if (day == 7){
+            // alert("Saturday")
+            //}
+
+            //alert("The date is"+indate +"\n"+"Day is "+days[day]+"\n"+ "Year is "+ year +"\n"+"Month is "+months[month])
+
+            // Check time 
+            
+            const date = new Date()
+            const time = date.getTime()
+            alert(time)
+            const hours = date.getHours()
+            const minute = date.getHours()
+            const second = date.getHours()
+
+
+
+
+
+        }
+    </script>
+</body>
+
+</html>

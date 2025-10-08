@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array practice</title>
+</head>
+<body>
+    <script>
+//         let coin1 = ["H" ,"T"] ;
+//         let coin2 = ["H" ,"T"] ; 
+//         let probability = [] ; 
+
+//         for(let i = 0 ; i <= coin1.length ; i ++){
+//        for(let a  of coin2){
+//  probability.push(coin1[i]+ a) ;
+
+// } } 
+
+// Probability question 
+
+// let coin1 = ["H" ,"T"] ;
+//  let coin2 = ["H" ,"T"] ; 
+//  let coin3 = ["H" ,"T"] ; 
+// let probability = [] ; 
+
+// for(let i = 0 ; i <  coin1.length ; i ++){
+//     for(let z = 0 ; z < coin2.length ; z++){
+//          for(let a of coin3){
+//             probability.push(coin1[i]+ coin2[z] + a);
+//         }
+//     }
+// } 
+// console.log(probability)
+
+// The name of pairs 
+
+let firstName = ["S", "A", "I", "M"];
+let lastName = ["K", "A", "Z", "I"];
+let pair = [];
+
+for (let i = 0; i < firstName.length; i++) {
+  for (let a of lastName) {
+    if (firstName[i] !== a) {   
+      pair.push(firstName[i] + a);
+    }
+  }
+}
+
+console.log(pair);
+    </script>
+</body>
+</html>

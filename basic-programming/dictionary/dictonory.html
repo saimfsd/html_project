@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dictionory</title>
+</head>
+<body>
+    
+    <script>
+        function inValue(){
+            let name = prompt("Enter the name ")
+            let lastname = prompt("Enter the last name ")
+            let collegename = prompt("Enter the college name ")
+
+
+            let studentData = [{
+                name : name ,
+                lastname : lastname , 
+                collegename : collegename ,
+            } , 
+        
+            {
+                name : name ,
+                lastname : lastname , 
+                collegename : collegename ,
+            }
+        
+        
+        
+        ]
+            for(let i = 0 ; i < studentData.length ; i++){
+            console.log(studentData[i]);
+        }
+        }
+        inValue();
+    </script>
+</body>
+</html>

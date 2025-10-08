@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr = ["apple", "banana", "cherry"];
+console.log(arr.indexOf("banana")); // 1
+console.log(arr.indexOf("mango"));  // -1 (agar nahi hai)
+
+// lastindexof1 
+
+let arr1 = ["apple", "banana", "cherry", "banana"];
+console.log(arr1.lastIndexOf("banana")); // 3
+
+// INCLUDE 
+let arr2 = ["apple", "banana", "cherry"];
+console.log(arr.includes("banana")); // true
+console.log(arr2.includes("mango"));  // false
+
+//FIND 
+let numbers = [10, 20, 30, 40];
+let result = numbers.find(num => num > 25);
+console.log(result); // 30
+
+//FINDINDEX     
+let numbers1 = [10, 20, 30, 40];
+let index = numbers.findIndex(num => num > 25);
+console.log(index); // 2
+    </script>
+</body>
+</html>

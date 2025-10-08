@@ -1,0 +1,615 @@
+  <!DOCTYPE html>
+  <html lang="en" data-bs-theme="dark">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--Bootstrap link css-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+      <!--Bootstrap link script-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+      crossorigin="anonymous"></script>
+      <!--SHift the css index .css-->
+    <link rel="stylesheet" href="./assets/css/index.css">
+    </style>
+    <!--Bootstrap link animation-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!--Bootstrap link humberg-->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+  </head>
+
+  <body>
+      <div class="container-fluid px-4 py-5">
+        <!-- header section start -->
+      
+        <header id="heading">
+          <div class="Name" id="title">Taj Decoration</div>
+        
+          <!-- Hamburger Toggle (small screens) -->
+          <div class="hamburger" id="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        
+          <div class="nav-links align-items-center">
+            <a href="#nav-title"><span id="nav-home">Home</span></a>
+            <a href="#service"><span id="nav-services">Services</span></a>
+            <a href="#product-section-title"><span id="nav-product">Product</span></a>
+        
+            <!-- Portfolio Dropdown -->
+            <div class="dropdown">
+              <a href="#home-img" class="dropdown-toggle text-white" data-bs-toggle="dropdown"><span id="nav-portfolio">Portfolio</span></a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#about-para" id="nav-video">About</a></li>
+                <li><a class="dropdown-item" href="./assets/Images.html" id="nav-image">Image</a></li>   
+                <li><a class="dropdown-item" href="./assets/video.html" id="nav-video">Video</a></li>
+              </ul>
+            </div>
+        
+            <a href="#contact-title"><span id="nav-contact">Contact</span></a>
+        
+            <!-- Language as select -->
+            <div class="language-select">
+              <select id="select-lang" onchange="translateLan()">
+                <option value="English">English</option>
+                <option value="Hindi">Hindi</option>
+                <option value="Marathi">Marathi</option>
+              </select>
+            </div>
+          </div>
+        </header>
+      
+      
+      <!-- header section end -->
+      <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel" data-bs-interval="1600" >
+        <div class="carousel-inner" id="home-img">
+          <div class="carousel-item active">
+            <img
+              src="https://img.staticmb.com/mbcontent/images/uploads/2022/5/wedding%20stage%20decoration.jpg"
+              class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img
+              src="https://bandbajaweddings.com/wp-content/uploads/2022/09/WhatsApp-Image-2022-09-01-at-1.04.18-AM.jpeg"
+              class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="https://www.shaadibaraati.com/vendors-profile/32d9351be6e9de838dbc82e900d0ab6b.jpg"
+              class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="https://weddingsecrets.in/wp-content/uploads/2024/03/WD30.jpeg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="https://weddingsecrets.in/wp-content/uploads/2024/03/WD30.jpeg" class="d-block w-100" alt="...">
+          </div>
+        </div>
+      -
+        <!-- TEXT AREA WITH ANIMATION -->
+          <!-- Caption overlay -->
+          <div class="position-absolute top-50 start-50 translate-middle text-center text-white carousel-caption-custom animate__animated animate__fadeInUp animate__delay-1s" style="z-index: 10;">
+            <h2 class="hero" id="nav-title">Event Management and Product Supply</h2>
+            <p id="hero-para">
+              From stunning weddings to corporate setups, we provide end-to-end event management and top-tier product supply solutions
+            </p>
+            <a href="tel:8317297935"><button class="btn-modern" id="call-now">Call now</button></a>
+  
+          </div>
+        </div>
+
+  <!-- Content section with dark gradient background -->
+
+  <div class="container-fluid px-2 py-5" style="background: linear-gradient(135deg, #000000, #7c7e4d84);">
+    <div class="container col-xxl-8 px-4 py-5">
+      <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+        
+        <!-- Image -->
+        <div class="col-10 col-sm-8 col-lg-6 fade-in-start" id="imgAnim">
+          <img src="./assets/WhatsApp Image 2025-09-25 at 1.00.48 PM.jpeg"
+              class="d-block mx-lg-auto img-fluid rounded"
+              alt="Taj Decoration" width="700" height="400" loading="lazy">
+        </div>
+        
+        <!-- Text Section -->
+        <div class="col-lg-6 fade-in-start" id="textAnim">
+          <h3 id="about-title" class="display-5 fw-bold text-white lh-1 mb-3">TAJ DECORATION</h3>
+          <p id="about-para" class="lead text-white">
+            Hello! I’m Shoeb Diwan, the founder of Taj Decoration.
+            With years of experience in event decoration and management, I started this venture to bring creativity,
+            elegance, and perfection to every occasion. At Taj Decoration, we believe in turning your special moments
+            into lasting memories.
+          </p>
+        </div>
+          <!-- Social Icons -->
+          <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+            <div class="social-icons fs-3 d-flex gap-3 fade-in-start" id="iconAnim">
+              <a href="https://wa.me/9730214224" target="_blank"><i class="fab fa-whatsapp text-success"></i></a>
+              <a href="https://www.instagram.com/yourusername" target="_blank"><i class="fab fa-instagram text-danger"></i></a>
+              <a href="https://twitter.com/yourusername" target="_blank"><i class="fab fa-twitter text-primary"></i></a>
+            
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Content section end -->
+
+    <!--Services section-->
+  <section class="py-5" style="background-color: #473d3d00;">
+    <div class="container text-white" id="service">
+      <h2 class="text-center mb-5" data-aos="fade-up" id="services-title">Event Management & Decoration Services</h2>
+      <div class="row g-4">
+
+        <!-- Wedding Decoration -->
+        <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+          <div class="card h-100 bg-dark text-white border-0 shadow">
+            <img src="https://img.pikbest.com/photo/20250212/stage-decoration-wedding-bridal-function_11520855.jpg!bw700" class="card-img-top" alt="Wedding Decoration">
+            <div class="card-body text-center">
+              <h5 class="card-title" id="wed-title">Wedding all Decoration</h5>
+              <p class="card-text" id="wed-text">Stunning wedding stage setups with flowers, lights, and elegant themes for your special day.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Birthday Party -->
+        <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+          <div class="card h-100 bg-dark text-white border-0 shadow">
+            <img src="https://rukminim2.flixcart.com/image/704/844/xif0q/birthday-combo/w/j/i/multipastel-theme-birthday-decorations-kit-with-white-curtains-original-imaggg3rkhdgpagt.jpeg?q=90&crop=false" class="card-img-top" alt="Birthday Decoration">
+            <div class="card-body text-center">
+              <h5 class="card-title" id="bday-title">Birthday Decoration</h5>
+              <p class="card-text" id="bday-text">Creative birthday themes for kids and adults with balloon setups, cakes, and lighting.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Corporate Event -->
+        <div class="col-md-4" data-aos="zoom-in" data-aos-delay="300">
+          <div class="card h-100 bg-dark text-white border-0 shadow">
+            <img src="https://shadowwedlee.com/wp-content/uploads/2020/12/Cor-21.jpg" class="card-img-top" alt="Corporate Events">
+            <div class="card-body text-center">
+              <h5 class="card-title" id="corp-title">Corporate Events</h5>
+              <p class="card-text" id="corp-text">Professional event management for conferences, product launches, and seminars.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Engagement Decoration -->
+        <div class="col-md-4" data-aos="zoom-in" data-aos-delay="400">
+          <div class="card h-100 bg-dark text-white border-0 shadow">
+            <img src="https://storage.googleapis.com/shy-pub/337348/1701583610469_SKU-0241_2.jpg" class="card-img-top" alt="Engagement Setup">
+            <div class="card-body text-center">
+              <h5 class="card-title" id="eng-title">Engagement Ceremony</h5>
+              <p class="card-text" id="eng-text">Elegant and romantic setups for ring ceremonies with flowers, lights, and love themes.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Haldi & Mehndi -->
+        <div class="col-md-4" data-aos="zoom-in" data-aos-delay="500">
+          <div class="card h-100 bg-dark text-white border-0 shadow">
+            <img src="https://storage.googleapis.com/shy-pub/337348/SKU-1386_1-1712900539432.jpg" class="card-img-top" alt="Haldi & Mehndi">
+            <div class="card-body text-center">
+              <h5 class="card-title" id="haldi-title">Haldi & Mehndi Decoration</h5>
+              <p class="card-text" id="haldi-text">Vibrant yellow & green themes for traditional functions with floral and ethnic props.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- DJ Night / Custom Party -->
+        <div class="col-md-4" data-aos="zoom-in" data-aos-delay="600">
+          <div class="card h-100 bg-dark text-white border-0 shadow">
+            <img src="https://img.freepik.com/free-photo/closeup-dj-working-blue-light_181624-18773.jpg?semt=ais_hybrid&w=740" class="card-img-top" alt="DJ Night">
+            <div class="card-body text-center">
+              <h5 class="card-title" id="dj-title">DJ Night & Custom Parties</h5>
+              <p class="card-text" id="dj-text">High-energy music, lighting, and sound system setup for unforgettable night parties.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div><section class="py-5" style="background-color: #26252500;">
+      <div class="container text-white">
+        <h2 class="text-center mb-5" data-aos="fade-down" id="product-section-title">Our Products</h2>
+        <div class="row g-4 mb-4">
+    <!--Product section start-->
+          <!-- Product 1 -->
+          <div class="col-md-3" data-aos="fade-up">
+            <div class="card h-100 bg-dark text-white border-0 shadow">
+              <img src="https://thumbs.dreamstime.com/b/night-wedding-reception-outdoor-lights-aisle-floral-decor-363444675.jpg" class="card-img-top" alt="Decorative Lights">
+              <div class="card-body text-center">
+                <h5 class="card-title" id="product1-title">Decorative Lights</h5>
+                <p class="card-text" id="product1-desc">Colorful LED lights perfect for weddings and parties.</p>
+                <p class="text-warning fw-bold" id="product1-price">₹450 / set</p>
+              </div>
+            </div>
+          </div>
+    
+          <!-- Product 2 -->
+          <div class="col-md-3" data-aos="zoom-in">
+            <div class="card h-100 bg-dark text-white border-0 shadow">
+              <img src="https://m.media-amazon.com/images/I/61NPqoVTFPL.jpg" class="card-img-top" alt="Artificial Flowers">
+              <div class="card-body text-center">
+                <h5 class="card-title" id="product2-title">Artificial Flowers</h5>
+                <p class="card-text" id="product2-desc">High-quality flowers for stage and gate decoration.</p>
+                <p class="text-warning fw-bold" id="product2-price">₹120 / piece</p>
+              </div>
+            </div>
+          </div>
+    
+          <!-- Product 3 -->
+          <div class="col-md-3" data-aos="flip-left">
+            <div class="card h-100 bg-dark text-white border-0 shadow">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS16mU-jN3loVZ18iyVLLoIFrZdAIzjcZoYgQ&s" class="card-img-top" alt="Balloons">
+              <div class="card-body text-center">
+                <h5 class="card-title" id="product3-title">Balloons Pack</h5>
+                <p class="card-text" id="product3-desc">Combo pack of 50 colorful balloons for parties.</p>
+                <p class="text-warning fw-bold" id="product3-price">₹150 / pack</p>
+              </div>
+            </div>
+          </div>
+    
+          <!-- Product 4 -->
+          <div class="col-md-3" data-aos="fade-right">
+            <div class="card h-100 bg-dark text-white border-0 shadow">
+              <img src="https://m.media-amazon.com/images/I/61ZdJ10QDAL._UF894,1000_QL80_.jpg" class="card-img-top" alt="Backdrop Panels">
+              <div class="card-body text-center">
+                <h5 class="card-title" id="product4-title">Fiber Backdrop Panels</h5>
+                <p class="card-text" id="product4-desc">Reusable fiber panels for wedding and events.</p>
+                <p class="text-warning fw-bold" id="product4-price">₹3200 / piece</p>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+        <!-- See More Products Button -->
+        <div class="text-center mt-5" data-aos="fade-up">
+          <a href="./assets/product-section.html" class="btn btn-warning px-4 py-2" id="see-more-btn">See More Products</a>
+        </div>
+      </div>
+    </section>
+      
+      <!--see more product button-->
+      <!-- Taj Decoration - Client Testimonial Section Without Images --><section class="py-5" style="background-color: #26252500;">
+    <div class="container text-white text-center">
+    
+      <!-- Subtitle and Title -->
+      <h5 class="text-uppercase text-secondary" id="testimonial-subtitle">Client Testimonials</h5>
+      <h2 class="fw-bold mb-4" id="testimonial-title">See What Our Clients Have to Say</h2>
+      <div class="mx-auto mb-5" style="width: 80px; height: 3px; background-color: #a855f7;"></div>
+
+      <div id="tajTestimonial" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+
+          <!-- Testimonial 1 -->
+          <div class="carousel-item active">
+            <div class="row justify-content-center">
+              <div class="col-md-8">
+                <div class="bg-dark text-white rounded-4 p-4 shadow-lg position-relative">
+
+                  <!-- Circle -->
+                  <div class="placeholder-img-circle bg-gradient position-absolute" 
+                      style="top: -30px; left: 50%; transform: translateX(-50%); 
+                              width: 60px; height: 60px; border-radius: 50%; 
+                              background: linear-gradient(135deg, #a855f7, #9333ea); 
+                              box-shadow: 0 0 10px #a855f7;"></div>
+
+                  <p class="mt-5 fst-italic" id="testimonial-1-text">
+                    "Taj Decoration made my sister’s wedding absolutely magical! Stunning arrangements and very professional."
+                  </p>
+                  <div class="text-warning fs-5 mb-2" id="testimonial-1-stars">★★★★★</div>
+                  <h6 class="fw-bold mb-0" id="testimonial-1-name">Rahul Sharma</h6>
+                  <small class="text-muted" id="testimonial-1-date">2024-12-10</small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 2 -->
+          <div class="carousel-item">
+            <div class="row justify-content-center">
+              <div class="col-md-8">
+                <div class="bg-dark text-white rounded-4 p-4 shadow-lg position-relative">
+
+                  <div class="placeholder-img-circle bg-gradient position-absolute" 
+                      style="top: -30px; left: 50%; transform: translateX(-50%);
+                              width: 60px; height: 60px; border-radius: 50%;
+                              background: linear-gradient(135deg, #f59e0b, #f97316); 
+                              box-shadow: 0 0 10px #f59e0b;"></div>
+
+                  <p class="mt-5 fst-italic" id="testimonial-2-text">
+                    "Highly recommend Taj Decoration for all events. They are creative, punctual, and budget-friendly."
+                  </p>
+                  <div class="text-warning fs-5 mb-2" id="testimonial-2-stars">★★★★★</div>
+                  <h6 class="fw-bold mb-0" id="testimonial-2-name">Meena Patil</h6>
+                  <small class="text-muted" id="testimonial-2-date">2024-11-02</small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 3 -->
+          <div class="carousel-item">
+            <div class="row justify-content-center">
+              <div class="col-md-8">
+                <div class="bg-dark text-white rounded-4 p-4 shadow-lg position-relative">
+
+                  <div class="placeholder-img-circle bg-gradient position-absolute" 
+                      style="top: -30px; left: 50%; transform: translateX(-50%);
+                              width: 60px; height: 60px; border-radius: 50%; 
+                              background: linear-gradient(135deg, #10b981, #059669); 
+                              box-shadow: 0 0 10px #10b981;"></div>
+
+                  <p class="mt-5 fst-italic" id="testimonial-3-text">
+                    "One of the best decoration services in the city! Taj Decoration made our engagement look dreamy."
+                  </p>
+                  <div class="text-warning fs-5 mb-2" id="testimonial-3-stars">★★★★★</div>
+                  <h6 class="fw-bold mb-0" id="testimonial-3-name">Amit Deshmukh</h6>
+                  <small class="text-muted" id="testimonial-3-date">2024-10-18</small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+        <!-- Carousel Controls -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#tajTestimonial" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon bg-light rounded-circle p-2"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#tajTestimonial" data-bs-slide="next">
+          <span class="carousel-control-next-icon bg-light rounded-circle p-2"></span>
+        </button>
+      </div>
+    </div>
+  </section>
+      <!--Testnomoil end -->
+  <!-- Contact Section -->
+  <section class="py-5" style="background-color: #26252500;">
+    <div class="container text-white">
+      <div class="row justify-content-center">
+        <div class="col-md-8 text-center mb-4">
+          <h2 class="fw-bold text-warning" id="contact-title">Get In Touch</h2>
+          <p id="contact-desc">Have questions or want to book a decoration service? Send us a message or call directly.</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <!-- Contact Form -->
+        <div class="col-md-6">
+          <form>
+            <div class="mb-3">
+              <label class="form-label" id="contact-name-label">Your Name</label>
+              <input type="text" class="form-control" placeholder="Enter your name">
+            </div>
+            <div class="mb-3">
+              <label class="form-label" id="contact-email-label">Your Email</label>
+              <input type="email" class="form-control" placeholder="Enter your email">
+            </div>
+            <div class="mb-3">
+              <label class="form-label" id="contact-msg-label">Message</label>
+              <textarea class="form-control" rows="4" placeholder="Write your message..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-warning w-100" id="contact-btn">Send Message</button>
+          </form>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="col-md-6 text-white">
+          <h5 class="text-warning" id="contact-office-label">📍 Office Address</h5>
+          <p id="contact-office-info">Taj Decoration, Near Main Market, Jalalkheda, Nagpur</p>
+
+          <h5 class="text-warning" id="contact-phone-label">📞 Phone</h5>
+          <p><a href="tel:+919876543210" class="text-white text-decoration-none" id="contact-phone-info">+91 98765 43210</a></p>
+
+          <h5 class="text-warning" id="contact-email-heading">📧 Email</h5>
+          <p><a href="mailto:info@tajdecoration.com" class="text-white text-decoration-none" id="contact-email-info">info@tajdecoration.com</a></p>
+
+          <h5 class="text-warning" id="contact-time-label">🕒 Timing</h5>
+          <p id="contact-time-info">Mon - Sun: 9:00 AM to 9:00 PM</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white pt-5 pb-3" data-aos="fade-up" data-aos-duration="1000">
+    <div class="container">
+      <div class="row">
+        <!-- Company Info -->
+        <div class="col-md-4 mb-4">
+          <h5 class="text-uppercase mb-3" id="footer-title">Taj Decoration</h5>
+          <p id="footer-desc">Bringing elegance and creativity to your events. From weddings to corporate gatherings, we turn your vision into a beautiful reality.</p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="col-md-4 mb-4">
+          <h5 class="text-uppercase mb-3" id="footer-quick-links">Quick Links</h5>
+          <ul class="list-unstyled">
+            <li><a href="#carouselExampleInterval" class="text-white text-decoration-none" id="footer-link-home">Home</a></li>
+            <li><a href="#textAnim" class="text-white text-decoration-none" id="footer-link-about">About Us</a></li>
+            <li><a href="#service" class="text-white text-decoration-none" id="footer-link-services">Services</a></li>
+            <li><a href="./assets/product-section.html" class="text-white text-decoration-none" id="footer-link-gallery">Gallery</a></li>
+            <li><a href="#contact-name-label" class="text-white text-decoration-none" id="footer-link-contact">Contact</a></li>
+          </ul>
+        </div>
+        
+        <!-- Contact & Social -->
+        <div class="col-md-4 mb-4">
+          <h5 class="text-uppercase mb-3" id="footer-getintouch">Get in Touch</h5>
+          <p><i class="bi bi-geo-alt-fill me-2"></i> <span id="footer-address">Amner, Th. Warud, Amravati District, Nagpur Road, Maharashtra</span></p>
+          <p><i class="bi bi-envelope-fill me-2"></i> <span id="footer-email">tajdecor@example.com</span></p>
+          <p><i class="bi bi-phone-fill me-2"></i> <span id="footer-phone">+91 8317297935</span></p>
+        </div>
+      </div>
+
+      <hr class="border-light" />
+      <div class="text-center">
+        <p class="mb-0" id="footer-rights">© 2025 <strong>Taj Decoration</strong>. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/918317297935" target="_blank" class="whatsapp-button" aria-label="Chat on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- WhatsApp Button CSS -->
+
+
+
+<!---Start script-->
+
+<script src="./languages/english.js"></script>
+<script src="./languages/hindi.js"></script>
+<script src="./languages/marathi.js"></script>
+
+  <script>
+    
+  AOS.init();
+
+    const translate = {
+      English  : englishData ,
+      Marathi  : marathiData ,
+      Hindi    : hindiData ,
+    }
+
+    function translateLan() {
+  const lang = document.getElementById("select-lang").value;
+  const result = translate[lang];
+
+  // Header section
+  document.getElementById("title").innerText = result.siteTitle;
+  document.getElementById("nav-home").innerText = result.home;
+  document.getElementById("nav-services").innerText = result.services;
+  document.getElementById("nav-product").innerText = result.product;
+  document.getElementById("nav-portfolio").innerText = result.portfolio;
+  document.getElementById("nav-image").innerText = result.image;
+  document.getElementById("nav-video").innerText = result.video;
+  document.getElementById("nav-contact").innerText = result.contact;
+
+  // Hero section
+  document.getElementById("nav-title").innerText = result.title;
+  document.getElementById("hero-para").innerText = result.para;
+  document.getElementById("call-now").innerText = result.call;
+  document.getElementById("whatsapp-now").innerText = result.whatsapp;
+  // About Taj Decoration Owner
+document.getElementById("about-title").innerText = result.aboutTitle;
+document.getElementById("about-para").innerText = result.aboutPara;
+// Serivice section
+document.getElementById("services-title").innerText = result.servicesTitle;
+  document.getElementById("wed-title").innerText = result.wedTitle;
+  document.getElementById("wed-text").innerText = result.wedText;
+  document.getElementById("bday-title").innerText = result.bdayTitle;
+  document.getElementById("bday-text").innerText = result.bdayText;
+  document.getElementById("corp-title").innerText = result.corpTitle;
+  document.getElementById("corp-text").innerText = result.corpText;
+  document.getElementById("eng-title").innerText = result.engTitle;
+  document.getElementById("eng-text").innerText = result.engText;
+  document.getElementById("haldi-title").innerText = result.haldiTitle;
+  document.getElementById("haldi-text").innerText = result.haldiText;
+  document.getElementById("dj-title").innerText = result.djTitle;
+  document.getElementById("dj-text").innerText = result.djText;
+
+  //Product Section
+
+  document.getElementById("product-section-title").innerText = result.productSectionTitle;
+  document.getElementById("product1-title").innerText = result.product1Title;
+  document.getElementById("product1-desc").innerText = result.product1Desc;
+  document.getElementById("product1-price").innerText = result.product1Price;
+  document.getElementById("product2-title").innerText = result.product2Title;
+  document.getElementById("product2-desc").innerText = result.product2Desc;
+  document.getElementById("product2-price").innerText = result.product2Price;
+
+  document.getElementById("product3-title").innerText = result.product3Title;
+  document.getElementById("product3-desc").innerText = result.product3Desc;
+  document.getElementById("product3-price").innerText = result.product3Price;
+
+  document.getElementById("product4-title").innerText = result.product4Title;
+  document.getElementById("product4-desc").innerText = result.product4Desc;
+  document.getElementById("product4-price").innerText = result.product4Price;
+
+  document.getElementById("see-more-btn").innerText = result.seeMoreBtn;
+
+
+///testonomial 
+
+  // Section heading
+  document.getElementById("testimonial-subtitle").innerText = result.testimonialSubtitle;
+  document.getElementById("testimonial-title").innerText = result.testimonialTitle;
+
+  // Testimonial 1
+  document.getElementById("testimonial-1-text").innerText = result.testimonial1Text;
+  document.getElementById("testimonial-1-name").innerText = result.testimonial1Name;
+  document.getElementById("testimonial-1-date").innerText = result.testimonial1Date;
+
+  // Testimonial 2
+  document.getElementById("testimonial-2-text").innerText = result.testimonial2Text;
+  document.getElementById("testimonial-2-name").innerText = result.testimonial2Name;
+  document.getElementById("testimonial-2-date").innerText = result.testimonial2Date;
+
+  // Testimonial 3
+  document.getElementById("testimonial-3-text").innerText = result.testimonial3Text;
+  document.getElementById("testimonial-3-name").innerText = result.testimonial3Name;
+  document.getElementById("testimonial-3-date").innerText = result.testimonial3Date;
+  // Contact section
+
+  document.getElementById("contact-title").innerText = result.contactTitle;
+  document.getElementById("contact-desc").innerText = result.contactDesc;
+  document.getElementById("contact-name-label").innerText = result.contactNameLabel;
+  document.getElementById("contact-email-label").innerText = result.contactEmailLabel;
+  document.getElementById("contact-msg-label").innerText = result.contactMsgLabel;
+  document.getElementById("contact-btn").innerText = result.contactBtn;
+  document.getElementById("contact-office-label").innerText = result.contactOfficeLabel;
+  document.getElementById("contact-office-info").innerText = result.contactOfficeInfo;
+  document.getElementById("contact-phone-label").innerText = result.contactPhoneLabel;
+  document.getElementById("contact-phone-info").innerText = result.contactPhoneInfo;
+  document.getElementById("contact-email-heading").innerText = result.contactEmailHeading;
+  document.getElementById("contact-email-info").innerText = result.contactEmailInfo;
+  document.getElementById("contact-time-label").innerText = result.contactTimeLabel;
+  document.getElementById("contact-time-info").innerText = result.contactTimeInfo;
+  //footer 
+  document.getElementById("footer-title").innerText =result.footerTitle;
+document.getElementById("footer-desc").innerText = result.footerDesc;
+document.getElementById("footer-quick-links").innerText = result.footerQuickLinks;
+document.getElementById("footer-link-home").innerText = result.footerLinkHome;
+document.getElementById("footer-link-about").innerText = result.footerLinkAbout;
+document.getElementById("footer-link-services").innerText = result.footerLinkServices;
+document.getElementById("footer-link-gallery").innerText = result.footerLinkGallery;
+document.getElementById("footer-link-contact").innerText = result.footerLinkContact;
+document.getElementById("footer-getintouch").innerText = result.footerGetintouch;
+document.getElementById("footer-address").innerText = result.footerAddress;
+document.getElementById("footer-email").innerText = result.footerEmail;
+document.getElementById("footer-phone").innerText = result.footerPhone;
+document.getElementById("footer-rights").innerText = result.footerRights;
+};
+
+    const hamburger = document.getElementById("hamburger");
+    const navLinks = document.querySelector(".nav-links");
+  
+    hamburger.addEventListener("click", () => {
+      navLinks.classList.toggle("show");
+  
+      // Optional: Hamburger animation (rotate to X)
+      hamburger.classList.toggle("active");
+    });
+  
+
+       
+  </script>
+
+</body>
+
+</html>

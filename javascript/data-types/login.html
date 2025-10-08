@@ -80,7 +80,7 @@
         <input type="text" id="input" placeholder="Enter username or email">
         <p>you can use either your registered email or username</p>
         <label for="">Password</label>
-        <input type="text" id="input-1" placeholder="Enter the Password">
+        <input type="password" id="input-1" placeholder="Enter the Password">
         
             <p id="display"></p>
        
@@ -91,13 +91,12 @@
 </body>
 <script>
     function checklogin() {
-        var username = document.getElementById("input").value;
-        var password = document.getElementById("input-1").value;
+        let username = document.getElementById("input").value.trim();
+       let  password = document.getElementById("input-1").value.trim();
 
-        if (username === "saim kazi" && password === "monishka") {
+        if (username === "saimkazi" && password ==="monishka") {
             document.getElementById("display").innerHTML = "login successful";
             document.getElementById("display").style.color = "green";
-            
 
         }
         else {

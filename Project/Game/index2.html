@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cinematic Code MCQ Game - UI Only</title>
+<style>
+body, html{
+    margin:0; padding:0;
+    width:100%; height:100%;
+    font-family: 'Courier New', monospace;
+    overflow:hidden;
+    background: radial-gradient(ellipse at bottom, #0b0c2a 0%, #0a0b1e 100%);
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* --- Star background placeholder --- */
+#stars{ position:fixed; width:100%; height:100%; z-index:-1; background: radial-gradient(circle, #111, #000); }
+
+/* --- Start Screen --- */
+#startScreen{
+    position:absolute; width:100%; height:100%;
+    display:flex; justify-content:center; align-items:center; flex-direction:column;
+    background: radial-gradient(circle, #1f0f3c, #0a0b1e);
+    z-index:10;
+}
+#startBtn{
+    padding: 25px 50px;
+    font-size:28px;
+    font-weight:bold;
+    border:none;
+    border-radius:50px;
+    cursor:pointer;
+    background: linear-gradient(45deg,#ff3cac,#784ba0);
+    color:white;
+    box-shadow:0 0 30px #ff3cac,0 0 60px #784ba0;
+    animation: pulse 1.2s infinite;
+    text-align:center;
+}
+#startBtn:hover{ transform: scale(1.1); }
+
+@keyframes pulse{
+    0%{ box-shadow:0 0 30px #ff3cac,0 0 60px #784ba0; }
+    50%{ box-shadow:0 0 60px #ff3cac,0 0 120px #784ba0; }
+    100%{ box-shadow:0 0 30px #ff3cac,0 0 60px #784ba0; }
+}
+
+/* --- Container --- */
+#container{
+    width:90%; max-width:700px;
+    background: linear-gradient(135deg,#1f1c3f,#302b63);
+    border-radius:20px;
+    padding:25px;
+    text-align:center;
+    box-shadow: 0 0 50px #ff3cac;
+    transform: scale(0.8);
+    opacity:0;
+}
+pre{
+    background:#1e1e2f;
+    padding:15px;
+    border-radius:12px;
+    text-align:left;
+    overflow-x:auto;
+    color:#00ffcc;
+    font-size:18px;
+    line-height:1.5;
+}
+.options{ margin-top:20px; }
+.option-btn{
+    display:block; width:100%;
+    padding:12px;
+    margin:10px 0;
+    border:none; border-radius:12px;
+    font-size:18px; cursor:pointer;
+    background: rgba(0,255,255,0.2);
+    color:white; text-shadow:0 0 4px #00ffff;
+    transition: all 0.3s ease;
+}
+.option-btn:hover{
+    transform: scale(1.07);
+    background: rgba(0,255,255,0.5);
+    box-shadow:0 0 20px #00ffff;
+}
+
+#message{
+    margin-top:15px;
+    font-size:24px;
+    font-weight:bold;
+    min-height:30px;
+    color: yellow;
+}
+
+/* --- Blast / Congratulations --- */
+#blast{
+    position:fixed; top:0; left:0; width:100%; height:100%;
+    background: radial-gradient(circle, #ffff00, #ff0000);
+    display:flex; justify-content:center; align-items:center;
+    font-size:60px; font-weight:bold; color:#fff;
+    z-index:9999; flex-direction:column;
+    display:none;
+}
+#blastText{
+    opacity:0;
+    transition: opacity 1.5s ease-in-out;
+}
+</style>
+</head>
+<body>
+
+<!-- Star Background Placeholder -->
+<div id="stars"></div>
+
+<!-- Start Screen -->
+<div id="startScreen">
+  <div id="startBtn">Start Game</div>
+</div>
+
+<!-- Game Container -->
+<div id="container">
+  <pre id="codeBlock">console.log("Hello World!");</pre>
+  <div class="options" id="optionsContainer">
+    <button class="option-btn">Option 1</button>
+    <button class="option-btn">Option 2</button>
+    <button class="option-btn">Option 3</button>
+    <button class="option-btn">Option 4</button>
+  </div>
+  <div id="message">Select the correct answer</div>
+</div>
+
+<!-- Blast -->
+<div id="blast">
+  <div id="blastText">🎉 CONGRATULATIONS! 🎉</div>
+</div>
+
+</body>
+</html>

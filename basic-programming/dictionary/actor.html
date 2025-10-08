@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Actor Movies</title>
+</head>
+
+<body>
+  <div id="display"></div>
+ 
+ 
+  <script>
+ let newData = [
+  {
+    name: "Shahrukh Khan",
+    movies: [
+      { Name: "Idiots", Release_Date: "2009", IMDB_Rating: 8.4 },
+      { Name: "Dangal", Release_Date: "2016", IMDB_Rating: 8.3 }
+    ]
+  },
+  {
+    name: "Amir Khan", 
+    movies: [
+      { Name: "Chak De! India", Release_Date: "2007", IMDB_Rating: 8.2 },
+      { Name: "My Name Is Khan", Release_Date: "2010", IMDB_Rating: 8.0 }
+    ]
+  },
+  {
+    name: "Salman Khan",
+    movies: [
+      { Name: "Bajrangi Bhaijaan", Release_Date: "2015", IMDB_Rating: 8.0 },
+      { Name: "Kick", Release_Date: "2014", IMDB_Rating: 6.8 }
+    ]
+  }
+];
+
+for (let a of newData){
+  let movieArray = a.movies 
+  for(let b of movieArray){
+    for(let i = 0 ; i < movieArray.length-1 ; i++){
+      let x = movieArray[i]
+      let y = movieArray[i+1]
+      if(x. Name >  y.Name){
+        movieArray[i]=y
+        movieArray [i + 1] = x
+      }
+    }
+  }
+} 
+console.log(newData)
+
+// actor Name 
+
+// for (let actor of newData){
+//     console.log(actor.name)
+// }
+
+
+// Movie Name
+// for (let actor of newData){
+//     for (let movie of actor.movies){
+//     console.log(movie.Name)
+// }
+
+
+// Movie IMDB_rating 7 se jaida 
+
+// for (let actor of newData) {
+//     for (let movie of actor.movies) {
+//         if (movie.IMDB_Rating > 7) {
+//             console.log(`${movie.Name} - ${movie.IMDB_Rating}`);
+//         }
+//     }
+// }
+
+//  MovieCount 
+
+// let actorName = "";
+// let movieCount = 0 ;
+
+//  for (let actor of newData) {
+//     for (let movie of actor.movies) {
+        
+//     }
+// }
+
+
+// let actorName = "";
+// movieCount = 0 ; 
+// IMDB_Rat = 7 ;
+// for( let actor of newData.movies){
+    // if (actor.movies.length > movieCount){
+    //     actorName = actor.name
+    //     movieCount = actor.movies.length
+    // }
+
+    
+//   if(actor.IMDB_Rating > 7){
+//     console.log(actor.movies.Name)
+//   }
+// }
+
+// console.log (actorName);
+// console.log(movieCount);
+
+
+
+  </script>
+</body>
+</html>
+
+ 
+ 

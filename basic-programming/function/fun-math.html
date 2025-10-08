@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Random Number Generator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    .box {
+      display: inline-block;
+      width: 100px;
+      height: 100px;
+      margin: 20px;
+      border: 2px solid #333;
+      border-radius: 10px;
+      font-size: 24px;
+      line-height: 100px;
+      background-color: #f0f0f0;
+    }
+    button {
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+    <h2>🎲 Random Lottery Numbers 🎲</h2>
+
+    <div class="box" id="box1">?</div>
+    <div class="box" id="box2">?</div>
+    <div class="box" id="box3">?</div>
+    
+    <br>
+    
+    <button onclick="mahaLaxmi()">Button 1</button>
+    <button onclick="dreamFun()">Button 2</button>
+    <button onclick="Mcl()">Button 3</button>
+    
+    <script>
+      function generateRandom() {
+        return Math.floor(Math.random() * 10) + 1;
+      }
+    
+      function mahaLaxmi() {
+        let result = generateRandom();
+        document.getElementById("box1").innerText = result;                                                                
+      }
+    
+      function dreamFun() {
+        let result = generateRandom();
+        document.getElementById("box2").innerText = result;
+      }
+    
+      function Mcl() {
+        let result = generateRandom();
+        document.getElementById("box3").innerText = result;
+      }
+    </script>
+</body>
+</html>

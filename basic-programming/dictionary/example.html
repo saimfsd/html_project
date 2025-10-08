@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array With UI</title>
+    <style>
+        header{
+            width: 100vw;
+            height: 80px;
+            background-color: black;
+            color: white;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .btn{
+            width: 150px;
+            height: 50px;
+            background-color: aqua;
+            border-radius: 20px;
+        }
+        button{
+            width: 150px;
+            height: 50px;
+            background-color: rgb(148, 191, 191);
+            border-radius: 20px;
+        }
+        .count{
+            font-size: 20px;
+        }
+        .display{
+            width: 100vw ; 
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div id="countText">Count : 0</div>   <!-- ✅ Added id -->
+        <button class="btn" onclick="addStudent()">Add +</button>
+        <button class="btn" id="count">Cart 0</button>
+    </header>
+    <div class="display" id="display"></div>
+
+    <script>
+        let student = ["Saim" , "Bhushan" , "Ashish" , "Ayush" , "Ratnesh"];
+       
+function showStudent(){
+        student.map((student , index)=>{
+            document.getElementById("display").innerHTML += `
+                <div class="student">
+                    <p>${student}</p> 
+                    <button class="button" onclick="addtoCart(${index})">Add</button>
+                </div>`
+            ;
+        });
+    }
+    //Show the added student   
+    let cartArray = [];
+        let addtoCart = (index)=>{
+            cartArray.push(student[index])
+            document.getElementById("count").innerHTML = `Cart ${cartArray.length}`;
+
+            // ye Apna logic hai 
+          for(let i = 0 ; i < cartArray.length ; i++){
+            console.log(cartArray[i]) ;
+          } 
+        }
+        let showCount = ()=>{
+            document.getElementById("countText").innerHTML = `Count : ${student.length}`
+        }
+
+        let addStudent = ()=>{
+       document.getElementById("display").innerHTML = "" ;
+            let input = prompt();
+            student.push(input);
+            showCount() ;
+            showStudent();
+       
+        }
+        showStudent()
+    </script>
+</body>
+</html>

@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gao Mart — Gaon ka Apna Bazaar</title>
+  <meta name="description" content="Gao Mart - Fresh produce, daily needs and handicrafts directly from villages to your doorstep." />
+
+  <style>
+    /* ====== Simple Reset ====== */
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%}
+    body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Helvetica Neue', Arial; line-height:1.45; color:#24323a; background:#fbf9f6}
+
+    /* ====== Variables ====== */
+    :root{
+      --green:#2e7d32; /* earthy green */
+      --brown:#8d6e63; /* earthy brown */
+      --yellow:#f6b24a; /* warm yellow */
+      --muted:#7a8a89;
+      --card:#ffffff;
+      --radius:12px;
+      --glass: rgba(255,255,255,0.7);
+    }
+
+    /* ====== Container ====== */
+    .container{max-width:1100px;margin:0 auto;padding:20px}
+
+    /* ====== Header ====== */
+    header{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--green),var(--yellow));display:flex;align-items:center;justify-content:center;color:white;font-weight:700;box-shadow:0 6px 18px rgba(46,125,50,0.12)}
+    .brand h1{font-size:20px}
+    .brand p{font-size:12px;color:var(--muted);margin-top:3px}
+
+    nav{display:flex;gap:10px;align-items:center}
+    .btn{background:var(--green);color:white;padding:8px 14px;border-radius:10px;border:none;cursor:pointer;font-weight:600}
+    .btn.secondary{background:transparent;border:1px solid #e6e3e0;color:var(--green)}
+    .lang-switch{display:flex;gap:6px}
+    .lang-switch button{background:transparent;border:none;padding:6px 8px;border-radius:8px;cursor:pointer}
+
+    /* ====== Hero ====== */
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:26px;align-items:center;padding:26px 0}
+    .hero-card{background:linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.86));padding:28px;border-radius:16px;box-shadow:0 8px 30px rgba(36,50,58,0.06)}
+    .hero h2{font-size:28px;margin-bottom:10px}
+    .hero p{color:var(--muted);margin-bottom:18px}
+    .cta-row{display:flex;gap:12px}
+    .hero-illus{background:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="600" height="420"><rect width="100%" height="100%" fill="%23f4f1ea"/></svg>') center/cover no-repeat;border-radius:12px;height:320px;display:flex;align-items:center;justify-content:center}
+    .search{display:flex;gap:8px;margin-top:16px}
+    .search input{flex:1;padding:10px 12px;border-radius:10px;border:1px solid #e9e6e3}
+    .search button{background:var(--brown);color:white;padding:10px 12px;border-radius:10px;border:none}
+
+    /* ====== Categories ====== */
+    .categories{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:18px}
+    .cat{background:var(--card);border-radius:12px;padding:12px;display:flex;flex-direction:column;align-items:center;gap:8px;box-shadow:0 8px 18px rgba(36,50,58,0.04)}
+    .cat img{width:48px;height:48px}
+    .cat span{font-size:13px;color:var(--muted)}
+
+    /* ====== Why Choose Us ====== */
+    .why{display:flex;gap:12px;margin:26px 0}
+    .why .card{flex:1;padding:18px;border-radius:14px;background:var(--card);box-shadow:0 8px 20px rgba(36,50,58,0.04);display:flex;gap:10px;align-items:center}
+    .why .icon{width:44px;height:44px;border-radius:10px;background:var(--glass);display:flex;align-items:center;justify-content:center;font-weight:700}
+
+    /* ====== Products grid ====== */
+    .products{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .product{background:var(--card);border-radius:12px;padding:12px;box-shadow:0 10px 24px rgba(36,50,58,0.04);display:flex;flex-direction:column}
+    .product img{width:100%;height:140px;object-fit:cover;border-radius:10px}
+    .p-row{display:flex;justify-content:space-between;align-items:center;margin-top:8px}
+    .price{font-weight:700}
+    .add{background:var(--yellow);border:none;padding:8px;border-radius:10px;cursor:pointer}
+
+    /* ====== Testimonials ====== */
+    .testimonials{display:flex;gap:12px;overflow:auto;padding-bottom:8px}
+    .test{min-width:250px;background:linear-gradient(180deg,var(--card),#fff);padding:14px;border-radius:12px;box-shadow:0 8px 20px rgba(36,50,58,0.04);display:flex;gap:12px}
+    .avatar{width:56px;height:56px;border-radius:50%;background:var(--green);color:white;display:flex;align-items:center;justify-content:center;font-weight:700}
+
+    /* ====== Download App Banner ====== */
+    .download{background:linear-gradient(90deg, rgba(46,125,50,0.06), rgba(246,178,74,0.03));padding:18px;border-radius:12px;display:flex;align-items:center;justify-content:space-between;margin:22px 0}
+    .mobile-mock{width:120px;height:240px;border-radius:20px;background:linear-gradient(180deg,#fff,#f6f4ef);box-shadow:0 12px 30px rgba(36,50,58,0.06);display:flex;align-items:center;justify-content:center}
+
+    /* ====== Footer ====== */
+    footer{margin-top:28px;padding:18px 0;color:var(--muted);display:flex;justify-content:space-between;align-items:center}
+
+    /* ====== Responsive ====== */
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr;}
+      .products{grid-template-columns:repeat(2,1fr)}
+      .categories{grid-template-columns:repeat(4,1fr)}
+    }
+    @media (max-width:640px){
+      .categories{grid-template-columns:repeat(2,1fr)}
+      .why{flex-direction:column}
+      .products{grid-template-columns:1fr}
+      header{gap:8px}
+      .hero-illus{height:220px}
+    }
+
+    /* small helpers */
+    .muted{color:var(--muted)}
+    .rounded{border-radius:10px}
+    .center{text-align:center}
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <header>
+      <div class="brand">
+        <div class="logo">GM</div>
+        <div>
+          <h1>Gao Mart</h1>
+          <p>Gaon ka Apna Bazaar</p>
+        </div>
+      </div>
+
+      <nav>
+        <div class="lang-switch" aria-hidden>
+          <button onclick="setLang('hi')">हिंदी</button>
+          <button onclick="setLang('mr')">मराठी</button>
+          <button onclick="setLang('en')">EN</button>
+        </div>
+        <button class="btn secondary" onclick="openJoin()">Join as Seller</button>
+        <button class="btn" onclick="shopNow()">Shop Now</button>
+      </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-card">
+        <h2 id="hero-title">Gaon ka Apna Bazaar — Gao Mart</h2>
+        <p id="hero-sub">Fresh produce, daily needs, and handicrafts directly from villages to your doorstep.</p>
+
+        <div class="search">
+          <input id="search-input" placeholder="Search for 'potatoes', 'dairy', 'handicraft'..." />
+          <button onclick="doSearch()">Search</button>
+        </div>
+
+        <div style="margin-top:14px" class="cta-row">
+          <button class="btn" onclick="shopNow()">Shop Now</button>
+          <button class="btn secondary" onclick="openJoin()">Join as Seller</button>
+        </div>
+
+        <div class="categories" style="margin-top:18px">
+          <div class="cat"><img src="https://img.icons8.com/ios/50/000000/grain.png" alt="grains"/><span>Grains</span></div>
+          <div class="cat"><img src="https://img.icons8.com/ios/50/000000/vegetarian-food.png" alt="veggies"/><span>Vegetables</span></div>
+          <div class="cat"><img src="https://img.icons8.com/ios/50/000000/milk-bottle.png" alt="dairy"/><span>Dairy</span></div>
+          <div class="cat"><img src="https://img.icons8.com/ios/50/000000/handmade.png" alt="handicraft"/><span>Handicrafts</span></div>
+          <div class="cat"><img src="https://img.icons8.com/ios/50/000000/shopping-basket.png" alt="daily"/><span>Daily Needs</span></div>
+        </div>
+
+      </div>
+
+      <aside>
+        <div class="hero-illus rounded">
+          <!-- lightweight placeholder illustration -->
+          <svg width="100%" height="100%" viewBox="0 0 600 420" fill="none" xmlns="http://www.w3.org/2000/svg" style="border-radius:12px">
+            <rect width="600" height="420" rx="12" fill="#f5f3ee"/>
+            <g transform="translate(40,40)">
+              <rect x="0" y="200" width="480" height="140" rx="10" fill="#fff" stroke="#e9e6e3"/>
+              <circle cx="60" cy="120" r="50" fill="#2e7d32" opacity="0.12"/>
+              <rect x="160" y="50" width="140" height="60" rx="8" fill="#f6b24a" opacity="0.12"/>
+              <text x="18" y="260" fill="#6b6b6b" font-size="18">Fresh produce</text>
+              <text x="18" y="285" fill="#9aa1a0" font-size="14">Direct from villages</text>
+            </g>
+          </svg>
+        </div>
+      </aside>
+    </section>
+
+    <!-- Why choose us -->
+    <section class="why">
+      <div class="card">
+        <div class="icon">✓</div>
+        <div>
+          <strong>Trustworthy</strong>
+          <div class="muted">Verified sellers from local villages</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="icon">₹</div>
+        <div>
+          <strong>Affordable Prices</strong>
+          <div class="muted">Direct sourcing keeps costs low</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="icon">📦</div>
+        <div>
+          <strong>Cash on Delivery</strong>
+          <div class="muted">Simple payment options: COD & UPI</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured products -->
+    <section>
+      <h3 style="margin-bottom:12px">Featured Products</h3>
+      <div class="products">
+        <div class="product">
+          <img src="https://images.unsplash.com/photo-1543353071-873f17a7a088?w=800&q=60" alt="potatoes">
+          <div class="p-row">
+            <div>
+              <div>Fresh Potatoes</div>
+              <small class="muted">Farm-fresh (1 kg)</small>
+            </div>
+            <div class="price">₹40</div>
+          </div>
+          <div style="margin-top:10px;display:flex;justify-content:space-between;align-items:center">
+            <small class="muted">Seller: Ram's Farm</small>
+            <button class="add" onclick="addCart(this)">Add</button>
+          </div>
+        </div>
+
+        <div class="product">
+          <img src="https://images.unsplash.com/photo-1582515073490-399813b38d19?w=800&q=60" alt="milk">
+          <div class="p-row">
+            <div>
+              <div>Pure Cow Milk</div>
+              <small class="muted">500 ml</small>
+            </div>
+            <div class="price">₹30</div>
+          </div>
+          <div style="margin-top:10px;display:flex;justify-content:space-between;align-items:center">
+            <small class="muted">Seller: Sita Dairy</small>
+            <button class="add" onclick="addCart(this)">Add</button>
+          </div>
+        </div>
+
+        <div class="product">
+          <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=800&q=60" alt="handicraft">
+          <div class="p-row">
+            <div>
+              <div>Handmade Basket</div>
+              <small class="muted">Traditional craft</small>
+            </div>
+            <div class="price">₹250</div>
+          </div>
+          <div style="margin-top:10px;display:flex;justify-content:space-between;align-items:center">
+            <small class="muted">Seller: Rani's Crafts</small>
+            <button class="add" onclick="addCart(this)">Add</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section style="margin-top:22px">
+      <h3 style="margin-bottom:12px">What sellers & buyers say</h3>
+      <div class="testimonials">
+        <div class="test">
+          <div class="avatar">RK</div>
+          <div>
+            <strong>Ram K.</strong>
+            <div class="muted">"Gao Mart se mera samaan seedha shehar tak jaata hai — buyers se accha payment milta."</div>
+          </div>
+        </div>
+
+        <div class="test">
+          <div class="avatar">SP</div>
+          <div>
+            <strong>Sita P.</strong>
+            <div class="muted">"App bahut aasan hai. Main ab ghar baithe doodh bech paati hoon."</div>
+          </div>
+        </div>
+
+        <div class="test">
+          <div class="test" style="min-width:250px">
+            <div class="avatar">RN</div>
+            <div>
+              <strong>Rani N.</strong>
+              <div class="muted">"Humaare haath se bani basket shehar me bikti hai — bahut khushi."</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Download app -->
+    <section class="download">
+      <div>
+        <h3>Download the Gao Mart App</h3>
+        <div class="muted">Order easily, manage your shop, and receive payments — app available in Hindi & Marathi.</div>
+        <div style="margin-top:10px;display:flex;gap:10px">
+          <button class="btn">Play Store</button>
+          <button class="btn secondary">App (APK)</button>
+        </div>
+      </div>
+      <div class="mobile-mock">
+        <div style="text-align:center">
+          <div style="font-weight:700">Gao Mart</div>
+          <small class="muted">App preview</small>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div>
+        <strong>Gao Mart</strong>
+        <div class="muted">From Village to Your Home</div>
+      </div>
+      <div class="muted">© Gao Mart — All rights reserved</div>
+    </footer>
+
+  </div>
+
+  <script>
+    // Minimal JS: language handling + small interactions
+    const texts = {
+      en:{
+        heroTitle: 'Gaon ka Apna Bazaar — Gao Mart',
+        heroSub: 'Fresh produce, daily needs, and handicrafts directly from villages to your doorstep.'
+      },
+      hi:{
+        heroTitle: 'गाँव का अपना बाज़ार — Gao Mart',
+        heroSub: 'ताज़ा उत्पाद, दैनिक आवश्यकताएँ और हस्तशिल्प सीधे गाँवों से आपके दरवाजे तक।'
+      },
+      mr:{
+        heroTitle: 'ग्रामचं आपलं बाजार — Gao Mart',
+        heroSub: 'ताजे उत्पादन, दैनंदिन गरज आणि हस्तकला थेट गावातून तुमच्या दारापर्यंत.'
+      }
+    }
+
+    function setLang(code){
+      const t = texts[code] || texts.en
+      document.getElementById('hero-title').textContent = t.heroTitle
+      document.getElementById('hero-sub').textContent = t.heroSub
+    }
+
+    function shopNow(){
+      alert('Redirecting to shop (demo).')
+    }
+    function openJoin(){
+      alert('Join as seller — registration (demo).')
+    }
+
+    function doSearch(){
+      const q = document.getElementById('search-input').value.trim()
+      if(!q) return alert('Search ke liye kuch likho — e.g. "potatoes"')
+      alert('Searching for: ' + q + ' (demo)')
+    }
+
+    function addCart(btn){
+      btn.textContent = 'Added'
+      btn.disabled = true
+      btn.style.opacity = 0.9
+    }
+  </script>
+</body>
+</html>

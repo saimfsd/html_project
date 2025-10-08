@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Practice UI</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f3f4f6;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+    button {
+      padding: 10px 20px;
+      border: none;
+      background: #2563eb;
+      color: white;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-bottom: 15px;
+    }
+    button:hover {
+      background: #1d4ed8;
+    }
+    .output {
+      width: 300px;
+      height: 150px;
+      background: black;
+      color: #10b981;
+      padding: 10px;
+      border-radius: 6px;
+      font-family: monospace;
+      overflow-y: auto;
+    }
+  </style>
+</head>
+<body>
+  <button onclick="cliclButton()">▶ Run Code</button>
+  <div class="output" id="output">Output will appear here...</div>
+  <script>
+    //Greater than less than condition 
+    let a = 10;
+let b = 5;
+
+console.log(a > b); // true  (10, 5 se bada hai)
+console.log(b > a); // false (5, 10 se bada nahi hai)
+
+// Less than conditio
+let x = 8;
+let y = 12;
+
+console.log(x < y); // true  (8, 12 se chhota hai)
+console.log(y < x); // false (12, 8 se chhota nahi hai)
+
+    function cliclButton(){
+    //     let age = 20;
+    //   let hasID = true;
+// And condition 
+
+//    if (age >= 18 && hasID) {
+//  document.getElementById("output").innerHTML = "you can vote";
+// } 
+// else {
+//   console.log("You cannot vote ❌");
+// }
+
+// OR condition
+
+
+//     let day = "Sunday";
+
+// if (day === "Saturday" || day === "Sunday") {
+//   console.log("It’s weekend 🎉");
+// } else {
+//   console.log("It’s a weekday 📅");
+// }
+
+
+
+//Ek program banao jo check kare:
+//User ka age 18 se upar hai AND uske paas driving license hai → "You can drive" print karo, warna "You cannot drive".
+
+// let license = true ;
+// let age = 20 ;
+// if(age < 18 && license == true){
+//     document.getElementById("output").innerHTML = "you can drive";
+// }
+// else{
+//     document.getElementById("output").innerHTML = "you cannot drive";
+
+// }
+
+
+//Check if a number is greater than 10 AND less than 20.
+
+
+// let num = prompt("enter a number")
+// if( num >= 10 && num <= 20){
+//   alert("the number bewtween 10 and 20")
+// }
+// else{
+//   alert("the number not betweoon 10 and 20 ")
+// }}
+
+// Check if a student has passed: marks ≥ 35 AND attendance ≥ 75%
+
+
+// let Marks = prompt("enter a number");
+// let attendance = prompt("enter a number");
+
+// if (Marks >= 35 && attendance >= 75 ){
+// alert("PASS")
+// }
+// else {
+//   alert("FAIL")
+// }
+
+
+//Check if a person is a teenager (age ≥ 13 AND age ≤ 19)
+// let age = prompt("enter a number")
+
+// if (age >= 13 && age <= 19 ){
+//   alert("teenager")
+// }
+// else if (age >= 20){
+//   alert("seniour ")
+// }
+// else{
+//   alert("child")
+// }
+    
+ //Write a program to check if a number is even OR divisible by 5.
+
+ // let number = Number(prompt("enter a number")) 
+
+   // if(number > 0 && number % 5 == 0){
+    //   alert("even and divisibke by 5")
+    // }
+
+    // else if (number > 0){
+    //   alert("only even ")
+    // }
+    // else {
+    //   alert("please enter correcrt number")
+    // }
+
+
+  }
+
+  </script>
+</body>
+</html>

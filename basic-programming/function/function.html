@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>function practice </title>
+</head>
+
+<body>
+    <input type="text" name="" id="input-one">
+    <input type="text" name="" id="input-two">
+
+    <button onclick="addition()">Addition </button>
+    <button onclick="subtraction()">subtraction </button>
+    <button onclick="multiplication()">multiplication </button>
+    <button onclick="division()">division </button>
+    <h1 id="display"></h1>
+    <script>
+        function returnStudent(name, rollNo, age) {
+
+            let student = {
+                name: name,
+                rollNo: rollNo,
+                age: age,
+                institude: "enjoy programming",
+                city: "katol",
+            }
+
+            return student;
+
+
+
+        }
+        function textInput() {
+
+            const x = {
+                inputONe: document.getElementById("input-one").value,
+                inputTwo: document.getElementById("input-two").value,
+            };
+            if (x.inputONe === "" || x.inputTwo === "") {
+                alert("please enter the numbers")
+                return null;
+            }
+
+
+            if (isNaN(x.inputONe) || isNaN(x.inputTwo)) {
+                alert("pleaser enter correct number")
+                return null;
+            }
+            return x;
+
+        }
+
+        //addition
+
+        function addition() {
+
+            let x = textInput();
+            if (x) {
+                const result = parseInt(x.inputONe) + parseInt(x.inputTwo);// labery type convertion
+                document.getElementById("display").innerHTML = + result;
+            }
+        }
+        //subtraction
+
+        function subtraction() {
+
+            let result = parseInt(num1) - parseInt(num2);    // labery type convesrtion
+
+            let checkreturn = returnStudent("Ashish", 101, 20);
+            console.log(checkreturn)
+
+            document.getElementById("display").innerHTML = + g;
+
+        }
+
+    </script>
+</body>
+
+</html>

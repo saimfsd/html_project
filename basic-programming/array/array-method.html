@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Method</title>
+</head>
+<body>
+    <h2>Numbers and Squares</h2>
+<div id="display"></div>
+
+<script>
+let numbers = [1, 2, 3, 4, 5];
+
+// map हर number का square निकालता है
+let squares = numbers.map((num) => n * n);
+
+// UI पर दिखाने के लिए
+let displayDiv = document.getElementById("display");
+squares.map((sq, index) => {
+    displayDiv.innerHTML += `<p>Number: ${numbers[index]} → Square: ${sq}</p>`;
+});
+
+
+
+
+</script>
+</body>
+</html>
