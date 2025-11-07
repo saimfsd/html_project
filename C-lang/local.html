@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>LogicBuilder — Mini Game (HTML/CSS/JS)</title>
+  <style>
+    :root{--bg:#0f1724;--card:#0b1220;--accent:#7dd3fc;--muted:#94a3b8}
+    *{box-sizing:border-box;font-family:Inter,system-ui,Segoe UI,Roboto,'Helvetica Neue',Arial}
+    body{margin:0;min-height:100vh;background:linear-gradient(180deg,#071028 0%,#081022 60%);color:#e6eef8;display:flex;align-items:center;justify-content:center;padding:24px}
+    .app{width:100%;max-width:1100px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);border-radius:12px;padding:20px;box-shadow:0 8px 30px rgba(2,6,23,0.6)}
+    header{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+    header h1{font-size:20px;margin:0}
+    header p{margin:0;color:var(--muted);font-size:13px}
+    .layout{display:grid;grid-template-columns:340px 1fr;gap:18px}
+
+    /* left panel */
+    .panel{background:var(--card);padding:12px;border-radius:10px}
+    .palette{display:flex;flex-direction:column;gap:10px}
+    .block{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);cursor:grab}
+    .block:active{cursor:grabbing}
+    .block small{display:block;color:var(--muted);font-size:12px}
+
+    /* workspace */
+    .workspace{background:linear-gradient(180deg,rgba(255,255,255,0.01),transparent);min-height:380px;padding:14px;border-radius:10px;border:1px dashed rgba(255,255,255,0.03);display:flex;flex-direction:column}
+    .dropzone{background:rgba(255,255,255,0.01);flex:1;border-radius:8px;padding:10px;display:flex;flex-direction:column;gap:8px;overflow:auto}
+    .slot{min-height:48px;border-radius:8px;border:1px dashed rgba(255,255,255,0.03);display:flex;align-items:center;padding:8px;gap:8px;background:linear-gradient(180deg,rgba(255,255,255,0.005),transparent)}
+    .slot.empty{opacity:0.45}
+    .slot .label{font-weight:600}
+
+    .controls{display:flex;gap:10px;align-items:center;margin-top:12px}
+    .btn{background:transparent;padding:8px 12px;border-radius:8px;border:1px solid rgba(255,255,255,0.05);cursor:pointer}
+    .btn.primary{background:var(--accent);color:#012; border: none}
+
+    .playground{display:flex;gap:12px}
+    .panel.small{padding:10px}
+
+    .right-top{display:flex;gap:12px;align-items:center}
+    .info{color:var(--muted);font-size:13px}
+
+    .footer{display:flex;justify-content:space-between;align-items:center;margin-top:12px;color:var(--muted);font-size:13px}
+
+    /* responsive */
+    @media (max-width:880px){.layout{grid-template-columns:1fr}.right-top{flex-direction:column;align-items:flex-start}}
+
+    /* small helpers */
+    .input-row{display:flex;gap:8px;align-items:center}
+    input[type="number"]{padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit;width:120px}
+    .output{background:#021224;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);min-height:36px}
+    .hint{background:linear-gradient(90deg, rgba(125,211,252,0.06), transparent);padding:8px;border-radius:8px;border:1px solid rgba(125,211,252,0.06);color:var(--accent)}
+
+  </style>
+</head>
+<body>
+  <div class="app">
+    <header>
+      <div>
+        <h1>LogicBuilder — Mini Game</h1>
+        <p>Only HTML / CSS / JavaScript. Drag steps into order, run with an input, and test your logic.</p>
+      </div>
+      <div class="right-top">
+        <div class="info">Challenge: <strong>Sum of digits</strong></div>
+        <div class="info">Arrange the steps in correct order to compute sum of digits of a positive integer.</div>
+      </div>
+    </header>
+
+    <div class="layout">
+      <div class="panel">
+        <h3 style="margin:4px 0 10px">Step Palette</h3>
+        <div class="palette" id="palette">
+          <div class="block" draggable="true" data-step="read">Read number (input)</div>
+          <div class="block" draggable="true" data-step="init">Set sum = 0</div>
+          <div class="block" draggable="true" data-step="digit">digit = number % 10</div>
+          <div class="block" draggable="true" data-step="add">sum = sum + digit</div>
+          <div class="block" draggable="true" data-step="divide">number = Math.floor(number / 10)</div>
+          <div class="block" draggable="true" data-step="check">If number > 0 goto digit</div>
+          <div class="block" draggable="true" data-step="print">Print sum (output)</div>
+        </div>
+
+        <div style="margin-top:12px">
+          <div class="hint">Tip: You need to create a loop: read → init → (digit→add→divide) repeat until number=0 → print</div>
+        </div>
+      </div>
+
+      <div class="workspace panel">
+        <h3 style="margin:4px 0 8px">Workspace — Drop slots (Order matters)</h3>
+        <div class="dropzone" id="dropzone">
+          <!-- slots will be generated by JS -->
+        </div>
+
+        <div class="controls">
+          <div class="input-row">
+            <label for="numberInput">Test input:</label>
+            <input id="numberInput" type="number" value="12345" min="0">
+          </div>
+
+          <button class="btn primary" id="runBtn">Run</button>
+          <button class="btn" id="shuffleBtn">Auto Order (Hint)</button>
+          <button class="btn" id="resetBtn">Reset</button>
+
+          <div style="margin-left:8px;min-width:180px">
+            <div class="output" id="result">Output will appear here</div>
+          </div>
+        </div>
+
+        <div style="margin-top:12px;display:flex;gap:8px;align-items:center">
+          <button class="btn" id="checkBtn">Check Logic</button>
+          <div class="info" id="feedback">Arrange steps correctly to pass the check.</div>
+        </div>
+
+        <div class="footer">
+          <div>Made with ❤️ — Practice logic patterns</div>
+          <div class="info">Drag & drop — mobile supported by long-press</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Steps available and the canonical correct order for the 'Sum of digits' challenge
+    const correctOrder = [
+      'read',
+      'init',
+      'digit',
+      'add',
+      'divide',
+      'check',
+      'print'
+    ];
+
+    // friendly labels
+    const labels = {
+      read: 'Read number (input)',
+      init: 'Set sum = 0',
+      digit: 'digit = number % 10',
+      add: 'sum = sum + digit',
+      divide: 'number = Math.floor(number / 10)',
+      check: 'If number > 0 goto digit',
+      print: 'Print sum (output)'
+    };
+
+    const dropzone = document.getElementById('dropzone');
+    const palette = document.getElementById('palette');
+    const resultEl = document.getElementById('result');
+    const feedback = document.getElementById('feedback');
+
+    // Create 7 slots
+    function createSlots(){
+      dropzone.innerHTML = '';
+      for(let i=0;i<7;i++){
+        const slot = document.createElement('div');
+        slot.className = 'slot empty';
+        slot.dataset.index = i;
+        slot.innerHTML = `<div style="flex:1"><span class="label">Slot ${i+1}</span></div>`;
+        slot.addEventListener('dragover',e=>e.preventDefault());
+        slot.addEventListener('drop',onDrop);
+        dropzone.appendChild(slot);
+      }
+    }
+
+    createSlots();
+
+    // Drag handlers for palette blocks
+    document.querySelectorAll('#palette .block').forEach(b=>{
+      b.addEventListener('dragstart',e=>{
+        e.dataTransfer.setData('text/plain', b.dataset.step);
+        setTimeout(()=>b.classList.add('hidden'),0);
+      });
+      b.addEventListener('dragend',e=>{
+        b.classList.remove('hidden');
+      });
+    });
+
+    // Allow dragging blocks already placed in slots
+    function makeSlotDraggable(slot){
+      const child = slot.querySelector('.block');
+      if(!child) return;
+      child.setAttribute('draggable','true');
+      child.addEventListener('dragstart',e=>{
+        e.dataTransfer.setData('text/plain', child.dataset.step);
+        e.dataTransfer.setData('source-slot', slot.dataset.index);
+        setTimeout(()=>child.classList.add('hidden'),0);
+      });
+      child.addEventListener('dragend',e=>{
+        child.classList.remove('hidden');
+      });
+    }
+
+    // Drop handler
+    function onDrop(e){
+      e.preventDefault();
+      const step = e.dataTransfer.getData('text/plain');
+      const sourceSlotIndex = e.dataTransfer.getData('source-slot');
+      const target = e.currentTarget;
+
+      // if dropping from palette, clone. If from slot, move.
+      if(sourceSlotIndex){
+        // move: remove from source slot
+        const src = dropzone.querySelector(`[data-index='${sourceSlotIndex}']`);
+        const moving = src.querySelector('.block');
+        if(moving){
+          src.classList.add('empty');
+          src.innerHTML = `<div style="flex:1"><span class="label">Slot ${src.dataset.index*1 +1}</span></div>`;
+        }
+        // if target has child, swap
+        const existing = target.querySelector('.block');
+        if(existing){
+          // place existing back to source
+          src.innerHTML = '';
+          src.appendChild(existing);
+          src.classList.remove('empty');
+          makeSlotDraggable(src);
+        }
+        // move moving into target
+        target.innerHTML = '';
+        const node = moving;
+        target.appendChild(node);
+        target.classList.remove('empty');
+        makeSlotDraggable(target);
+        return;
+      }
+
+      // from palette: create new element
+      if(step && labels[step]){
+        // if target has child, swap it back to palette? We'll swap into empty only
+        const existing = target.querySelector('.block');
+        if(existing){
+          // do nothing if occupied
+          return;
+        }
+        const el = document.querySelector(`#palette .block[data-step='${step}']`).cloneNode(true);
+        el.addEventListener('dragstart',e=>{
+          e.dataTransfer.setData('text/plain', el.dataset.step);
+          e.dataTransfer.setData('source-slot', target.dataset.index);
+          setTimeout(()=>el.classList.add('hidden'),0);
+        });
+        el.addEventListener('dragend',e=>el.classList.remove('hidden'));
+        target.innerHTML='';
+        target.appendChild(el);
+        target.classList.remove('empty');
+        makeSlotDraggable(target);
+      }
+    }
+
+    // Run logic based on current slot order
+    document.getElementById('runBtn').addEventListener('click',()=>{
+      const input = Number(document.getElementById('numberInput').value) || 0;
+      resultEl.textContent = '';
+      feedback.textContent = 'Running...';
+
+      // build order array
+      const slots = Array.from(dropzone.querySelectorAll('.slot'));
+      const order = slots.map(s=>{
+        const b = s.querySelector('.block');
+        return b?b.dataset.step:null;
+      });
+
+      // quick validation
+      if(!order.includes('read') || !order.includes('print')){
+        resultEl.textContent = 'Make sure you have Read and Print steps placed.';
+        feedback.textContent = 'Missing essential steps.';
+        return;
+      }
+
+      // simulate simple interpreter for this challenge
+      try{
+        const output = simulateOrder(order, input);
+        resultEl.textContent = output;
+        feedback.textContent = 'Finished running.';
+      }catch(err){
+        resultEl.textContent = 'Runtime error — logic may be incorrect.';
+        feedback.textContent = err.message || 'Error during execution.';
+      }
+    });
+
+    // Reset button
+    document.getElementById('resetBtn').addEventListener('click',()=>{
+      createSlots();
+      feedback.textContent = 'Workspace cleared.';
+      resultEl.textContent = '';
+    });
+
+    // Auto order (hint)
+    document.getElementById('shuffleBtn').addEventListener('click',()=>{
+      createSlots();
+      const slots = Array.from(dropzone.querySelectorAll('.slot'));
+      correctOrder.forEach((step,i)=>{
+        const el = document.querySelector(`#palette .block[data-step='${step}']`).cloneNode(true);
+        el.addEventListener('dragstart',e=>{
+          e.dataTransfer.setData('text/plain', el.dataset.step);
+          e.dataTransfer.setData('source-slot', i);
+          setTimeout(()=>el.classList.add('hidden'),0);
+        });
+        el.addEventListener('dragend',e=>el.classList.remove('hidden'));
+        slots[i].innerHTML = '';
+        slots[i].appendChild(el);
+        slots[i].classList.remove('empty');
+        makeSlotDraggable(slots[i]);
+      });
+      feedback.textContent = 'Placed steps in correct order as a hint.';
+    });
+
+    // Check logic button
+    document.getElementById('checkBtn').addEventListener('click',()=>{
+      const slots = Array.from(dropzone.querySelectorAll('.slot'));
+      const order = slots.map(s=>{
+        const b = s.querySelector('.block');
+        return b?b.dataset.step:null;
+      });
+      // Compare ignoring nulls by compressing
+      const clean = order.filter(Boolean);
+      const match = arraysEqual(clean, correctOrder);
+      if(match){
+        feedback.textContent = 'Great! Logic order is correct. ✅';
+      }else{
+        // give small hint: first wrong position
+        let i=0;
+        for(;i<Math.min(clean.length, correctOrder.length);i++){
+          if(clean[i]!==correctOrder[i]) break;
+        }
+        if(i===0) feedback.textContent = 'Hint: Start by reading the number and initializing sum.';
+        else feedback.textContent = `First mistake near slot ${i+1}: expected '${labels[correctOrder[i]]}'`;
+      }
+    });
+
+    function arraysEqual(a,b){
+      if(a.length!==b.length) return false;
+      for(let i=0;i<a.length;i++) if(a[i]!==b[i]) return false;
+      return true;
+    }
+
+    // A tiny interpreter that understands our limited step set
+    function simulateOrder(order, input){
+      // We'll simulate a loop behavior using the presence of 'check' step. This is intentionally simple.
+      let number = input;
+      let sum = 0;
+      let ranRead=false, ranPrint=false;
+
+      // find index of 'check' to determine loop end
+      const indexMap = {};
+      order.forEach((s,i)=>{ if(s) indexMap[s]=i; });
+
+      // If check exists, we'll loop executing sequence between digit..check repeatedly
+      if(indexMap['check']!==undefined){
+        // execute in order from start to end, looping where needed
+        // initial pass: run steps before loop (read, init)
+        for(let i=0;i<order.length;i++){
+          const step = order[i];
+          if(!step) continue;
+          if(step==='read') ranRead=true;
+          if(step==='init') sum=0;
+          // stop when we reach check — remaining handled in loop
+          if(step==='check') break;
+        }
+
+        // Now loop while number>0
+        while(number>0){
+          for(let i=indexMap['digit']; i<=indexMap['check']; i++){
+            const step = order[i];
+            if(!step) continue;
+            if(step==='digit'){
+              var digit = Math.abs(number) % 10;
+            }else if(step==='add'){
+              sum += digit;
+            }else if(step==='divide'){
+              number = Math.floor(number/10);
+            }else if(step==='check'){
+              // nothing — loop condition checked externally
+            }
+          }
+        }
+
+        // After loop, run any steps after check (like print)
+        for(let i=indexMap['check']+1;i<order.length;i++){
+          const step = order[i];
+          if(!step) continue;
+          if(step==='print') ranPrint=true;
+        }
+      }else{
+        // If no check, just execute sequentially once
+        for(const step of order){
+          if(!step) continue;
+          if(step==='read') ranRead=true;
+          if(step==='init') sum=0;
+          if(step==='digit') var digit = Math.abs(number) % 10;
+          if(step==='add') sum += (typeof digit==='number'?digit:0);
+          if(step==='divide') number = Math.floor(number/10);
+          if(step==='print') ranPrint=true;
+        }
+      }
+
+      if(!ranRead) throw new Error('No input read.');
+      if(!ranPrint) throw new Error('No print step executed.');
+
+      return sum;
+    }
+
+    // Mobile support: allow long-press to pick from palette
+    // (simple: clicking on palette clones into first empty slot)
+    palette.addEventListener('click',e=>{
+      const b = e.target.closest('.block');
+      if(!b) return;
+      const firstEmpty = dropzone.querySelector('.slot.empty');
+      if(!firstEmpty) return;
+      const clone = b.cloneNode(true);
+      clone.addEventListener('dragstart',ev=>{
+        ev.dataTransfer.setData('text/plain', clone.dataset.step);
+        ev.dataTransfer.setData('source-slot', firstEmpty.dataset.index);
+        setTimeout(()=>clone.classList.add('hidden'),0);
+      });
+      clone.addEventListener('dragend',ev=>clone.classList.remove('hidden'));
+      firstEmpty.innerHTML='';
+      firstEmpty.appendChild(clone);
+      firstEmpty.classList.remove('empty');
+      makeSlotDraggable(firstEmpty);
+    });
+
+    // initialize: place placeholder text
+    feedback.textContent = 'Drag steps from left into the slots in correct order.';
+  </script>
+</body>
+</html>
