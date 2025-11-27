@@ -20,11 +20,6 @@ void loopOne(){
          printf("%s \n" , row);
      }
   }
-      
- 
-    
-
-
 }
 
 int main() {
